@@ -1,0 +1,124 @@
+% -------------------------------------------------------%
+
+% パッケージのインポート
+
+\usepackage{graphicx} % 図の挿入(includegraphics)
+\usepackage{wrapfig}
+\usepackage{booktabs} % tableのmidrule
+\usepackage{multirow} % tableのmultirow
+\usepackage{float} % [H]で厳密に位置を固定
+
+\usepackage{titlesec} % タイトルの書式を変える(titleformat)
+
+\usepackage{bm}
+\usepackage{amsmath} % 数式用
+\usepackage{amssymb} % もっと数式記号(iintとか)
+\usepackage{mathtools} % もっと数式(アクセント)
+\usepackage{accents} % \undertildeで下付きチルダ
+\usepackage{nccmath} % 数式左寄せ環境fleqn
+\usepackage{empheq} % わからん
+
+\usepackage{amsthm} % 定理，証明など
+
+\usepackage{siunitx} % 単位書き方(si)
+
+\usepackage[version=4]{mhchem} % 化学式
+\usepackage{chemfig}
+\usepackage{url}
+
+\usepackage{enumitem}
+\usepackage{comment} % コメントアウト(comment環境)
+
+\usepackage{framed} % 左線
+\usepackage{pict2e} % ベンゼン
+\usepackage{ascmac} % itembox
+\usepackage{fancybox} % itembox
+
+% ページスタイルのため
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% -------------------------------------------------------%
+
+% ページ番号に西暦を入れる用のカウンター
+\newcounter{yearcounter}
+
+% yearcounterとpageを変更
+% セクション始まりにこの2つを書けばページ番号を振り直せる
+% \setcounter{yearcounter}{2020}
+% \setcounter{page}{1}
+
+% これは多分使わない
+% yearcounterを1増加させる
+\newcommand{\incyearcounter}{\stepcounter{yearcounter}}
+
+% -------------------------------------------------------%
+
+% \pagestyle{plain} % empty：ページ番号削除
+% ページスタイルはドキュメント内で指定できる
+
+% メインのページスタイル 2020-1
+\fancypagestyle{mainPS}{%
+\lhead{}%ヘッダ左を空に
+\rhead{}%ヘッダ右を空に
+\cfoot{\theyearcounter\:\raisebox{1pt}{-}\:\thepage}%フッタ中央に"今のページ数/総ページ数"を設定
+\renewcommand{\headrulewidth}{0.0pt}%ヘッダの線を消す
+}
+
+% appendixのページスタイル appendix-1
+\fancypagestyle{appendixPS}{%
+\lhead{}
+\rhead{}
+\cfoot{appendix\:\raisebox{1pt}{-}\thepage}
+\renewcommand{\headrulewidth}{0.0pt}
+}
+
+% -------------------------------------------------------%
+
+% セクション・サブセクションの見出しのサイズ
+% \titleformat*{\section}{\Large\bfseries} % サイズ・太字
+% \titleformat*{\subsection}{\large\bfseries}
+\titleformat{\section}[block]
+{
+  % sectionとしたら絶対につく装飾
+  \newpage\noindent
+  {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
+  \hspace*{-13pt}
+  \raisebox{-4.5pt}{\begin{picture}(0,0)
+    \put(0,0){\color{black}\line(1,0){300}}
+  \end{picture}}
+}
+{
+  % section*では消える場所
+  % \hspace{0pt}
+  % {\normalfont \Large\bfseries}
+}{0pt}
+{
+  \normalfont \Large\bfseries 
+}
+[ 
+]
+
+\titleformat{\subsection}[block]
+{%
+  \raisebox{-5pt}%
+  {\linethickness{1.5pt}%
+  {\begin{picture}(5,20)%
+    \put(0,0){\line(0,1){20}}%
+  \end{picture}}}%
+  \raisebox{-4pt}
+  {\linethickness{0.5pt}%
+  {\begin{picture}(0,20)%
+    \put(0,0){\line(0,1){18}}%
+  \end{picture}}}
+}{%
+}{0pt}
+{
+  \hspace*{0pt}\normalfont \large\bfseries 
+}
+[ 
+]
+
+
+% その他コマンド
+\input{./src/Commands.tex}
