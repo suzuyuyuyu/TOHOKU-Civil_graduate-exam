@@ -22,7 +22,7 @@ yuta.suzuki.q6のdcメールかLINEなど何でも構いません。
 
 ## Licence
 ここで作成した解答の使用については
-[CC BY-NC-ND 4.0 DEED](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja)
+[CC BY-NC-SA 4.0 DEED](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.ja)
 に従ってください。  
 ただし，試験問題の著作権は作成した先生方にあります。
 
