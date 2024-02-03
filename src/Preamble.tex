@@ -54,14 +54,16 @@
 
 % -------------------------------------------------------%
 
+% 作ったけど使ってません
+
 % \pagestyle{plain} % empty：ページ番号削除
 % ページスタイルはドキュメント内で指定できる
 
 % メインのページスタイル 2020-1
 \fancypagestyle{mainPS}{%
-\lhead{}%ヘッダ左を空に
-\rhead{}%ヘッダ右を空に
-\cfoot{\theyearcounter\:\raisebox{1pt}{-}\:\thepage}%フッタ中央に"今のページ数/総ページ数"を設定
+% \lhead{}%ヘッダ左を空に
+% \rhead{}%ヘッダ右を空に
+\cfoot{\thepage}%フッタ中央に"今のページ数/総ページ数"を設定
 \renewcommand{\headrulewidth}{0.0pt}%ヘッダの線を消す
 }
 
@@ -73,6 +75,14 @@
 \renewcommand{\headrulewidth}{0.0pt}
 }
 
+% titlepageのページスタイル
+\fancypagestyle{titlePS}{%
+\lhead{empty}
+\rhead{empty}
+\cfoot{empty}
+\renewcommand{\headrulewidth}{0.0pt}
+}
+
 % -------------------------------------------------------%
 
 % セクション・サブセクションの見出しのサイズ
@@ -81,12 +91,13 @@
 \titleformat{\section}[block]
 {
   % sectionとしたら絶対につく装飾
-  \newpage\noindent
+  \noindent
   {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
   \hspace*{-13pt}
   \raisebox{-4.5pt}{\begin{picture}(0,0)
     \put(0,0){\color{black}\line(1,0){300}}
   \end{picture}}
+  \hspace*{4pt}
 }
 {
   % section*では消える場所
@@ -122,3 +133,8 @@
 
 % その他コマンド
 \input{./src/Commands.tex}
+
+% 2:問題番号を表示しない 3:する
+\setcounter{tocdepth}{2}
+% \setcounter{tocdepth}{3}
+

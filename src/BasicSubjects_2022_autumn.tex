@@ -1,0 +1,418 @@
+\newpage
+\section{2022秋}
+
+\setcounter{yearcounter}{2022}
+% \setcounter{page}{1}
+
+
+\subsection{微分積分}
+\prob{%
+  次の極限値を求めよ。
+  \al{\lim_{x\to0}\frac{x^2\sin(1/x)}{\sin x}}
+}
+\begin{ans*}
+  ${}$
+  \begin{gather}
+    \lim_{x\to 0}\frac{x^2\sin\cfrac{1}{x}}{\sin x}
+    = \lim_{x\to 0}\left(\frac{x}{\sin x}\cdot x\sin\frac{1}{x}\right)
+  \end{gather}
+  \dm{-1\leq\sin\frac{1}{x}\leq 1}より
+  \begin{gather}
+    \begin{dcases}
+      -\frac{x}{\sin x}\cdot x 
+      \leq \frac{x}{\sin x}\cdot x\sin\frac{1}{x} 
+      \leq \frac{x}{\sin x}\cdot x
+      & (\text{if\:\:} \frac{x}{\sin x} > 0) \\
+      \frac{x}{\sin x}\cdot x 
+      \leq \frac{x}{\sin x}\cdot x\sin\frac{1}{x} 
+      \leq -\frac{x}{\sin x}\cdot x 
+      & (\text{if\:\:} \frac{x}{\sin x} < 0)
+    \end{dcases}
+  \end{gather}
+  いずれについても\dm{\lim_{x\to 0}\frac{\sin x}{x} = 1}より
+  最左辺，最右辺$\longrightarrow 0\:(x\to 0)$であるので
+  はさみうちの原理から
+  \begin{gather}
+    \lim_{x\to 0}\frac{x^2 \sin \cfrac{1}{x}}{\sin x} = 0
+  \end{gather}
+\end{ans*}
+
+
+\prob{%
+  次の関数$f(x,y)$の極値を求めよ。
+  \begin{gather}
+    f(x,y) = xy + \frac{8}{x} + \frac{1}{y} \quad(x\neq 0, y\neq 0)
+  \end{gather}
+}
+% [x]: 極値と二階微分
+\begin{ans*}
+  停留点であるためには
+  \begin{align}
+    &\begin{dcases*}
+      \ppar{f}{x} = y - \frac{8}{x^2} = 0 \\
+      \ppar{f}{y} = x - \frac{1}{y^2} = 0
+    \end{dcases*}\\
+    &\Rightarrow
+    \begin{dcases*}
+      x = 4 \\
+      y = \frac{1}{2}
+    \end{dcases*}
+  \end{align}
+  かつ，この点でヘッシアン$\det\bH$は
+  \begin{align}
+    \det\bH
+    &=
+    \left.
+    \det 
+    \begin{bmatrix}
+    \frac{\d^2f}{\d x^2} & \frac{\d^2f}{\d x\d y} \\
+    \\
+    \frac{\d^2f}{\d x\d y} & \frac{\d^2f}{\d y^2}
+    \end{bmatrix}\right|_{(x,y) = (4,1/2)} \\
+    &=
+    \begin{vmatrix}
+      1/4 & 1 \\
+      1 & 16
+    \end{vmatrix}
+    = 3 > 0
+  \end{align}
+  より\dm{(x,y) = (4,1/2)}で極小値6をとる。
+\end{ans*}
+
+\prob{%
+  次に示す$xyz$空間の領域$D$を考える。
+  このとき，以下の問いに答えよ。
+  \begin{gather}
+    D = \left\{(x,y,z)\relmiddle 0\leq z\leq x^2+y^2, x^2+y^2\leq 2x \right\}
+  \end{gather}
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item 領域$D$を図示せよ。
+    \item 領域$D$の体積を求めよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 略 % []: 図示
+    \item ある座標$(x,y)$における領域の上限は$x^2+y^2=z$上の点であるので，
+    高さを$z=x^2 + y^2$，積分領域を\dm{C = \left\{(x,y)\relmiddle (x-1)^2+y^2 \leq 1 \right\}}として
+    求める体積$V_{\rm{D}}$は
+    \begin{gather}
+      V_{\rm{D}} = \iint_C z \:dxdy
+    \end{gather}
+    と求められる。
+    まず，この積分領域は極座標系$(r,\theta)$に変換すれば
+    \begin{align}
+      C 
+      &= \left\{(x,y)\relmiddle (x-1)^2 + y^2 \leq 1 \right\} \\
+      &= \left\{(r,\theta)\relmiddle r^2 - 2r\cos\theta\leq 1 \right\} \\
+      &= \left\{(r,\theta)\relmiddle 0\leq r\leq 2\cos\theta, 0\leq \theta < 2\pi \right\}
+    \end{align}
+    であるので，
+    \begin{align}
+      V_{\rm{D}}
+      &= \int_{0}^{2\pi}\int_{0}^{2\cos\theta}r^3\:drd\theta \\
+      &= \int_{0}^{2\pi} 4\cos^4\theta\:d\theta \\
+      &= \int_{0}^{2\pi} \left(1 + 2\cos\theta + \frac{1 + \cos4\theta}{2}\right)\:d\theta \\
+      &= 3\pi
+    \end{align}
+  \end{enumerate}
+  
+\end{ans*}
+
+\prob{%
+  次の微分方程式を解け。
+  ここで$e$は自然対数の底である。
+  \begin{gather}
+    y'' + 4y' + 4y - e^{-2x} = 0
+  \end{gather}
+}
+
+\begin{ans*}
+  与えられた微分方程式の斉次形である$y'' + 4y' + 4y = 0$について，
+  特性方程式\mbox{\dm{\lambda^2+4\lambda+4=0\Longleftrightarrow \lambda = -2}}であるので，
+  斉次解は\dm{y = (A+Bx)e^{-2x}}
+
+  また，特解を\dm{y_{\rm{p}} = Cx^2e^{-2x}}とおくと
+  \begin{gather}
+    \begin{dcases*}
+      y'_{\rm{p}} = 2C(x-x^2)e^{-2x} \\
+      y''_{\rm{p}}= 2C(2x^2-4x+1)e^{-2x}
+    \end{dcases*}
+  \end{gather}
+  であるので与えられた微分方程式に代入して
+  \begin{gather}
+    2C(2x^2 - 4x + 1) + 8C(x-x^2) + 4Cx^2 = 1 \\
+    C = \frac{1}{2} 
+  \end{gather}
+  よって，求める一般解は斉次解と特解の足し合わせで
+  \begin{gather}
+    y = \left(A + Bx + \frac{1}{2}x^2\right)e^{-2x} \\
+  \end{gather}
+\end{ans*}
+
+
+
+\subsection{線形代数}
+\prob{%
+  以下の行列の行列式を求めよ。
+  \al{
+    \begin{pmatrix}
+      0 & 1 & 2 & 0 \\
+      -4 & 0 & 3 & 1 \\
+      3 & -3 & 0 & 0 \\
+      6 & 0 & -2 & 0 \\
+    \end{pmatrix}
+  }
+}
+\begin{ans*}
+  \begin{align}
+    \det 
+    \begin{bmatrix}
+      0 & 1 & 2 & 0 \\
+      -4 & 0 & 3 & 1 \\
+      3 & -3 & 0 & 0 \\
+      6 & 0 & -2 & 0 \\
+    \end{bmatrix}
+    = \det
+    \begin{bmatrix}
+      0  & 1  & 2  \\
+      3  & -3 & 0  \\
+      6  & 0  & -2 \\
+    \end{bmatrix}
+    = 42
+  \end{align}
+\end{ans*}
+
+\prob{%
+  以下の行列
+  \begin{gather}
+    \bA =
+    \begin{pmatrix}
+      {\disp \frac{13}{2}} & {\disp \frac{5}{2}} \\
+      \\
+      {\disp \frac{5}{2}} & {\disp \frac{13}{2}} \\
+    \end{pmatrix}
+  \end{gather}
+  は固有値$\lambda_1 = 4, \lambda_2 = 9$を持つ。
+  この行列について以下の問いに答えよ。
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item \bA の正規化された固有ベクトルをすべて求めよ。
+    \item $\bB^2 = \bA$となる行列$\bB$を求めよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 固有ベクトルを$\bu$で表す。
+    
+    \begin{enumerate}[label=(\roman*)]
+      \item $\lambda = \lambda_1$のとき
+      \begin{gather}
+        (\lambda \bE - \bA)\bu
+        =
+        \begin{bmatrix}
+          {\disp -\frac{5}{2}} & {\disp -\frac{5}{2}} \\
+          \\
+          {\disp -\frac{5}{2}} & {\disp -\frac{5}{2}} \\
+        \end{bmatrix}
+        = \bm{0} \\
+        \bu_1 = 
+        \frac{1}{\sqrt{2}}
+        \begin{Bmatrix}
+          -1 \\ 1
+        \end{Bmatrix}
+      \end{gather}
+      \item $\lambda = \lambda_2$のとき
+      \begin{gather}
+        (\lambda \bE - \bA)\bu
+        =
+        \begin{bmatrix}
+          {\disp \frac{5}{2}} & {\disp -\frac{5}{2}} \\
+          \\
+          {\disp -\frac{5}{2}} & {\disp \frac{5}{2}} \\
+        \end{bmatrix}
+        = \bm{0} \\
+        \bu_1 = 
+        \frac{1}{\sqrt{2}}
+        \begin{Bmatrix}
+          1 \\ 1
+        \end{Bmatrix}
+      \end{gather}
+    \end{enumerate}
+    \item $\bB^2$を計算して\bA となるので$\bB$は$2\times2$の正方行列である。
+    ここで，\dm{\bB = \begin{bmatrix}a & b \\ c & d \end{bmatrix}}とおくと
+    \begin{gather}
+      \bB^2 =
+      \begin{bmatrix}
+        a^2+bc & (a+d)b \\
+        (a+d)b & bc+d^2
+      \end{bmatrix} 
+      =  
+      \begin{bmatrix}
+        {\disp \frac{13}{2}} & {\disp \frac{5}{2}} \\
+        \\
+        {\disp \frac{5}{2}} & {\disp \frac{13}{2}} \\
+      \end{bmatrix}
+      \\
+      \begin{dcases*}
+        \frac{13}{2} = a^2 + bc \\
+        \frac{5}{2} = (a+d)b \\
+        \frac{5}{2} = (a+d)c \\
+        \frac{13}{2} = bc + d^2
+      \end{dcases*}
+    \end{gather}
+    整理して
+    \begin{gather}
+      a=d,b=c \\
+      \begin{dcases*}
+        \frac{13}{2} = a^2 + b^2 \\
+        \frac{5}{2} = 2ab
+      \end{dcases*} \\
+      \therefore a + b = \pm 3, a - b = \pm 2\quad(\text{複号任意})
+    \end{gather}
+    を得る。よって，
+    \begin{gather}
+      \bB = 
+      \begin{bmatrix}
+        {\disp \pm\frac{1}{2}} & {\disp \pm\frac{5}{2}} \\
+        \\
+        {\disp \pm\frac{5}{2}} & {\disp \pm\frac{1}{2}} \\
+      \end{bmatrix},
+      \begin{bmatrix}
+        {\disp \pm\frac{5}{2}} & {\disp \pm\frac{1}{2}} \\
+        \\
+        {\disp \pm\frac{1}{2}} & {\disp \pm\frac{5}{2}} \\
+      \end{bmatrix}\quad(\text{行列内は複号同順})
+    \end{gather}
+
+  \end{enumerate}
+  
+\end{ans*}
+
+
+\prob{%
+  $\Pi$ を以下のベクトルで張られる$\mathbb{R}^3$（三次元空間）の平面とする。
+  \begin{gather}
+    \ba_1 =
+    \begin{Bmatrix}
+      -1 \\ 0 \\ 1
+    \end{Bmatrix}
+    ,
+    \ba_2 =
+    \begin{Bmatrix}
+      1 \\ 1 \\ 0
+    \end{Bmatrix}
+  \end{gather}
+  以下の問いに答えよ。
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item $\Pi$の正規直交基底$\bb_1,\bb_2$を求めよ。
+    ただし$\ba_1 \parallel \bb_1$とする。
+    \item $\{\bb_1, \bb_2, \bb_3\}$が$\mathbb{R}^3$の正規直交基底となるような$\bb_3$を求めよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    % 線型独立な有限個のベクトルが与えられたとき、それらと同じ部分空間を張る正規直交系を作り出す
+    \item Gram-Schmidtの直交化法を用いて得た2つのベクトルはもとのベクトルと
+    同じ部分空間を張る。
+    \begin{gather}
+      \bb_1 = \frac{1}{\sqrt{2}}
+      \begin{Bmatrix}
+      -1 \\ 0 \\ 1
+      \end{Bmatrix}
+    \end{gather}
+    $\ba_2$ の$\ba_1$への射影ベクトルは
+    \begin{gather}
+      (\ba_2\cdot\ba_1)\ba_1
+    \end{gather}
+    であるので，$\ba_2$はこの射影ベクトルと$\ba_1$と直交するベクトル$\bb'_2$を用いて
+    \begin{gather}
+      \ba_2 = (\ba_2\cdot\ba_1)\ba_1 + \bb'_2
+    \end{gather}
+    よって，$\bb_2$は
+    \begin{align}
+      \bb_2 
+      &=
+      \frac{\bb'_2}{|\bb'_2|} \\
+      &=
+      \frac{1}{\sqrt{6}}
+      \begin{Bmatrix}
+        1 \\ 2 \\ 1
+      \end{Bmatrix}
+    \end{align}
+    \item あらたな$\bb_3$は$\bb_1,\bb_2$の両者に直交するので外積として得られる。
+    \begin{align}
+      \bb_3
+      &=
+      \bb_1 \times \bb_2 \\
+      &=
+      \frac{1}{\sqrt{3}}
+      \begin{Bmatrix}
+        -1 \\ 1 \\ -1
+      \end{Bmatrix}
+    \end{align}
+  \end{enumerate}
+  % [x]: 別解
+  \begin{other*}
+    $\bb_2,\bb_3$について，平面$\Pi$の法線ベクトル$\bn$から得ることを考える。法線ベクトルを
+    \begin{gather}
+      \bn =
+      \begin{Bmatrix}
+        p \\ q \\ r
+      \end{Bmatrix}
+    \end{gather}
+    とおくと法線ベクトルは$\ba_1\cdot\bn=\ba_2\cdot\bn=0$であるので
+    \begin{gather}
+      \left\{
+      \begin{aligned}
+        -p + r &= 0 \\
+        p + q &= 0
+      \end{aligned}
+      \right.
+      \\
+      \therefore \bn =
+      \begin{Bmatrix}
+        1 \\ -1 \\ 1
+      \end{Bmatrix}
+    \end{gather}
+    $\bb_2\cdot\bn=\bb_2\cdot\bb_1=0$であるので，
+    正規化されていない$\bb_2$と平行なベクトル$\bb'_2 = \{x, y, z\}^T$は
+    \begin{gather}
+      \left\{
+      \begin{aligned}
+        -x + z &= 0 \\
+        x - y + z &= 0
+      \end{aligned}
+      \right.
+      \\
+      \therefore \bb'_2 =
+      \begin{Bmatrix}
+        1 \\ 2 \\ 1
+      \end{Bmatrix}
+    \end{gather}
+    これを正規化して
+    \begin{gather}
+      \bb_2 = 
+      \frac{1}{\sqrt{6}}
+      \begin{Bmatrix}
+        1 \\ 2 \\ 1
+      \end{Bmatrix}
+    \end{gather}
+
+    $\bb_3$は法線ベクトルと等しい方向で，
+    \begin{align}
+      \bb_3 
+      &= \frac{\bn}{|\bn|} \\
+      &= \frac{1}{\sqrt{3}}
+      \begin{Bmatrix}
+        1 \\ -1 \\ 1
+      \end{Bmatrix}
+    \end{align}
+  \end{other*}
+\end{ans*}
+

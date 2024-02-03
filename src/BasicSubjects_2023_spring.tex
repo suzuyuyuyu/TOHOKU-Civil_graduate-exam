@@ -1,0 +1,310 @@
+\newpage
+\section{2023春}
+
+\subsection{微分積分}
+\prob{%
+  次の極限値を求めよ。
+  ただし，\dm{a>0,b>0}とする。
+  \begin{gather}
+    \lim_{x\to 0}\left(\frac{a^x+b^x}{2}\right)^{1/x}
+  \end{gather}
+}
+% []: lhopitalの条件
+% []: 真数条件
+\begin{ans*}
+  与えられた極限に対数をとった次の極限は
+  \begin{align}
+    \lim_{x\to 0} \frac{\log \cfrac{a^x + b^x}{2}}{x}
+    &= \lim_{x\to 0} \frac{\cfrac{1}{2}\;(a^x\log a+b^x\log b)}{\cfrac{a^x + b^x}{2}} \quad(\text{L'H\^{o}pitalの定理})\\
+    &= \frac{\log a + \log b}{2} = \log \sqrt{ab}
+  \end{align}
+  と得られるので，
+  \begin{align}
+    \lim_{x\to 0}\left(\frac{a^x+b^x}{2}\right)^{1/x}
+     = \sqrt{ab}
+  \end{align}
+\end{ans*}
+
+\prob{%
+  \dm{x=r\cos\theta,y=r\sin\theta}のとき，以下の問いに答えよ。
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item $dx$および$dy$を求めよ。
+    \item $r,dr,\theta,d\theta$を用いて次式を表せ。
+    \begin{gather}
+      x\:dy - y\:dx
+    \end{gather}
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 
+    \begin{gather}
+      dx = \cos\theta\:dr - r\sin\theta\:d\theta \\
+      dy = \sin\theta\:dr + r\cos\theta\:d\theta
+    \end{gather}
+    \item 
+    \begin{align}
+      \begin{split}
+        x\:dy - y\:dx 
+        &= r\cos\theta(\sin\theta \:dr + r\cos\theta\:d\theta) \\
+        &\hspace*{30pt} - r\sin\theta(\cos\theta\:dr - r\sin\theta\:d\theta)  
+      \end{split}\\
+      &= r^2\cos^2\theta\:d\theta + r^2\sin\theta\:d\theta = r^2\:d\theta
+    \end{align}
+  \end{enumerate}
+\end{ans*}
+
+
+\prob{%
+  次に示す$xyz$空間の領域$D$を考える。
+  このとき，以下の問いに答えよ。
+  \begin{gather}
+    D = \left\{(x,y,z)\relmiddle y\geq 0,z\geq 0, z^2\leq 4x, y^2\leq x-x^2 \right\}
+  \end{gather}
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item 領域$D$を図示せよ。
+    \item 領域$D$の体積を求めよ。
+  \end{enumerate}
+}
+\begin{ans*} % ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 略
+    \item \dm{C = \left\{(x,y)\relmiddle \left(x-\frac{1}{2}\right)^2 + y^2 \leq \left(\frac{1}{2}\right)^2 \right\}}として，
+    求める体積$V_{\rm{D}}$は
+    \begin{align}
+      V_{\rm{D}}
+      &= \iint_C z\:dxdy \\
+      &= \iint_C 2\sqrt{x}\:dxdy \\
+      &= \int_{0}^{1}\int_{0}^{\sqrt{x-x^2}} 2\sqrt{x}\:dydx \\
+      &= \int_{0}^{1}2\sqrt{x}\sqrt{x-x^2}\:dx \\
+      &= \int_{0}^{1} 2x\sqrt{1-x}\:dx \\
+      &= \int_{0}^{1} 2\sqrt{1-x}\:dx - \int_{0}^{1}2(1-x)\sqrt{1-x}\:dx \\
+      &= \frac{8}{15}
+    \end{align}
+  \end{enumerate}
+  
+\end{ans*}
+
+\prob{%
+  次の微分方程式を解け。
+  ここで，$e$は自然対数の底である。
+  \begin{gather}
+    y'' - 2y' + 2y - e^x - 2x = 0
+  \end{gather}
+}
+\begin{ans*}
+  斉次の微分方程式$y'' - 2y' + 2y = 0$の解は
+  特性方程式$\lambda^2 - 2\lambda + 2 = 0\Longleftrightarrow \lambda = 1\pm i$より
+  \begin{gather}
+    y = e^x (A\cos x + B\sin x)
+  \end{gather}
+  ここで，与えられた微分方程式について特解を\dm{y_{\rm{p}} = ke^x + ax + b}と仮定すると
+  \begin{gather}
+    \begin{dcases*}
+      y'_{\rm{p}} = ke^x + a \\
+      y''_{\rm{p}} = ke^x
+    \end{dcases*}
+  \end{gather}
+  であるので，
+  \begin{gather}
+    ke^x - 2(ke^x + a) + 2(ke^x + ax + b) = e^x + 2x \\
+    \therefore k = a = b = 1
+  \end{gather}
+  ゆえに与えられた微分方程式の一般解は
+  \begin{gather}
+    y = e^x(A\cos x + B\sin x) + e^x + x + 1
+  \end{gather}
+\end{ans*}
+
+
+\subsection{線形代数}
+\prob{%
+  以下の線形方程式の基本解を求めよ。
+  \begin{align}
+    x_1 + x_2 + x_3 + 2x_4 &= 0 \\
+    x_1 + 2x_2 + 3x_4 &= 0 \\
+    x_1 + 3x_2 - x_3 + 4x_4 &= 0
+  \end{align}
+}
+% []: 解集合・解空間
+% []: たしかに解になることを示す
+\begin{ans*}
+  行列で表すと
+  \begin{align}
+    \begin{bmatrix}
+      1 & 1 & 1 & 2 \\
+      1 & 2 & 0 & 3 \\
+      1 & 3 & -1 & 4 \\
+    \end{bmatrix}
+    \begin{Bmatrix}
+      x_1 \\ x_2 \\ x_3 \\ x_4
+    \end{Bmatrix}
+    = \bm{0} \quad (\Leftrightarrow \bA \bx = \bm{0}\text{\:とおく})
+  \end{align}
+  このとき，\bA の行基本変形によって
+  \begin{gather}
+    \bA \longrightarrow
+    \begin{bmatrix}
+      1& 1& 1& 2 \\
+      0& 1& -1& 1 \\
+      0& 0& 0& 0 \\
+    \end{bmatrix}
+  \end{gather}
+  とできるので，
+  \begin{align}
+    &\left\{
+    \begin{aligned}
+      x_1 + x_2 + x_3 + 2x_4 &= 0 \\
+      x_2 - x_3 + x_4 &= 0
+    \end{aligned}
+    \right.
+  \end{align}
+  よって，基本解は$\dim\bx - \rank\bA = 2$から2つあって
+  $x_1,x_2 = s,t \in \mathbb{R}$として解は
+  \begin{align}
+    \bx = s
+    \begin{Bmatrix}
+      1 \\ 0 \\ -1/3 \\ -1/3 
+    \end{Bmatrix}
+    + t
+    \begin{Bmatrix}
+      0 \\ 1 \\ 1/3 \\ -2/3
+    \end{Bmatrix}
+  \end{align}
+  と表せる。基本解は
+  \begin{align}
+    \begin{Bmatrix}
+      1 \\ 0 \\ -1/3 \\ -1/3 
+    \end{Bmatrix}, 
+    \begin{Bmatrix}
+      0 \\ 1 \\ 1/3 \\ -2/3
+    \end{Bmatrix}
+  \end{align}
+\end{ans*}
+
+
+\prob{%
+  行列$A$について以下の問いに答えよ。
+  \begin{gather}
+    A =
+    \begin{pmatrix}
+      1 & 3 & 2 \\
+      0 & 2 & 0 \\
+      1 & 1 & 0
+    \end{pmatrix}
+  \end{gather}
+  
+  \begin{enumerate}[label=(\arabic*)]
+    \item $A$の階数を求めよ。
+    \item $A$の行列式を求めよ。
+    \item $A$のすべての固有値を求めよ。
+    \item $A$の各固有値に対する固有ベクトルを求めよ。
+    \item 行列$A$は対角化可能か否かを調べよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 行基本変形によって
+    \begin{gather}
+      \bA \longrightarrow
+      \begin{bmatrix}
+        1& 0& 0 \\
+        0& 1& 0 \\
+        0& 0& 1 
+      \end{bmatrix}
+    \end{gather}
+    とできるので$\rank \bA = 3$
+    \item 余因子展開から
+    \begin{align}
+      \det \bA
+      &=
+      \begin{vmatrix}
+        2& 0 \\
+        1& 0
+      \end{vmatrix}
+      - 0
+      \begin{vmatrix}
+        3& 2 \\
+        1& 0
+      \end{vmatrix}
+      +
+      \begin{vmatrix}
+        3& 2 \\
+        2& 0
+      \end{vmatrix} \\
+      &= -4
+    \end{align}
+    \item 固有方程式$\det(\lambda\bE - \bA) = 0$より
+    \begin{align}
+      \det
+      \begin{bmatrix}
+        \lambda-1& 3& 2 \\
+        0& \lambda-2& 0 \\
+        1& 1& \lambda
+      \end{bmatrix}
+      &= (\lambda -1)
+      \begin{vmatrix}
+        \lambda-2 & 0 \\
+        1& \lambda
+      \end{vmatrix}
+      +
+      \begin{vmatrix}
+        3& 2 \\
+        \lambda-2& 0
+      \end{vmatrix} \\
+      &= (\lambda-1)(\lambda-2)\lambda - 2(\lambda-2) \\
+      &= (\lambda-2)^2(\lambda+1) = 0 \\
+    \end{align}
+    \begin{gather}
+      \therefore \lambda = -1, 2 
+    \end{gather}
+    \item 固有ベクトルを$\bu = (x,y,z)^T$とする。
+    \begin{enumerate}[label=(\roman*)]
+      \item $\lambda = -1$のとき
+      \begin{gather}
+        (\lambda\bE - \bA)\bu = \bm{0} \\
+        \begin{bmatrix}
+          -2& -3& -2 \\
+          0& -3& 0 \\
+          -1& -1& -1 \\
+        \end{bmatrix}
+        \begin{Bmatrix}
+          x \\ y \\ z
+        \end{Bmatrix}
+        =\bm{0} \\
+      \end{gather}
+      よって，固有ベクトルは
+      \begin{gather}
+        \bu =
+        \begin{Bmatrix}
+          1 \\ 0 \\ -1
+        \end{Bmatrix}
+      \end{gather}
+      \item $\lambda = 2$のとき
+      \begin{gather}
+        (\lambda\bE - \bA)\bu = \bm{0} \\
+        \begin{bmatrix}
+          1& -3& -2 \\
+          0& 0& 0 \\
+          -1& -1& 2
+        \end{bmatrix}
+        \begin{Bmatrix}
+          x \\ y \\ z
+        \end{Bmatrix}
+        =\bm{0} \\
+      \end{gather}
+      よって，固有ベクトルは
+      \begin{gather}
+        \bu =
+        \begin{Bmatrix}
+          2 \\ 0 \\ 1
+        \end{Bmatrix}
+      \end{gather}
+    \end{enumerate}
+    \item 固有方程式の解のうち重解$\lambda = 2$において固有ベクトルが1つなので対角化可能でない。
+  \end{enumerate}
+\end{ans*}
