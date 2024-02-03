@@ -1,12 +1,10 @@
 # TOHOKU-Civil_graduate-exam
 
 ## Overview
-東北大学 土木系 大学院試験の解答を順次作成します。
+東北大学 土木系 大学院試験の問題と解答を順次作成します。\
+以下のファイルにまとめています。
+- [基礎科目](./BasicSubjects.pdf)
 
-<!--
-> [!IMPORTANT]
-> 誤りを含む場合があります。
--->
 
 > [!NOTE]
 > 次の場合は気軽に連絡ください
@@ -23,7 +21,7 @@ yuta.suzuki.q6のdcメールかLINEなど何でも構いません。
 ## Licence
 ここで作成した解答の使用については
 [CC BY-NC-ND 4.0 DEED](https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja)
-に従ってください。  
+に従ってください。\
 ただし，試験問題の著作権は作成した先生方にあります。
 
 ## Collaborator/Contributor
