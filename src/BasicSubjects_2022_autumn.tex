@@ -78,17 +78,6 @@
   \end{align}
   より\dm{(x,y) = (4,1/2)}で極小値6をとる。
 \end{ans*}
-\begin{supple*}
-  ヘッセ行列の行列式$\det\bH=H$の値から
-  
-  \begin{enumerate}[label=\arabic*.]
-    \item $H>0$ \land\: $f_{xx}>0$\Rightarrow 極小値
-    \item $H>0$ \land\: $f_{xx}<0$\Rightarrow 極大値
-    \item $H=0$ \Rightarrow 不明。個別に計算する % notice: https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1092575770
-    \item $H<0$ \Rightarrow 極値ではない
-  \end{enumerate}
-  
-\end{supple*}
 
 \prob{%
   次に示す$xyz$空間の領域$D$を考える。
@@ -139,9 +128,7 @@
     y'' + 4y' + 4y - e^{-2x} = 0
   \end{gather}
 }
-% [x]: 未定係数法の特解の求め方
-% 重解を持っている場合はxe^axも一般解に含まれるからx^2e^axとする
-% 普段から高次を無視するのはなぜか？
+
 \begin{ans*}
   与えられた微分方程式の斉次形である$y'' + 4y' + 4y = 0$について，
   特性方程式\mbox{\dm{\lambda^2+4\lambda+4=0\Longleftrightarrow \lambda = -2}}であるので，
@@ -164,32 +151,6 @@
     y = \left(A + Bx + \frac{1}{2}x^2\right)e^{-2x} \\
   \end{gather}
 \end{ans*}
-\begin{supple*}
-  通常，非斉次の場合は次のようにする。
-  % [x]: 特解の置き方 表
-  
-  \begin{table}[H]
-  \centering
-  \begin{tabular}{ccccc}
-  \toprule
-    右辺$r(x)\propto$ & 特解$y_{\rm{p}}$ \\
-  \midrule
-    $e^{ax}$ & $k e^{ax}$ \\
-    $x^n$ & $k + k_1 x + \cdots + k_n x^n$ \\
-    $\sin{ax},\cos{ax}$ & $k_1 \cos{ax} + k_2 \sin{ax}$ \\
-  \bottomrule
-  \end{tabular}\end{table}
-
-  ただし一般解にこれらが含まれている場合はその限りではない。
-  その場合は一般解が含まれなくなるまで$x$倍するような工夫が必要である。
-  この方法を未定係数法といい，定数係数についての方程式を解けば特殊解が得られる。
-
-  未定係数法は適切に解の形を仮定しなくてはならないため，
-  右辺によっては良い仮定が見つからないことがある。
-  そこで定数変化法を用いることがある。
-\end{supple*}
-
-
 
 
 
@@ -443,10 +404,10 @@
       \end{Bmatrix}
     \end{gather}
 
-    $\bb_3$は法線ベクトルと等しく，
+    $\bb_3$は法線ベクトルと等しい方向で，
     \begin{align}
       \bb_3 
-      &= \bn \\
+      &= \frac{\bn}{|\bn|} \\
       &= \frac{1}{\sqrt{3}}
       \begin{Bmatrix}
         1 \\ -1 \\ 1
