@@ -74,9 +74,11 @@
 
 % 問題文の左の線の定義
 \renewenvironment{leftbar}{%
-\def\FrameCommand{\hspace{10pt}\vrule width 2pt \hspace{10pt}}%
+\def\FrameCommand{\hspace{10pt}\vrule width 1.2pt \hspace{10pt}}%
 \MakeFramed {\advance\hsize-\width \FrameRestore}}%
 {\endMakeFramed}
+
+% subsubsectionを太字の「問1」表示にする
 \renewcommand{\thesubsubsection}{\large\textbf{問\arabic{subsubsection}}}
 
 % -------------------------------------------------------%
