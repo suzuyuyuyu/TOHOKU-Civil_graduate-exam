@@ -9,35 +9,66 @@
 
 % -------------------------------------------------------%
 
+% \siを使うと数字と単位の間が空かないので致し方なく\siを書き変えてる
+\let\originsi\si
+\renewcommand{\si}[1]{\hspace*{1pt}\originsi{#1}}
+
+% -------------------------------------------------------%
+
 \makeatletter
 
 \newcommand{\reference}[0]{\setlength{\hangindent}{18pt}\noindent}
 
+% -------------------------------------------------------%
+
 \newcommand{\yearn}[0]{\number\year}
 \newcommand{\monthn}[0]{\number\month}
 \newcommand{\dayn}[0]{\number\day}
+
+% -------------------------------------------------------%
 
 % 数式や図表のref
 \renewcommand{\refeq}[1]{\eqref{#1}式}
 \newcommand{\reffig}[1]{図\ref{#1}}
 \newcommand{\reftbl}[1]{表\ref{#1}}
 
+
+% -------------------------------------------------------%
+
+% 雑多なやつら
+% 「$x$軸，平面，座標」のように書くとスペースが空くので
+% \dspaceと入れてほんのすこーーしだけ詰める
+% \newcommand{\axis}{\hspace*{-0.05pt}\,軸}
+% \newcommand{\pln}{\hspace*{-0.05pt}\,面}
+\newcommand{\dspace}{\hspace*{-0.05pt}\,}
+
+% -------------------------------------------------------%
+
 % よく使う単位
 \newcommand{\degC}[0]{\mathrm{{}^\circ \hspace*{-0.5pt} C}}
 \renewcommand{\deg}[0]{\mathrm{{}^\circ}}
+
+% -------------------------------------------------------%
 
 % よく使う演算子
 \renewcommand{\Vector}[1]{{\mbox{\boldmath$#1$}}}
 \newcommand{\tensor}[1]{\undertilde{#1}}
 \renewcommand{\rm}[1]{\mathrm{#1}}
 
+% -------------------------------------------------------%
+
 % displaystyle math mode
 \newcommand{\dm}[1]{
   $\displaystyle #1 $
 }
 \newcommand{\disp}{\displaystyle}
-  
+
+% -------------------------------------------------------%
+
 % よく使う記号
+
+% =================================
+% 太字行列・ベクトル
 \newcommand{\bA}{\bm{A}}
 \newcommand{\bB}{\bm{B}}
 \newcommand{\bE}{\bm{E}}
@@ -61,6 +92,28 @@
 \newcommand{\bu}{{\bm{u}}}
 \newcommand{\bv}{{\bm{v}}}
 % \newcommand{\zerov}{\bm{0}}
+
+% =================================
+% ギリシャ文字
+\newcommand{\ve}{\varepsilon}
+\newcommand{\vp}{\varphi}
+
+\newcommand{\gra}{{\alpha}}
+\newcommand{\grg}{{\gamma}}
+\newcommand{\grd}{{\delta}}
+\newcommand{\grt}{{\theta}}
+\newcommand{\grk}{{\kappa}}
+\newcommand{\grl}{{\lambda}}
+\newcommand{\grs}{{\sigma}}
+\newcommand{\gro}{{\omega}}
+
+% =================================
+% 略記号
+\newcommand{\tm}{\times}
+
+
+% -------------------------------------------------------%
+
 
 % -------------------------------------------------------%
 
@@ -120,16 +173,13 @@
 % -------------------------------------------------------%
 % 問題(problem)
 \newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}\noindent#1\end{leftbar}}
-
 % -------------------------------------------------------%
 % 小論文
 \newcommand{\essayprob}[1]{\begin{leftbar}#1\end{leftbar}}
 
 % -------------------------------------------------------%
-
-
-
-% -------------------------------------------------------%
+% 専門科目問題(specialized problem)
+\newcommand{\spprob}[1]{\begin{leftbar}#1\end{leftbar}}
 
 % alignを書くのが面倒なとき
 \newcommand{\al}[1]{\begin{align}#1\end{align}}
