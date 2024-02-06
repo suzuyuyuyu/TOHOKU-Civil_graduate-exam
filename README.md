@@ -2,9 +2,13 @@
 
 ## Overview
 東北大学 土木系 大学院試験の問題と解答を順次作成します。\
-以下のファイルにまとめています。
-- [基礎科目](./BasicSubjects.pdf)
+作成しているものは次の通りです。
 
+- 📄[基礎科目 (BasicSubjects.pdf)](./BasicSubjects.pdf)
+- 📄[専門科目 (SpecializedSubjects.pdf)](./SpecializedSubjects.pdf)
+- 📄[小論文 (essay.pdf)](./essay.pdf)
+- 📄[付録 (appendix.pdf)](./appendix.pdf)
+- 📂[過去問 (PastExamPapers/)](./PastExamPapers/)
 
 > [!NOTE]
 > 次の場合は気軽に連絡ください
