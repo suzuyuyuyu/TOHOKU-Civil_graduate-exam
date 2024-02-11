@@ -6,13 +6,13 @@
 
 - 📄[基礎科目 (BasicSubjects.pdf)](./BasicSubjects.pdf)
 - 📄[専門科目 (SpecializedSubjects.pdf)](./SpecializedSubjects.pdf)
-- 📄[小論文 (essay.pdf)](./essay.pdf)
+- 📄[小論文 (essay.pdf)](./essay.pdf)（解答は作成しません。）
 - 📄[付録 (appendix.pdf)](./appendix.pdf)
 - 📂[過去問 (PastExamPapers/)](./PastExamPapers/)
 
 > [!NOTE]
 > 次の場合は気軽に連絡ください
-> - 多少の疑問が残っていても，議論が不十分な点や計算の誤り，別解が見つかった場合
+> - 議論が不十分な点や計算の誤り，別解が見つかった場合
 > - 先輩などの答案を提供できる場合
 > - 他の年の問題を提供できる場合  
 > - 解決していない問題を一緒に解いてくれる場合  
