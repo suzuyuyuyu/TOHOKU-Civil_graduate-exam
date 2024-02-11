@@ -32,11 +32,20 @@
 \newcommand{\reffig}[1]{図\ref{#1}}
 \newcommand{\reftbl}[1]{表\ref{#1}}
 
+% -------------------------------------------------------%
+
+% 図挿入（作ったけど使わず）
+\newcommand{\insfig}[2][.85]{%
+  \begin{figure}[H]\centering
+    \includegraphics[width=#1\linewidth]{#2}
+  \end{figure}
+}
+
 
 % -------------------------------------------------------%
 
 % 雑多なやつら
-% 「$x$軸，平面，座標」のように書くとスペースが空くので
+% 「$x$軸、平面、座標」のように書くとスペースが空くので
 % \dspaceと入れてほんのすこーーしだけ詰める
 % \newcommand{\axis}{\hspace*{-0.05pt}\,軸}
 % \newcommand{\pln}{\hspace*{-0.05pt}\,面}
@@ -173,6 +182,7 @@
 % -------------------------------------------------------%
 % 問題(problem)
 \newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}\noindent#1\end{leftbar}}
+
 % -------------------------------------------------------%
 % 小論文
 \newcommand{\essayprob}[1]{\begin{leftbar}#1\end{leftbar}}

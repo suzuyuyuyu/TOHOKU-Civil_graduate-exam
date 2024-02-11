@@ -6,7 +6,7 @@
 
 \subsection{微分積分}
 \prob{%
-  次のように\dm{x,y}が変数\dm{t}の関数として与えられるとき，
+  次のように\dm{x,y}が変数\dm{t}の関数として与えられるとき、
   \dm{x,y}を用いて\dm{\frac{dy}{dx}}を表せ。
   \al{
     \begin{dcases*}
@@ -28,8 +28,8 @@
     \item 次に示す関数\dm{f(t)}および\dm{g(t)}を\dm{t=0}のまわりでそれぞれテイラー展開せよ。
     \al{f(t) = \sin t,\quad g(t) = \cos t}
     \item 次に示す2次の正方行列\dm{\bA}と単位行列\dm{\bE}を考える。
-    \dm{n}をゼロ以上の整数とし，\dm{n,t,\bE}を用いて\dm{\bA^2}および
-    \dm{\bA^{2n}}を表せ。なお，\dm{\bA^0}は\dm{\bE}と定義される。
+    \dm{n}をゼロ以上の整数とし、\dm{n,t,\bE}を用いて\dm{\bA^2}および
+    \dm{\bA^{2n}}を表せ。なお、\dm{\bA^0}は\dm{\bE}と定義される。
     \al{
       \bA =
       \begin{pmatrix}
@@ -59,7 +59,7 @@
       g(t)
       &= 1 - \frac{t^2}{2!} + \frac{t^4}{4!} - \frac{t^6}{6!} + \cdots
     \end{align}
-    \item 与えられた行列について，$\bA^2$は
+    \item 与えられた行列について、$\bA^2$は
     \begin{align}
       \bA^2
       &=
@@ -78,7 +78,7 @@
       \end{pmatrix} \\
       &= -t^2 \bE
     \end{align}
-    また，$\bA^{2n}$は
+    また、$\bA^{2n}$は
     \begin{align}
       \bA^{2n}
       &=
@@ -131,9 +131,9 @@
 \end{ans*}
 
 \prob{%
-  次の重積分について，以下の問いに答えよ。
+  次の重積分について、以下の問いに答えよ。
   \al{
-    I = \iint_D x \:dx dy,\quad D = \left\{(x,y)\relmiddle x\geq 0, y\geq 0, 1\leq x^2 + y^2\leq 2y\right\}
+    I = \iint_D x \,dx dy,\quad D = \left\{(x,y)\relmiddle x\geq 0, y\geq 0, 1\leq x^2 + y^2\leq 2y\right\}
     }
   
   \begin{enumerate}[label=(\arabic*)]
@@ -147,25 +147,25 @@
     \item 積分領域\dm{D}は下図
     
     \begin{figure}[H]\centering
-      \includegraphics[width=.5\linewidth]{./src/asset/fig/2023_D.png}
+      \includegraphics[width=.5\linewidth]{./src/fig/Basic/2023_D.png}
     \end{figure}
     
     \item 
-    与えられた積分について極座標変換\dm{x = r\cos\theta,y=r\sin\theta}を考えると，
+    与えられた積分について極座標変換\dm{x = r\cos\grt,y=r\sin\grt}を考えると、
     領域\dm{D}は
     \al{
-      D &= \left\{(r,\theta)\relmiddle r\geq 0, 0\leq\theta\leq\frac{\pi}{2}, 1\leq r^2 \leq 2r\sin\theta\right\}\\
-        &= \left\{(r,\theta)\relmiddle r\geq 0, 0\leq\theta\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\theta\right\}\\
-        &= \left\{(r,\theta)\relmiddle 0\leq\theta\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\theta\right\}\\
-        &= \left\{(r,\theta) \relmiddle \frac{\pi}{6}\leq\theta\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\theta\right\}\quad(\because 1\leq 2\sin\theta)
+      D &= \left\{(r,\grt)\relmiddle r\geq 0, 0\leq\grt\leq\frac{\pi}{2}, 1\leq r^2 \leq 2r\sin\grt\right\}\\
+        &= \left\{(r,\grt)\relmiddle r\geq 0, 0\leq\grt\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\grt\right\}\\
+        &= \left\{(r,\grt)\relmiddle 0\leq\grt\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\grt\right\}\\
+        &= \left\{(r,\grt) \relmiddle \frac{\pi}{6}\leq\grt\leq\frac{\pi}{2}, 1\leq r \leq 2\sin\grt\right\}\quad(\because 1\leq 2\sin\grt)
     }
-    である。\dm{dxdy = r\:drd\theta}も考えて，
+    である。\dm{dxdy = r\,drd\grt}も考えて、
     \al{
       I
-      &= \int_{\pi/6}^{\pi/2}\int_{1}^{2\sin\theta} r^2\cos\theta \:drd\theta  \\
-      &= \int_{\pi/6}^{\pi/2}d\theta \left[ \frac{r^3}{3}\cos\theta \right]_{1}^{2\sin\theta} \\
-      &= \int_{\pi/6}^{\pi/2}\left( \frac{8}{3}\sin^3\theta\cos\theta - \frac{1}{3}\cos\theta \right) \:d\theta \\
-      &= \frac{1}{3}\int_{1/2}^{1}(8t^3-1) \:dt \\
+      &= \int_{\pi/6}^{\pi/2}\int_{1}^{2\sin\grt} r^2\cos\grt \,drd\grt  \\
+      &= \int_{\pi/6}^{\pi/2}d\grt \left[ \frac{r^3}{3}\cos\grt \right]_{1}^{2\sin\grt} \\
+      &= \int_{\pi/6}^{\pi/2}\left( \frac{8}{3}\sin^3\grt\cos\grt - \frac{1}{3}\cos\grt \right) \,d\grt \\
+      &= \frac{1}{3}\int_{1/2}^{1}(8t^3-1) \,dt \\
       &= \frac{1}{3}\left[ 2t^4 - t \right]_{1/2}^{1} \\
       &= \frac{11}{24}
     }
@@ -180,13 +180,13 @@
         &\hspace*{50pt} \vee \left\{(x,y)\relmiddle \frac{\sqrt{3}}{2}\leq x\leq 1, -\sqrt{1-x^2}+1\leq y\leq \sqrt{1-x^2}+1 \right\}
       \end{split}
     }
-    とも表せるので，重積分\dm{I}は
+    とも表せるので、重積分\dm{I}は
     \al{
       I
-      &= \int_{0}^{\sqrt{3}/2}\int_{\sqrt{1-x^2}}^{\sqrt{1-x^2}+1} x\:dydx
-         + \int_{\sqrt{3}}^{1}\int_{-\sqrt{1-x^2}+1}^{\sqrt{1-x^2}+1}x\:dydx \\
-      &= \int_{0}^{\sqrt{3}/2} x \:dx + \int_{\sqrt{3}/2}^{1}2x\sqrt{1-x^2}\:dx \\
-      &= \left[\frac{1}{2}x^2\right]_{0}^{\sqrt{3}/2} + \int_{3/4}^{1}\sqrt{1-t}\:dt \quad(t=x^2) \\
+      &= \int_{0}^{\sqrt{3}/2}\int_{\sqrt{1-x^2}}^{\sqrt{1-x^2}+1} x\,dydx
+         + \int_{\sqrt{3}}^{1}\int_{-\sqrt{1-x^2}+1}^{\sqrt{1-x^2}+1}x\,dydx \\
+      &= \int_{0}^{\sqrt{3}/2} x \,dx + \int_{\sqrt{3}/2}^{1}2x\sqrt{1-x^2}\,dx \\
+      &= \left[\frac{1}{2}x^2\right]_{0}^{\sqrt{3}/2} + \int_{3/4}^{1}\sqrt{1-t}\,dt \quad(t=x^2) \\
       &= \frac{1}{2}\cdot\frac{3}{4} + \left[-\frac{2}{3}(1-t)^{3/2}\right]_{3/4}^{1} \\
       &= \frac{11}{24}
     }
@@ -215,7 +215,7 @@
     \end{pmatrix}
   }
   \begin{enumerate}[label=(\arabic*)]
-    \item ベクトル\dm{\bb}を，\dm{\ba}を通る直線へ射影せよ。
+    \item ベクトル\dm{\bb}を、\dm{\ba}を通る直線へ射影せよ。
     \item \dm{\ba}を通る直線への射影行列\dm{\bm{P}}を求めよ。
   \end{enumerate}
 }
@@ -223,7 +223,7 @@
 \begin{ans*}
   ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item ベクトル\bb の\ba への射影\bm{p}は\dm{\bm{p} = \frac{\ba}{|\ba|}|\bb|\cos\theta}より
+    \item ベクトル\bb の\ba への射影\bm{p}は\dm{\bm{p} = \frac{\ba}{|\ba|}|\bb|\cos\grt}より
     \begin{align}
       \bm{p}=\mathrm{proj}_{\ba} \bb
       = \frac{\ba\cdot\bb}{|\ba|^2}\:\ba
@@ -251,7 +251,7 @@
 
 \prob{%
   \dm{\bA = \bL\bU}とする下三角行列\dm{\bL}と上三角行列\dm{\bU}を求めよ。
-  ただし，下三角行列\dm{\bL}の対角成分は1とする。
+  ただし、下三角行列\dm{\bL}の対角成分は1とする。
   \al{
     \bA = 
     \begin{pmatrix}
@@ -263,7 +263,7 @@
 }
 \begin{ans*}
   行列\dm{\bL,\bU}の未知の\dm{i}行\dm{j}列の要素を
-  \dm{l_{ij},u_{ij}}と表すとき，
+  \dm{l_{ij},u_{ij}}と表すとき、
   \dm{\bL\bU}分解は
   \al{
     \bA 
@@ -287,7 +287,7 @@
       l_{31}u_{11} & l_{31}u_{12}+l_{32}u_{22} & l_{31}u_{13}+l_{32}u_{23}+u_{33} \\
     \end{pmatrix}
   }
-  とできるので，
+  とできるので、
   \begin{gather}
     \bL = 
     \begin{pmatrix}
@@ -340,7 +340,7 @@
         {\disp \frac{1}{4}} & {\disp \frac{1}{2}} \\
       \end{pmatrix}
     \end{gather}
-    であるので，\dm{\bB^2} の固有方程式\dm{\det(\bB^2-\lambda\bE)=0}より
+    であるので、\dm{\bB^2} の固有方程式\dm{\det(\bB^2-\lambda\bE)=0}より
     \al{
       \det(\bB^2-\lambda\bE) 
       &= 
@@ -375,7 +375,7 @@
         \end{pmatrix}
         =\bm{0}
       \end{gather}
-      であるので，固有ベクトルは
+      であるので、固有ベクトルは
       \begin{gather}
         \bu = 
         \begin{pmatrix}
@@ -395,7 +395,7 @@
         \end{pmatrix}
         =\bm{0}
       \end{gather}
-      であるので，固有ベクトルは
+      であるので、固有ベクトルは
       \begin{gather}
         \bu = 
         \begin{pmatrix}
@@ -404,7 +404,7 @@
       \end{gather}
     \end{enumerate}
 
-    (i)，(ii)より，対角化行列\bP は
+    (i)、(ii)より、対角化行列\bP は
     \begin{gather}
       \bP =
       \begin{pmatrix}
@@ -427,7 +427,7 @@
         0 & 0 \\ 0 & 1
       \end{pmatrix}
     \end{align}
-    左から$\bP$，右から$\bP^{-1}$をかけて
+    左から$\bP$、右から$\bP^{-1}$をかけて
     \begin{align}
       \bB^{\infty}
       &= 

@@ -1,0 +1,112 @@
+\newpage
+\section{2022春}
+
+\setcounter{yearcounter}{2022}
+% \setcounter{page}{1}
+
+
+\subsection{微分積分}
+\prob{%
+  次の級数が収束するか、発散するかを判定せよ。
+  \begin{gather}
+    \sum_{n=0}^{\infty}\frac{(n!)^3}{(3n)!}
+  \end{gather}
+}
+\begin{ans*}
+  ${}$
+  \dm{a_{n} = \frac{(n!)^3}{(3n)!}}とおくと
+  \begin{align}
+    \left| \frac{a_{n+1}}{a_{n}} \right|
+    &= \frac{\{(n+1)!\}^3}{\{3(n+1)\}!} \tm \frac{(n!)^3}{(3n)!} \\
+    &= \frac{(n+1)^3}{(3n+3)(3n+2)(3n+1)} \\
+    &= \frac{\biggl(1+\cfrac{1}{n}\biggr)\biggl(1+\cfrac{1}{n}\biggr)}
+    {3\biggl(3+\cfrac{2}{n}\biggr)\biggl(3+\cfrac{1}{n}\biggr)} \\
+    &\to \frac{1}{27} < 1 \quad(n\to\infty)
+  \end{align}
+  より収束する。
+\end{ans*}
+
+
+\prob{%
+  次の関数$f(x)$が$x=0$において微分可能であるか否かを調べよ。
+  ここで、$e$は自然対数の底である。
+  \begin{gather}
+    f(x) = \frac{x}{1+e^{\frac{1}{x}}}\quad(x\neq 0),\quad f(0) = 0
+  \end{gather}
+}
+
+\begin{ans*}
+  関数$f$についての$x=0$周辺での次の極限を考えるとき
+  \begin{align}
+    \lim_{\Delta x\to +0}\frac{f(\Delta x) - f(0)}{\Delta x} 
+    = \lim_{\Delta x\to +0}\frac{1}{1+e^{\frac{1}{x}}} 
+    = 0 \\
+    \lim_{\Delta x\to -0}\frac{f(\Delta x) - f(0)}{\Delta x} 
+    = \lim_{\Delta x\to -0}\frac{1}{1+e^{\frac{1}{x}}} 
+    = 1
+  \end{align}
+  であり、両側極限が一致せず極限が存在しないので微分可能でない。
+\end{ans*}
+
+
+\prob{
+  次の重積分について、以下の問いに答えよ。
+  \begin{gather}
+    \iint_D \sqrt{x^2+y^2}dxdy, \quad 
+    D = \left\{ (x,y) \relmiddle x\geq 0, y\geq 0, x\leq x^2+y^2\leq 1 \right\}
+  \end{gather}
+  \begin{enumerate}[label=(\arabic*)]
+    \item 積分領域$D$を図示せよ。
+    \item この重積分を計算せよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item 略
+    \item 極座標変換を考える。
+    \begin{align}
+      D 
+      &= \left\{(r,\grt)\relmiddle \cos\grt\geq 0, \sin\grt\geq 0, r\cos\grt\leq r^2, r^2\leq 1\right\} \\
+      &= \left\{(r,\grt)\relmiddle 0\leq \grt\leq \frac{\pi}{2}, r\leq 1, \cos\grt \leq r\right\}
+    \end{align}
+    よって、与えられた積分は
+    \begin{align}
+      \iint_D \sqrt{x^2+y^2}dxdy
+      &= \int_{0}^{\pi/2}\int_{\cos\grt}^{1} drd\grt [r^2] \\
+      &= \int_{0}^{\pi/2}d\grt \left[ \frac{1}{3}r^3 \right]_{\cos\grt}^{1} \\
+      &= \int_{0}^{\pi/2} \Biggl( \frac{1}{3} - \cos^3\grt \Biggr) d\grt \\
+      &= \frac{\pi}{6} - \frac{2}{3}
+    \end{align}
+  \end{enumerate}
+\end{ans*}
+
+
+\prob{%
+  次の初期値問題を解け。
+  \begin{gather}
+    y'' + 2y' + y = 0,\quad y(0) = 1,\quad y'(0) = 0
+  \end{gather}
+}
+\begin{ans*}
+  補助方程式$\grl^2+2\grl+1 = (\grl + 1)^2 = 0$より、基本解$y = e^{-x},xe^{-x}$の
+  線形結合で、任意定数$A,B$を用いて一般解を
+  \begin{gather}
+    y = (A+Bx)e^{-x}
+  \end{gather}
+  と得る。
+  ここに、初期条件を考慮して$A = 1,B = 1$と決定するのでこの解は
+  \begin{gather}
+    y = (1+x)e^{-x}
+  \end{gather}
+  である。
+\end{ans*}
+
+
+\subsection{線形代数}
+\prob{%
+  行列$A$、ベクトル$\bx,bb$に関する以下の問いに答えよ。
+  ここに、
+}
+
+
