@@ -1,1 +1,5 @@
 *.gz
+*.md
+!README.md
+*.fdb_latexmk
+calc.ipynb
