@@ -19,6 +19,11 @@
 > - GitHubやLaTeX(LuaLaTeX)を用いた編集に参加できる場合
 > - その他疑問点や要望がある場合
 
+
+`src`フォルダ内のファイルはpdfを作成するためのものなので直接関係ありません。\
+`.gitignore`も直接関係ありません。
+
+
 ## Contact
 yuta.suzuki.q6のdcメールかLINEなど何でも構いません。  
 
