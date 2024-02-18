@@ -29,3 +29,4 @@ yuta.suzuki.q6のdcメールかLINEなど何でも構いません。
 ただし，試験問題の著作権は作成した先生方にあります。
 
 ## Collaborator/Contributor
+- [Tさん](https://github.com/katahaba5m)
