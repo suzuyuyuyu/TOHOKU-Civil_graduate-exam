@@ -82,25 +82,36 @@
 \newcommand{\bB}{\bm{B}}
 \newcommand{\bE}{\bm{E}}
 \newcommand{\bC}{\bm{C}}
+\newcommand{\bD}{\bm{D}}
 \newcommand{\bH}{\bm{H}}
+\newcommand{\bI}{\bm{I}}
 \newcommand{\bL}{\bm{L}}
 \newcommand{\bU}{\bm{U}}
 \newcommand{\bP}{\bm{P}}
+
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
 
 \newcommand{\ba}{{\bm{a}}}
 \newcommand{\bb}{{\bm{b}}}
 \newcommand{\bc}{{\bm{c}}}
 \newcommand{\bd}{{\bm{d}}}
 \newcommand{\be}{{\bm{e}}}
+\newcommand{\bg}{{\bm{g}}}
 
 \newcommand{\bn}{{\bm{n}}}
 
 \newcommand{\bx}{{\bm{x}}}
 \newcommand{\by}{{\bm{y}}}
+\newcommand{\bz}{{\bm{z}}}
 
 \newcommand{\bu}{{\bm{u}}}
 \newcommand{\bv}{{\bm{v}}}
-% \newcommand{\zerov}{\bm{0}}
+
+% bold zero vector
+\newcommand{\bzv}{\bm{0}}
 
 % =================================
 % ギリシャ文字
@@ -116,10 +127,14 @@
 \newcommand{\grs}{{\sigma}}
 \newcommand{\gro}{{\omega}}
 
+
+\newcommand{\grG}{{\Gamma}}
+
 % =================================
 % 略記号
 \newcommand{\tm}{\times}
-
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\eqa}{\Leftrightarrow} % equivalent arrowのつもり
 
 % -------------------------------------------------------%
 
@@ -166,22 +181,30 @@
 
 % 数学文字表現
 \DeclareMathOperator{\rank}{rank}
-
+\DeclareMathOperator{\Ker}{Ker}
+% \DeclareMathOperator{\Im}{Im}
+% 虚部の「ℑ」を更新（像として使いたい）
+\renewcommand{\Im}{\operatorname{Im}}
 
 % -------------------------------------------------------%
 
 % 数学記号
 \renewcommand{\parallel}{/\!/}
 
+% 床関数（ガウス関数）
+\newcommand{\flr}[1]{\lfloor #1 \rfloor} % ふつーの床関数
+\newcommand{\gflr}[1]{\left[ #1 \right]} % ガウス記号を使った床関数
+
 % -------------------------------------------------------%
 
 % 演算子
 \newcommand{\ppar}[2]{\frac{\partial #1}{\partial #2}}
 \renewcommand{\d}{\partial}
+\newcommand{\pd}{\partial}
 
 % -------------------------------------------------------%
 % 問題(problem)
-\newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}\noindent#1\end{leftbar}}
+\newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}#1\end{leftbar}}
 
 % -------------------------------------------------------%
 % 小論文
@@ -193,6 +216,19 @@
 
 % alignを書くのが面倒なとき
 \newcommand{\al}[1]{\begin{align}#1\end{align}}
+% ベクトル
+\renewcommand{\vec}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+% 行列
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
+% ロピタル
+\newcommand{\lhopital}{L'H\^{o}pital}
+% 集合
+\newcommand{\Dset}[1]{\left\{ #1 \right\}}
 % 集合の{(x,y)|x<0}みたいに書くときの縦線
 \newcommand{\relmiddle}{\mathrel{}\middle| \mathrel{}}
+
+% 内積
+\newcommand{\ip}[1]{\langle#1\rangle}

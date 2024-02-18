@@ -1,5 +1,7 @@
 *.gz
+*.fdb_latexmk
+
 *.md
 !README.md
-*.fdb_latexmk
-calc.ipynb
+
+hoge/
