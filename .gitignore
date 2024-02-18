@@ -1,1 +1,7 @@
 *.gz
+*.fdb_latexmk
+
+*.md
+!README.md
+
+hoge/

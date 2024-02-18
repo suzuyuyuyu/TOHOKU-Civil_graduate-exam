@@ -9,58 +9,135 @@
 
 % -------------------------------------------------------%
 
+% \siを使うと数字と単位の間が空かないので致し方なく\siを書き変えてる
+\let\originsi\si
+\renewcommand{\si}[1]{\hspace*{1pt}\originsi{#1}}
+
+% -------------------------------------------------------%
+
 \makeatletter
 
 \newcommand{\reference}[0]{\setlength{\hangindent}{18pt}\noindent}
 
+% -------------------------------------------------------%
+
 \newcommand{\yearn}[0]{\number\year}
 \newcommand{\monthn}[0]{\number\month}
 \newcommand{\dayn}[0]{\number\day}
+
+% -------------------------------------------------------%
 
 % 数式や図表のref
 \renewcommand{\refeq}[1]{\eqref{#1}式}
 \newcommand{\reffig}[1]{図\ref{#1}}
 \newcommand{\reftbl}[1]{表\ref{#1}}
 
+% -------------------------------------------------------%
+
+% 図挿入（作ったけど使わず）
+\newcommand{\insfig}[2][.85]{%
+  \begin{figure}[H]\centering
+    \includegraphics[width=#1\linewidth]{#2}
+  \end{figure}
+}
+
+
+% -------------------------------------------------------%
+
+% 雑多なやつら
+% 「$x$軸、平面、座標」のように書くとスペースが空くので
+% \dspaceと入れてほんのすこーーしだけ詰める
+% \newcommand{\axis}{\hspace*{-0.05pt}\,軸}
+% \newcommand{\pln}{\hspace*{-0.05pt}\,面}
+\newcommand{\dspace}{\hspace*{-0.05pt}\,}
+
+% -------------------------------------------------------%
+
 % よく使う単位
 \newcommand{\degC}[0]{\mathrm{{}^\circ \hspace*{-0.5pt} C}}
 \renewcommand{\deg}[0]{\mathrm{{}^\circ}}
+
+% -------------------------------------------------------%
 
 % よく使う演算子
 \renewcommand{\Vector}[1]{{\mbox{\boldmath$#1$}}}
 \newcommand{\tensor}[1]{\undertilde{#1}}
 \renewcommand{\rm}[1]{\mathrm{#1}}
 
+% -------------------------------------------------------%
+
 % displaystyle math mode
 \newcommand{\dm}[1]{
   $\displaystyle #1 $
 }
 \newcommand{\disp}{\displaystyle}
-  
+
+% -------------------------------------------------------%
+
 % よく使う記号
+
+% =================================
+% 太字行列・ベクトル
 \newcommand{\bA}{\bm{A}}
 \newcommand{\bB}{\bm{B}}
 \newcommand{\bE}{\bm{E}}
 \newcommand{\bC}{\bm{C}}
+\newcommand{\bD}{\bm{D}}
 \newcommand{\bH}{\bm{H}}
+\newcommand{\bI}{\bm{I}}
 \newcommand{\bL}{\bm{L}}
 \newcommand{\bU}{\bm{U}}
 \newcommand{\bP}{\bm{P}}
+
+\newcommand{\bbR}{\mathbb{R}}
+\newcommand{\bbC}{\mathbb{C}}
+\newcommand{\bbN}{\mathbb{N}}
+\newcommand{\bbZ}{\mathbb{Z}}
 
 \newcommand{\ba}{{\bm{a}}}
 \newcommand{\bb}{{\bm{b}}}
 \newcommand{\bc}{{\bm{c}}}
 \newcommand{\bd}{{\bm{d}}}
 \newcommand{\be}{{\bm{e}}}
+\newcommand{\bg}{{\bm{g}}}
 
 \newcommand{\bn}{{\bm{n}}}
 
 \newcommand{\bx}{{\bm{x}}}
 \newcommand{\by}{{\bm{y}}}
+\newcommand{\bz}{{\bm{z}}}
 
 \newcommand{\bu}{{\bm{u}}}
 \newcommand{\bv}{{\bm{v}}}
-% \newcommand{\zerov}{\bm{0}}
+
+% bold zero vector
+\newcommand{\bzv}{\bm{0}}
+
+% =================================
+% ギリシャ文字
+\newcommand{\ve}{\varepsilon}
+\newcommand{\vp}{\varphi}
+
+\newcommand{\gra}{{\alpha}}
+\newcommand{\grg}{{\gamma}}
+\newcommand{\grd}{{\delta}}
+\newcommand{\grt}{{\theta}}
+\newcommand{\grk}{{\kappa}}
+\newcommand{\grl}{{\lambda}}
+\newcommand{\grs}{{\sigma}}
+\newcommand{\gro}{{\omega}}
+
+
+\newcommand{\grG}{{\Gamma}}
+
+% =================================
+% 略記号
+\newcommand{\tm}{\times}
+\newcommand{\lra}{\longrightarrow}
+\newcommand{\eqa}{\Leftrightarrow} % equivalent arrowのつもり
+
+% -------------------------------------------------------%
+
 
 % -------------------------------------------------------%
 
@@ -104,26 +181,54 @@
 
 % 数学文字表現
 \DeclareMathOperator{\rank}{rank}
-
+\DeclareMathOperator{\Ker}{Ker}
+% \DeclareMathOperator{\Im}{Im}
+% 虚部の「ℑ」を更新（像として使いたい）
+\renewcommand{\Im}{\operatorname{Im}}
 
 % -------------------------------------------------------%
 
 % 数学記号
 \renewcommand{\parallel}{/\!/}
 
+% 床関数（ガウス関数）
+\newcommand{\flr}[1]{\lfloor #1 \rfloor} % ふつーの床関数
+\newcommand{\gflr}[1]{\left[ #1 \right]} % ガウス記号を使った床関数
+
 % -------------------------------------------------------%
 
 % 演算子
 \newcommand{\ppar}[2]{\frac{\partial #1}{\partial #2}}
 \renewcommand{\d}{\partial}
+\newcommand{\pd}{\partial}
 
 % -------------------------------------------------------%
-
 % 問題(problem)
-\newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}\noindent#1\end{leftbar}}
+\newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}#1\end{leftbar}}
+
+% -------------------------------------------------------%
+% 小論文
+\newcommand{\essayprob}[1]{\begin{leftbar}#1\end{leftbar}}
+
+% -------------------------------------------------------%
+% 専門科目問題(specialized problem)
+\newcommand{\spprob}[1]{\begin{leftbar}#1\end{leftbar}}
 
 % alignを書くのが面倒なとき
 \newcommand{\al}[1]{\begin{align}#1\end{align}}
+% ベクトル
+\renewcommand{\vec}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+% 行列
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
+\newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
 
+% ロピタル
+\newcommand{\lhopital}{L'H\^{o}pital}
+% 集合
+\newcommand{\Dset}[1]{\left\{ #1 \right\}}
 % 集合の{(x,y)|x<0}みたいに書くときの縦線
 \newcommand{\relmiddle}{\mathrel{}\middle| \mathrel{}}
+
+% 内積
+\newcommand{\ip}[1]{\langle#1\rangle}

@@ -30,7 +30,7 @@
     \end{dcases}
   \end{gather}
   いずれについても\dm{\lim_{x\to 0}\frac{\sin x}{x} = 1}より
-  最左辺，最右辺$\longrightarrow 0\:(x\to 0)$であるので
+  最左辺、最右辺$\longrightarrow 0\:(x\to 0)$であるので
   はさみうちの原理から
   \begin{gather}
     \lim_{x\to 0}\frac{x^2 \sin \cfrac{1}{x}}{\sin x} = 0
@@ -58,7 +58,7 @@
       y = \frac{1}{2}
     \end{dcases*}
   \end{align}
-  かつ，この点でヘッシアン$\det\bH$は
+  かつ、この点でヘッシアン$\det\bH$は
   \begin{align}
     \det\bH
     &=
@@ -81,7 +81,7 @@
 
 \prob{%
   次に示す$xyz$空間の領域$D$を考える。
-  このとき，以下の問いに答えよ。
+  このとき、以下の問いに答えよ。
   \begin{gather}
     D = \left\{(x,y,z)\relmiddle 0\leq z\leq x^2+y^2, x^2+y^2\leq 2x \right\}
   \end{gather}
@@ -95,21 +95,21 @@
   ${}$
   \begin{enumerate}[label=(\arabic*)]
     \item 略 % []: 図示
-    \item ある座標$(x,y)$における領域の上限は$x^2+y^2=z$上の点であるので，
-    高さを$z=x^2 + y^2$，積分領域を\dm{C = \left\{(x,y)\relmiddle (x-1)^2+y^2 \leq 1 \right\}}として
+    \item ある座標$(x,y)$における領域の上限は$x^2+y^2=z$上の点であるので、
+    高さを$z=x^2 + y^2$、積分領域を\dm{C = \left\{(x,y)\relmiddle (x-1)^2+y^2 \leq 1 \right\}}として
     求める体積$V_{\rm{D}}$は
     \begin{gather}
       V_{\rm{D}} = \iint_C z \:dxdy
     \end{gather}
     と求められる。
-    まず，この積分領域は極座標系$(r,\theta)$に変換すれば
+    まず、この積分領域は極座標系$(r,\theta)$に変換すれば
     \begin{align}
       C 
       &= \left\{(x,y)\relmiddle (x-1)^2 + y^2 \leq 1 \right\} \\
       &= \left\{(r,\theta)\relmiddle r^2 - 2r\cos\theta\leq 1 \right\} \\
       &= \left\{(r,\theta)\relmiddle 0\leq r\leq 2\cos\theta, 0\leq \theta < 2\pi \right\}
     \end{align}
-    であるので，
+    であるので、
     \begin{align}
       V_{\rm{D}}
       &= \int_{0}^{2\pi}\int_{0}^{2\cos\theta}r^3\:drd\theta \\
@@ -130,11 +130,11 @@
 }
 
 \begin{ans*}
-  与えられた微分方程式の斉次形である$y'' + 4y' + 4y = 0$について，
-  特性方程式\mbox{\dm{\lambda^2+4\lambda+4=0\Longleftrightarrow \lambda = -2}}であるので，
+  与えられた微分方程式の斉次形である$y'' + 4y' + 4y = 0$について、
+  特性方程式\mbox{\dm{\lambda^2+4\lambda+4=0\Longleftrightarrow \lambda = -2}}であるので、
   斉次解は\dm{y = (A+Bx)e^{-2x}}
 
-  また，特解を\dm{y_{\rm{p}} = Cx^2e^{-2x}}とおくと
+  また、特解を\dm{y_{\rm{p}} = Cx^2e^{-2x}}とおくと
   \begin{gather}
     \begin{dcases*}
       y'_{\rm{p}} = 2C(x-x^2)e^{-2x} \\
@@ -146,7 +146,7 @@
     2C(2x^2 - 4x + 1) + 8C(x-x^2) + 4Cx^2 = 1 \\
     C = \frac{1}{2} 
   \end{gather}
-  よって，求める一般解は斉次解と特解の足し合わせで
+  よって、求める一般解は斉次解と特解の足し合わせで
   \begin{gather}
     y = \left(A + Bx + \frac{1}{2}x^2\right)e^{-2x} \\
   \end{gather}
@@ -243,7 +243,7 @@
       \end{gather}
     \end{enumerate}
     \item $\bB^2$を計算して\bA となるので$\bB$は$2\times2$の正方行列である。
-    ここで，\dm{\bB = \begin{bmatrix}a & b \\ c & d \end{bmatrix}}とおくと
+    ここで、\dm{\bB = \begin{bmatrix}a & b \\ c & d \end{bmatrix}}とおくと
     \begin{gather}
       \bB^2 =
       \begin{bmatrix}
@@ -273,7 +273,7 @@
       \end{dcases*} \\
       \therefore a + b = \pm 3, a - b = \pm 2\quad(\text{複号任意})
     \end{gather}
-    を得る。よって，
+    を得る。よって、
     \begin{gather}
       \bB = 
       \begin{bmatrix}
@@ -330,11 +330,11 @@
     \begin{gather}
       (\ba_2\cdot\ba_1)\ba_1
     \end{gather}
-    であるので，$\ba_2$はこの射影ベクトルと$\ba_1$と直交するベクトル$\bb'_2$を用いて
+    であるので、$\ba_2$はこの射影ベクトルと$\ba_1$と直交するベクトル$\bb'_2$を用いて
     \begin{gather}
       \ba_2 = (\ba_2\cdot\ba_1)\ba_1 + \bb'_2
     \end{gather}
-    よって，$\bb_2$は
+    よって、$\bb_2$は
     \begin{align}
       \bb_2 
       &=
@@ -359,7 +359,7 @@
   \end{enumerate}
   % [x]: 別解
   \begin{other*}
-    $\bb_2,\bb_3$について，平面$\Pi$の法線ベクトル$\bn$から得ることを考える。法線ベクトルを
+    $\bb_2,\bb_3$について、平面$\Pi$の法線ベクトル$\bn$から得ることを考える。法線ベクトルを
     \begin{gather}
       \bn =
       \begin{Bmatrix}
@@ -380,7 +380,7 @@
         1 \\ -1 \\ 1
       \end{Bmatrix}
     \end{gather}
-    $\bb_2\cdot\bn=\bb_2\cdot\bb_1=0$であるので，
+    $\bb_2\cdot\bn=\bb_2\cdot\bb_1=0$であるので、
     正規化されていない$\bb_2$と平行なベクトル$\bb'_2 = \{x, y, z\}^T$は
     \begin{gather}
       \left\{
@@ -404,7 +404,7 @@
       \end{Bmatrix}
     \end{gather}
 
-    $\bb_3$は法線ベクトルと等しい方向で，
+    $\bb_3$は法線ベクトルと等しい方向で、
     \begin{align}
       \bb_3 
       &= \frac{\bn}{|\bn|} \\

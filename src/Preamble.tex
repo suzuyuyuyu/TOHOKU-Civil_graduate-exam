@@ -37,6 +37,7 @@
 % ページスタイルのため
 \usepackage{fancyhdr}
 \usepackage{lastpage}
+\usepackage{color}
 
 % -------------------------------------------------------%
 
@@ -61,8 +62,8 @@
 
 % メインのページスタイル 2020-1
 \fancypagestyle{mainPS}{%
-% \lhead{}%ヘッダ左を空に
-% \rhead{}%ヘッダ右を空に
+\lhead{\leftmark}%ヘッダ左を空に
+\rhead{\rightmark}%ヘッダ右を空に
 \cfoot{\thepage}%フッタ中央に"今のページ数/総ページ数"を設定
 \renewcommand{\headrulewidth}{0.0pt}%ヘッダの線を消す
 }
@@ -72,15 +73,14 @@
 \lhead{}
 \rhead{}
 \cfoot{appendix\:\raisebox{1pt}{-}\thepage}
-\renewcommand{\headrulewidth}{0.0pt}
 }
+
 
 % titlepageのページスタイル
 \fancypagestyle{titlePS}{%
 \lhead{empty}
 \rhead{empty}
 \cfoot{empty}
-\renewcommand{\headrulewidth}{0.0pt}
 }
 
 % -------------------------------------------------------%
@@ -91,7 +91,7 @@
 \titleformat{\section}[block]
 {
   % sectionとしたら絶対につく装飾
-  \noindent
+  % \noindent
   {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
   \hspace*{-13pt}
   \raisebox{-4.5pt}{\begin{picture}(0,0)

@@ -2,16 +2,17 @@
 
 ## Overview
 東北大学 土木系 大学院試験の問題と解答を順次作成します。\
-作成資料は以下のとおりです。
-- [基礎科目](./BasicSubjects.pdf)
-- [付録](./appendix.pdf)
+作成しているものは次の通りです。
 
-また，過去問は次にまとめています。
-- [過去問](./PastExamPapers/)
+- 📄[基礎科目 (BasicSubjects.pdf)](./BasicSubjects.pdf)
+- 📄[専門科目 (SpecializedSubjects.pdf)](./SpecializedSubjects.pdf)
+- 📄[小論文 (essay.pdf)](./essay.pdf)（解答は作成しません。）
+- 📄[付録 (appendix.pdf)](./appendix.pdf)
+- 📂[過去問 (PastExamPapers/)](./PastExamPapers/)
 
 > [!NOTE]
 > 次の場合は気軽に連絡ください
-> - 多少の疑問が残っていても，議論が不十分な点や計算の誤り，別解が見つかった場合
+> - 議論が不十分な点や計算の誤り，別解が見つかった場合
 > - 先輩などの答案を提供できる場合
 > - 他の年の問題を提供できる場合  
 > - 解決していない問題を一緒に解いてくれる場合  
@@ -33,3 +34,4 @@ yuta.suzuki.q6のdcメールかLINEなど何でも構いません。
 ただし，試験問題の著作権は作成した先生方にあります。
 
 ## Collaborator/Contributor
+- [Tさん](https://github.com/katahaba5m)
