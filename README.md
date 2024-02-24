@@ -19,6 +19,8 @@
 > - GitHubやLaTeX(LuaLaTeX)を用いた編集に参加できる場合
 > - その他疑問点や要望がある場合
 
+[作成者](https://github.com/suzuyuyuyu)と協力者が社会基盤および都市シスなので水環境系の解答は（今のところ）ありません。\
+また、基礎数学も微分積分、線形代数のみです。
 
 `src`フォルダ内のファイルはpdfを作成するためのものなので直接関係ありません。\
 `.gitignore`も直接関係ありません。
@@ -35,3 +37,4 @@ yuta.suzuki.q6のdcメールかLINEなど何でも構いません。
 
 ## Collaborator/Contributor
 - [Tさん](https://github.com/katahaba5m)
+- たまうさぎさん
