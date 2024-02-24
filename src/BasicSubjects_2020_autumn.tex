@@ -6,5 +6,340 @@
 
 
 \subsection{微分積分}
+\prob{
+  以下の問いに答えなさい。
+  \begin{enumerate}[label=(\alph*)]
+    \item 次の極限値を調べよ。
+    \begin{gather}
+      L = \lim_{x\to 0}\frac{\sec x - \cos x}{\sin x}
+    \end{gather}
+    \item 次の関数を微分しなさい。
+    \begin{gather}
+      y = x^{\cos x}
+    \end{gather}
+    \item 以下の定積分を求めよ。
+    \begin{gather}
+      \int_{0}^{\pi/2} \frac{dx}{(1+\cos x)^2}
+    \end{gather}
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\alph*)]
+    \item \dm{\sec x = \frac{1}{\cos x}}より
+    \begin{align}
+      L
+      &= \lim_{x\to 0}\frac{\sec x - \cos x}{\sin x} \\
+      &= \lim_{x\to 0}\frac{1-\cos^2 x}{\cos x \sin x} \\
+      &= \lim_{x\to 0}\tan x \\
+      &= 0
+    \end{align}
+    \item 与式の両辺に自然対数をとって
+    \begin{gather}
+      \log y = \cos x \log x \\
+      \frac{y'}{y} = -\sin x \log x + \frac{\cos x}{x} \\
+      \therefore y' = x^{\cos x}\biggl(-\sin x \log x + \frac{\cos x}{x}\biggr)
+    \end{gather}
+    \item \dm{t = \tan \frac{x}{2}}とおくことで
+    \begin{align}
+      \int_{0}^{\pi/2} \frac{dx}{(1+\cos x)^2}
+      &= \int_{0}^{1}\frac{2}{\biggl\{ 1+\biggl(\cfrac{1-t^2}{1+t^2}\biggr) \biggr\}^2}(1+t^2)\,dt \\
+      &= \int_{0}^{1}\frac{1}{2}(1+t^2)\,dt \\
+      &= \frac{2}{3}
+    \end{align}
+  \end{enumerate}
+\end{ans*}
+
+\prob{
+  以下の積分方程式について次の問いに答えなさい。
+  ただし、$G(t)$は微分可能な関数である。
+  \begin{gather}
+    I = \int_{0}^{t} G(z)e^{t-z}\,dz + 2G(t) = 2
+  \end{gather}
+  \begin{enumerate}[label=(\alph*)]
+    \item $G(0)$を求めよ。
+    \item $G'(0)$を求めよ。
+    \item $G(t)$を求めよ。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\alph*)]
+    \item $I$に$t=0$として、
+    \begin{align}
+      2G(0) = 2 \eqa G(0) = 1
+    \end{align}
+    \item $I$の両辺を$t$で微分してから$t=0$とすれば
+    \begin{gather}
+      e^t\int_{0}^{t}G(z)e^{-z}\,dz + G(t) + 2G'(t) = 0 \label{eq:2020_autumn_diffintG}\\
+      G(0) + 2G'(0) = 0 \\
+      G'(0) = -\frac{1}{2}
+    \end{gather}
+    \item $I$は
+    \begin{gather}
+      \int_{0}^{t} G(z)e^{t-z}\,dz + 2G(t) - 2 = 0 \label{eq:2020_autumn_intG}
+    \end{gather}
+    であるので、\refeq{eq:2020_autumn_diffintG}と\refeq{eq:2020_autumn_intG}の差をとって
+    \begin{gather}
+      G(t) - 2G'(t) - 2 = 0 \\
+      2G'(t) - G(t) = -2 \label{eq:2020_autumn_GODE}
+    \end{gather}
+    となり、この微分方程式を\dm{G(0)=1,\,G'(0)=\frac{1}{2}}を
+    初期条件として解けば良い。
+
+    斉次形\dm{2G'(t)-G(t) = 0}は\dm{G(t)\neq 0}のとき
+    \begin{gather}
+      \frac{G'(t)}{G(t)} = \frac{1}{2} \\
+      \log |G(t)| = \frac{1}{2}t + C
+    \end{gather}
+    であるので、任意定数$A$を用いて一般解が
+    \begin{gather}
+      G(t) = Ae^\frac{t}{2}
+    \end{gather}
+    と得られる。\dm{G(t)=0}は\dm{A=0}のときである。
+    よって、非斉次形の一般解は特解$G_{\rm{p}}=k$を仮定すれば
+    \refeq{eq:2020_autumn_GODE}より$k=2$であるので一般解は
+    \begin{gather}
+      G(t) = Ae^\frac{t}{2} + 2
+    \end{gather}
+    である。
+    ここに、初期条件\dm{G(0)=1}より任意定数は$A=-1$と決まり
+    求める関数\dm{G(t)}は
+    \begin{gather}
+      G(t) = -e^{\frac{t}{2}} + 2
+    \end{gather}
+    である。（これは\dm{G'(0)=-\frac{1}{2}}を満たす。）
+  \end{enumerate}
+\end{ans*}
+
+\prob{
+  次の微分方程式を解きなさい。
+  \begin{gather}
+    (1+\sin y)dx = [2y\cos y - x(\sec y + \tan y)]dy
+  \end{gather}
+}
+
+\begin{ans*}
+  与えられた微分方程式は
+  \begin{gather}
+    \frac{dx}{dy} + \frac{1}{\cos y} x = \frac{2y\cos y}{1+\sin y} \label{eq:2020_autumn_ODE}
+  \end{gather}
+  であるのでこれは一階線形微分方程式\footnote{appendix}である。
+
+  ここに積分因子\dm{\grl(y)}を考える。
+  可積分条件を満たす、すなわち
+  \begin{gather}
+    \frac{1}{\grl}\frac{d\grl}{dy} = P(y) = \frac{1}{\cos y}
+  \end{gather}
+  となるように$\grl$を決定する。
+  \begin{gather}
+    \int \frac{d\grl}{\grl} = \int\frac{dy}{\cos y} \\
+    \log |\grl| = \frac{1}{2}\log\left| \frac{1+\sin y}{1-\sin y} \right| + C
+  \end{gather}
+  $C=0$として得る次の式
+  \begin{gather}
+    \grl(y) = \pm\sqrt{\frac{1+\sin y}{1-\sin y}} = \pm\frac{1+\sin y}{|\cos y|}
+  \end{gather}
+  より、
+  \begin{gather}
+    \grl(y) := \frac{1+\sin y}{\cos y}
+  \end{gather}
+  を積分因子としてとる。
+  \refeq{eq:2020_autumn_ODE}に積分因子$\grl(y)$をかけて
+  \begin{gather}
+    \frac{d}{dy}\bigl(\grl(y)x\bigr) = \grl(y)\frac{2y\cos y}{1+\sin y} \\
+    \frac{d\biggl(\cfrac{1+\sin y}{\cos y}x\biggr)}{dy} = 2y \\
+    d\biggl(\frac{1+\sin y}{\cos y}x\biggr) = 2y\,dy
+  \end{gather}
+  よって、求める解は
+  \begin{gather}
+    \frac{1+\sin y}{\cos y}x = y^2 + C \quad(\text{$C$は任意定数})
+  \end{gather}
+\end{ans*}
 
 \subsection{線形代数}
+\prob{
+  $f(\bx)=\bA\bx$を線形写像$f$とする。ここに
+  \begin{gather}
+    \bA = \bmat{
+      1 & 2 & 1 \\
+      2 & -2 & -2 \\
+      2 & 1 & 0
+    }
+  \end{gather}
+  \begin{enumerate}[label=(\arabic*)]
+    \item 線形写像$f$の核$\Ker (f)$の基底を求めなさい。
+    \item 線形写像$f$の像$\Im (f)$の基底を求めなさい。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item $\Ker f=\Dset{\bx\in \bbR\relmiddle f(\bx) = \bzv}$より
+    $f(\bx)=\bzv$を満たす解の集合である。\\以下、\dm{\bx=\{x_1 ,\, x_2 ,\, x_3\}^\top \in\bbR^3}とする。
+    $\bA$の行基本変形によって
+    \begin{align}
+      \bA
+      &\lra \bmat{
+        1 & 2 & 1 \\
+        0 & -6 & -4 \\
+        0 & -3 & -2
+      } \\
+      &\lra \bmat{
+        1 & 2 & 1 \\
+        0 & 3 & 2 \\
+        0 & 0 & 0
+      } \\
+      &\lra \bmat{
+        1 & 0 & -1/3 \\
+        0 & 1 & 2/3 \\
+        0 & 0 & 0
+      }
+    \end{align}
+    とできるから
+    \begin{gather}
+      \bA\bx =
+      \Bmat{
+        x_1 + 2x_2 + x_3 \\
+        3x_2 + 2x_3 \\
+        0
+      }=\bzv
+    \end{gather}
+    よって$\Ker f$の基底は
+    \begin{gather}
+      \Bmat{
+        1 \\ -2 \\ 3
+      }
+    \end{gather}
+    \item $\Im f =\Dset{f(\bx)\relmiddle x\in\bbR^3}$
+    より$x\in\bbR^3$に対する写像$f$の終域である。
+    \begin{align}
+      f(\bx)
+      &= \bmat{
+        1 & 2 & 1 \\
+        2 & -2 & -2 \\
+        2 & 1 & 0
+      } \Bmat{x_1 \\ x_2 \\ x_3}\\
+      &=
+      \Bmat{1 \\ 2 \\ 2} x_1
+      +\Bmat{2 \\ -2 \\ 1} x_2
+      +\Bmat{1 \\ -2 \\ 0} x_3
+    \end{align}
+    より終域は\dm{
+      \Bmat{1 \\ 2 \\ 2},\,
+      \Bmat{2 \\ -2 \\ 1},\,
+      \Bmat{1 \\ -2 \\ 0}
+    }の張る部分空間と等しい。
+    ここで、(1)の$\bA$の行基本変形より
+    \begin{gather}
+      -\frac{1}{3}\Bmat{1 \\ 2 \\ 2}
+      +\frac{2}{3}\Bmat{2 \\ -2 \\ 1}
+      =\Bmat{1 \\ -2 \\ 0}
+    \end{gather}
+    であるので、$\Im f$の次元は$2$で基底は
+    \begin{gather}
+      \Bmat{1 \\ 2 \\ 2},\,
+      \Bmat{2 \\ -2 \\ 1}
+    \end{gather}
+  \end{enumerate}
+\end{ans*}
+
+\prob{
+  \dm{
+    \bB =
+    \bmat{
+      \disp\frac{5}{2} & \disp -\frac{3}{2} \\
+      & \\
+      \disp -\frac{3}{2} & \disp\frac{5}{2}
+    }
+  }
+  とする。
+  \begin{enumerate}[label=(\arabic*)]
+    \item $\bB$の固有値と対応する正規化された固有ベクトルをすべて求めなさい。
+    \item $\bB^2 - 5\bB + 4\bI$を計算しなさい。ただし、$\bI$は$2\tm 2$の単位行列である。
+    \item $\bB^5 - 5\bB^4 + 4\bB^3 - \bB^2 + 5\bB$を計算しなさい。
+    \item $\bC^2 = \bB$を満たす$\bC$を求めなさい。
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*)]
+    \item $\bB$の固有方程式より
+    \begin{gather}
+      \biggl(\frac{5}{2}-\grl\biggr)\biggl(\frac{5}{2}-\grl\biggr)-\biggl(\frac{3}{2}\biggr)^2
+      = (\grl - 4)(\grl - 1) = 0 \\
+      \therefore \grl = 4,\, 1\:(=:\grl_1,\,\grl_2)
+    \end{gather}
+    \begin{enumerate}[label=(\roman*)]
+      \item $\grl=\grl_1$のとき固有ベクトル$\bu_1(=\{u,\:v\}^\top)$は
+      \begin{gather}
+        \bmat{
+          \disp -\frac{3}{2} & \disp -\frac{3}{2} \\
+          & \\
+          \disp -\frac{3}{2} & \disp -\frac{3}{2}
+        }\bu = \bzv
+      \end{gather}
+      より、
+      \begin{gather}
+        \bu_1 = \frac{1}{\sqrt{2}}\Bmat{
+          -1 \\ 1
+        }
+      \end{gather}
+      \item $\grl=\grl_2$のとき固有ベクトル$\bu_2$は
+      \begin{gather}
+        \bu_2 = \frac{1}{\sqrt{2}}\Bmat{
+          -1 \\ -1
+        }
+      \end{gather}
+    \end{enumerate}
+    \item 固有方程式が$\grl^2-5\grl + 4=0$であるから
+    ケーリーハミルトンの定理より$\bB^2 - 5\bB + 4\bI=\bzv$
+    \item
+    \begin{align}
+      \bB^5 - 5\bB^4 + 4\bB^3 - \bB^2 + 5\bB
+      &= (\bB^2 - 5\bB + 4\bI)(\bB^3 - \bI) + 4\bI \\
+      &= \bmat{
+        4 & 0 \\ 0 & 4
+      }
+    \end{align}
+    % [] 対角化を使った別解 2022autumn, 2021autumn
+    \item 行列$\bC$を
+    \begin{gather}
+      \bC = \bmat{
+        a & b \\ c & d
+      }
+    \end{gather}
+    とおく。このとき、\dm{\bC^2}は
+    \begin{gather}
+      \bC^2 = \bmat{
+        a^2 + bc & (a+d)b \\ (a+d)c & bc + d^2
+      }=
+      \bmat{
+        \disp\frac{5}{2} & \disp -\frac{3}{2} \\
+        & \\
+        \disp -\frac{3}{2} & \disp\frac{5}{2}
+      }
+    \end{gather}
+    であるので
+    \begin{gather}
+      \begin{dcases*}
+        a^2 + bc = \frac{5}{2} \\
+        (a+d)b = -\frac{3}{2} \\
+        (a+d)c = -\frac{3}{2} \\
+        d^2 + bc = \frac{5}{2}
+      \end{dcases*}
+    \end{gather}
+    これを解いて、$\bC$は4つ得られる。
+    \begin{gather}
+      \bC =\bmat{
+        \disp\pm\frac{3}{2} & \disp\mp\frac{1}{2} \\
+        & \\
+        \disp\mp\frac{1}{2} & \disp\pm\frac{3}{2} \\
+      },\,\bmat{
+        \disp\pm\frac{1}{2} & \disp\mp\frac{3}{2} \\
+        & \\
+        \disp\mp\frac{3}{2} & \disp\pm\frac{1}{2} \\
+      }\quad(\text{行列内は複号同順})
+    \end{gather}
+  \end{enumerate}
+\end{ans*}

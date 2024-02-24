@@ -53,6 +53,19 @@
 % yearcounterを1増加させる
 \newcommand{\incyearcounter}{\stepcounter{yearcounter}}
 
+
+% 1ならなにもしない、それ以外なら改ページする変数とコマンド
+% cpornot
+\newcounter{cpornot}
+\setcounter{cpornot}{1}
+\newcommand{\clearpageornot}{%
+  \ifnum\value{cpornot}=1
+    % skip
+  \else
+    \newpage
+  \fi
+}
+
 % -------------------------------------------------------%
 
 % 作ったけど使ってません
@@ -73,6 +86,7 @@
 \lhead{}
 \rhead{}
 \cfoot{appendix\:\raisebox{1pt}{-}\thepage}
+\renewcommand{\headrulewidth}{0.0pt}%ヘッダの線を消す
 }
 
 
@@ -105,13 +119,15 @@
   % {\normalfont \Large\bfseries}
 }{0pt}
 {
-  \normalfont \Large\bfseries 
+  \normalfont \Large\bfseries
+  \setcounter{cpornot}{1}
 }
-[ 
+[
 ]
 
 \titleformat{\subsection}[block]
 {%
+  \clearpageornot
   \raisebox{-5pt}%
   {\linethickness{1.5pt}%
   {\begin{picture}(5,20)%
@@ -125,9 +141,10 @@
 }{%
 }{0pt}
 {
-  \hspace*{0pt}\normalfont \large\bfseries 
+  \hspace*{0pt}\normalfont \large\bfseries
+  \setcounter{cpornot}{1}
 }
-[ 
+[
 ]
 
 
