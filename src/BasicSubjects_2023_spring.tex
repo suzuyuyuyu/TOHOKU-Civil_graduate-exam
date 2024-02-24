@@ -9,49 +9,71 @@
     \lim_{x\to 0}\left(\frac{a^x+b^x}{2}\right)^{1/x}
   \end{gather}
 }
-% []: lhopitalの条件
-% []: 真数条件
+
 \begin{ans*}
-  与えられた極限に対数をとった次の極限は
-  \begin{align}
+  \dm{\frac{a^x + b^x}{2}>0}より
+  与えられた極限に対数をとった次の極限
+  \begin{gather}
     \lim_{x\to 0} \frac{\log \cfrac{a^x + b^x}{2}}{x}
-    &= \lim_{x\to 0} \frac{\cfrac{1}{2}\;(a^x\log a+b^x\log b)}{\cfrac{a^x + b^x}{2}} \quad(\text{L'H\^{o}pitalの定理})\\
+  \end{gather}
+  を考える。
+  この分子
+  \dm{f(x) = \log \frac{a^x + b^x}{2}}
+  と分母
+  \dm{g(x) = x}
+  は微分可能でこれを微分した極限は
+  \begin{align}
+    \lim_{x\to 0} \frac{f'(x)}{g'(x)}
+    &=\lim_{x\to 0} \frac{\cfrac{1}{2}\;(a^x\log a+b^x\log b)}{\cfrac{a^x + b^x}{2}} \\
     &= \frac{\log a + \log b}{2} = \log \sqrt{ab}
   \end{align}
-  と得られるので、
+  と得られる。
+  ここに、
+  $\disp\forall x\in\bbR,\,\disp g'(x) = 1 \neq 0 $と$ \lim_{x\to 0}f(x) = \lim_{x\to 0}g(x) = 0$
+  であることから\lhopital の定理\footnote{appendix}より
+  極限
+  \dm{
+    \lim_{x\to\infty}\frac{f(x)}{g(x)}
+  }
+  は存在して
+  \begin{gather}
+    \lim_{x\to 0} \frac{\log \cfrac{a^x + b^x}{2}}{x} = \log\sqrt{ab}
+  \end{gather}
+  ゆえに、求める極限は
   \begin{align}
     \lim_{x\to 0}\left(\frac{a^x+b^x}{2}\right)^{1/x}
      = \sqrt{ab}
   \end{align}
+  である。
 \end{ans*}
 
 \prob{%
-  \dm{x=r\cos\theta,y=r\sin\theta}のとき、以下の問いに答えよ。
-  
+  \dm{x=r\cos\theta,\,y=r\sin\theta}のとき、以下の問いに答えよ。
+
   \begin{enumerate}[label=(\arabic*)]
     \item $dx$および$dy$を求めよ。
-    \item $r,dr,\theta,d\theta$を用いて次式を表せ。
+    \item $r,\,dr,\,\theta,\,d\theta$を用いて次式を表せ。
     \begin{gather}
-      x\:dy - y\:dx
+      x\,dy - y\,dx
     \end{gather}
   \end{enumerate}
 }
 \begin{ans*}
   ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item 
+    \item
     \begin{gather}
-      dx = \cos\theta\:dr - r\sin\theta\:d\theta \\
-      dy = \sin\theta\:dr + r\cos\theta\:d\theta
+      dx = \cos\theta\,dr - r\sin\theta\,d\theta \\
+      dy = \sin\theta\,dr + r\cos\theta\,d\theta
     \end{gather}
-    \item 
+    \item
     \begin{align}
       \begin{split}
-        x\:dy - y\:dx 
-        &= r\cos\theta(\sin\theta \:dr + r\cos\theta\:d\theta) \\
-        &\hspace*{30pt} - r\sin\theta(\cos\theta\:dr - r\sin\theta\:d\theta)  
+        x\,dy - y\,dx
+        &= r\cos\theta(\sin\theta \,dr + r\cos\theta\,d\theta) \\
+        &\hspace*{30pt} - r\sin\theta(\cos\theta\,dr - r\sin\theta\,d\theta)
       \end{split}\\
-      &= r^2\cos^2\theta\:d\theta + r^2\sin\theta\:d\theta = r^2\:d\theta
+      &= r^2\cos^2\theta\,d\theta + r^2\sin\theta\,d\theta = r^2\,d\theta
     \end{align}
   \end{enumerate}
 \end{ans*}
@@ -61,31 +83,34 @@
   次に示す$xyz$空間の領域$D$を考える。
   このとき、以下の問いに答えよ。
   \begin{gather}
-    D = \left\{(x,y,z)\relmiddle y\geq 0,z\geq 0, z^2\leq 4x, y^2\leq x-x^2 \right\}
+    D = \Dset{(x,y,z)\relmiddle y\geq 0,\, z\geq 0,\, z^2\leq 4x,\, y^2\leq x-x^2}
   \end{gather}
-  
+
   \begin{enumerate}[label=(\arabic*)]
     \item 領域$D$を図示せよ。
     \item 領域$D$の体積を求めよ。
   \end{enumerate}
 }
-\begin{ans*} % ${}$
+\begin{ans*}
+  ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item 略
-    \item \dm{C = \left\{(x,y)\relmiddle \left(x-\frac{1}{2}\right)^2 + y^2 \leq \left(\frac{1}{2}\right)^2 \right\}}として、
+    \item 略 % pic
+    \item \dm{
+      C = \Dset{(x,y)\relmiddle \left(x-\frac{1}{2}\right)^2 + y^2 \leq \left(\frac{1}{2}\right)^2}
+      }として、
     求める体積$V_{\rm{D}}$は
     \begin{align}
       V_{\rm{D}}
-      &= \iint_C z\:dxdy \\
-      &= \iint_C 2\sqrt{x}\:dxdy \\
-      &= \int_{0}^{1}\int_{0}^{\sqrt{x-x^2}} 2\sqrt{x}\:dydx \\
-      &= \int_{0}^{1}2\sqrt{x}\sqrt{x-x^2}\:dx \\
-      &= \int_{0}^{1} 2x\sqrt{1-x}\:dx \\
-      &= \int_{0}^{1} 2\sqrt{1-x}\:dx - \int_{0}^{1}2(1-x)\sqrt{1-x}\:dx \\
+      &= \iint_C z\,dxdy \\
+      &= \iint_C 2\sqrt{x}\,dxdy \\
+      &= \int_{0}^{1}\int_{0}^{\sqrt{x-x^2}} 2\sqrt{x}\,dydx \\
+      &= \int_{0}^{1}2\sqrt{x}\sqrt{x-x^2}\,dx \\
+      &= \int_{0}^{1} 2x\sqrt{1-x}\,dx \\
+      &= \int_{0}^{1} 2\sqrt{1-x}\,dx - \int_{0}^{1}2(1-x)\sqrt{1-x}\,dx \\
       &= \frac{8}{15}
     \end{align}
   \end{enumerate}
-  
+
 \end{ans*}
 
 \prob{%
@@ -97,11 +122,11 @@
 }
 \begin{ans*}
   斉次の微分方程式$y'' - 2y' + 2y = 0$の解は
-  特性方程式$\lambda^2 - 2\lambda + 2 = 0\Longleftrightarrow \lambda = 1\pm i$より
+  特性方程式$\grl^2 - 2\grl + 2 = 0\Longleftrightarrow \grl = 1\pm i$より
   \begin{gather}
     y = e^x (A\cos x + B\sin x)
   \end{gather}
-  ここで、与えられた微分方程式について特解を\dm{y_{\rm{p}} = ke^x + ax + b}と仮定すると
+  ここで、与えられた微分方程式について特解を\dm{y_{\rm{p}} = ke^x + ax + b}と仮定する\footnote{appendix}と
   \begin{gather}
     \begin{dcases*}
       y'_{\rm{p}} = ke^x + a \\
@@ -124,34 +149,35 @@
 \prob{%
   以下の線形方程式の基本解を求めよ。
   \begin{align}
-    x_1 + x_2 + x_3 + 2x_4 &= 0 \\
-    x_1 + 2x_2 + 3x_4 &= 0 \\
-    x_1 + 3x_2 - x_3 + 4x_4 &= 0
+    \begin{aligned}
+      x_1 + x_2 + x_3 + 2x_4 &= 0 \\
+      x_1 + 2x_2 + 3x_4 &= 0 \\
+      x_1 + 3x_2 - x_3 + 4x_4 &= 0
+    \end{aligned}
   \end{align}
 }
-% []: 解集合・解空間
-% []: たしかに解になることを示す
 \begin{ans*}
-  行列で表すと
-  \begin{align}
-    \begin{bmatrix}
+  \begin{gather}
+    \bA := \bmat{
       1 & 1 & 1 & 2 \\
       1 & 2 & 0 & 3 \\
-      1 & 3 & -1 & 4 \\
-    \end{bmatrix}
-    \begin{Bmatrix}
+      1 & 3 & -1 & 4
+    },\quad \bx := \Bmat{
       x_1 \\ x_2 \\ x_3 \\ x_4
-    \end{Bmatrix}
-    = \bm{0} \quad (\Leftrightarrow \bA \bx = \bm{0}\text{\:とおく})
+    }
+  \end{gather}
+  とおくと与えられた方程式は
+  \begin{align}
+    \bA \bx = \bm{0}
   \end{align}
   このとき、\bA の行基本変形によって
   \begin{gather}
     \bA \longrightarrow
-    \begin{bmatrix}
+    \bmat{
       1& 1& 1& 2 \\
       0& 1& -1& 1 \\
       0& 0& 0& 0 \\
-    \end{bmatrix}
+    }
   \end{gather}
   とできるので、
   \begin{align}
@@ -166,43 +192,43 @@
   $x_1,x_2 = s,t \in \mathbb{R}$として解は
   \begin{align}
     \bx = s
-    \begin{Bmatrix}
-      1 \\ 0 \\ -1/3 \\ -1/3 
-    \end{Bmatrix}
+    \Bmat{
+      1 \\ 0 \\ -1/3 \\ -1/3
+    }
     + t
-    \begin{Bmatrix}
+    \Bmat{
       0 \\ 1 \\ 1/3 \\ -2/3
-    \end{Bmatrix}
+    }
   \end{align}
   と表せる。基本解は
   \begin{align}
-    \begin{Bmatrix}
-      1 \\ 0 \\ -1/3 \\ -1/3 
-    \end{Bmatrix}, 
-    \begin{Bmatrix}
+    \Bmat{
+      1 \\ 0 \\ -1/3 \\ -1/3
+    },\,
+    \Bmat{
       0 \\ 1 \\ 1/3 \\ -2/3
-    \end{Bmatrix}
+    }
   \end{align}
 \end{ans*}
 
 
 \prob{%
-  行列$A$について以下の問いに答えよ。
+  行列$\bA$について以下の問いに答えよ。
   \begin{gather}
-    A =
-    \begin{pmatrix}
+    \bA =
+    \pmat{
       1 & 3 & 2 \\
       0 & 2 & 0 \\
       1 & 1 & 0
-    \end{pmatrix}
+    }
   \end{gather}
-  
+
   \begin{enumerate}[label=(\arabic*)]
-    \item $A$の階数を求めよ。
-    \item $A$の行列式を求めよ。
-    \item $A$のすべての固有値を求めよ。
-    \item $A$の各固有値に対する固有ベクトルを求めよ。
-    \item 行列$A$は対角化可能か否かを調べよ。
+    \item $\bA$の階数を求めよ。
+    \item $\bA$の行列式を求めよ。
+    \item $\bA$のすべての固有値を求めよ。
+    \item $\bA$の各固有値に対する固有ベクトルを求めよ。
+    \item 行列$\bA$は対角化可能か否かを調べよ。
   \end{enumerate}
 }
 \begin{ans*}
@@ -211,100 +237,100 @@
     \item 行基本変形によって
     \begin{gather}
       \bA \longrightarrow
-      \begin{bmatrix}
+      \bmat{
         1& 0& 0 \\
         0& 1& 0 \\
-        0& 0& 1 
-      \end{bmatrix}
+        0& 0& 1
+      }
     \end{gather}
     とできるので$\rank \bA = 3$
     \item 余因子展開から
     \begin{align}
       \det \bA
       &=
-      \begin{vmatrix}
+      \vmat{
         2& 0 \\
         1& 0
-      \end{vmatrix}
+      }
       - 0
-      \begin{vmatrix}
+      \vmat{
         3& 2 \\
         1& 0
-      \end{vmatrix}
+      }
       +
-      \begin{vmatrix}
+      \vmat{
         3& 2 \\
         2& 0
-      \end{vmatrix} \\
-      &= -4
+      }
+      = -4
     \end{align}
-    \item 固有方程式$\det(\lambda\bE - \bA) = 0$より
+    \item 固有方程式$\det(\grl\bE - \bA) = 0$より
     \begin{align}
       \det
-      \begin{bmatrix}
-        \lambda-1& 3& 2 \\
-        0& \lambda-2& 0 \\
-        1& 1& \lambda
-      \end{bmatrix}
-      &= (\lambda -1)
-      \begin{vmatrix}
-        \lambda-2 & 0 \\
-        1& \lambda
-      \end{vmatrix}
+      \bmat{
+        \grl-1& 3& 2 \\
+        0& \grl-2& 0 \\
+        1& 1& \grl
+      }
+      &= (\grl -1)
+      \vmat{
+        \grl-2 & 0 \\
+        1& \grl
+      }
       +
-      \begin{vmatrix}
+      \vmat{
         3& 2 \\
-        \lambda-2& 0
-      \end{vmatrix} \\
-      &= (\lambda-1)(\lambda-2)\lambda - 2(\lambda-2) \\
-      &= (\lambda-2)^2(\lambda+1) = 0 \\
+        \grl-2& 0
+      } \\
+      &= (\grl-1)(\grl-2)\grl - 2(\grl-2) \\
+      &= (\grl-2)^2(\grl+1) = 0
     \end{align}
     \begin{gather}
-      \therefore \lambda = -1, 2 
+      \therefore \grl = -1, 2
     \end{gather}
-    \item 固有ベクトルを$\bu = (x,y,z)^T$とする。
+    \item 固有ベクトルを$\bu = \{x,\,y,\,z\}^\top$とする。
     \begin{enumerate}[label=(\roman*)]
-      \item $\lambda = -1$のとき
+      \item $\grl = -1$のとき
       \begin{gather}
-        (\lambda\bE - \bA)\bu = \bm{0} \\
-        \begin{bmatrix}
+        (\grl\bE - \bA)\bu = \bm{0} \\
+        \bmat{
           -2& -3& -2 \\
           0& -3& 0 \\
           -1& -1& -1 \\
-        \end{bmatrix}
-        \begin{Bmatrix}
+        }
+        \Bmat{
           x \\ y \\ z
-        \end{Bmatrix}
-        =\bm{0} \\
+        }
+        =\bm{0}
       \end{gather}
       よって、固有ベクトルは
       \begin{gather}
         \bu =
-        \begin{Bmatrix}
+        \Bmat{
           1 \\ 0 \\ -1
-        \end{Bmatrix}
+        }
       \end{gather}
-      \item $\lambda = 2$のとき
+      \item $\grl = 2$のとき
       \begin{gather}
-        (\lambda\bE - \bA)\bu = \bm{0} \\
-        \begin{bmatrix}
+        (\grl\bE - \bA)\bu = \bm{0} \\
+        \bmat{
           1& -3& -2 \\
           0& 0& 0 \\
           -1& -1& 2
-        \end{bmatrix}
-        \begin{Bmatrix}
+        }
+        \Bmat{
           x \\ y \\ z
-        \end{Bmatrix}
-        =\bm{0} \\
+        }
+        =\bm{0}
       \end{gather}
       よって、固有ベクトルは
       \begin{gather}
         \bu =
-        \begin{Bmatrix}
+        \Bmat{
           2 \\ 0 \\ 1
-        \end{Bmatrix}
+        }
       \end{gather}
     \end{enumerate}
-    \item 固有方程式の解のうち重解$\lambda = 2$において固有ベクトルが1つなので対角化可能でない。
+    \item 固有方程式の解のうち重解$\grl = 2$において固有ベクトルが1つなので対角化可能でない。
   \end{enumerate}
 \end{ans*}

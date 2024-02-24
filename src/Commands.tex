@@ -88,6 +88,7 @@
 \newcommand{\bL}{\bm{L}}
 \newcommand{\bU}{\bm{U}}
 \newcommand{\bP}{\bm{P}}
+\newcommand{\bQ}{\bm{Q}}
 
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
@@ -103,12 +104,15 @@
 
 \newcommand{\bn}{{\bm{n}}}
 
+\newcommand{\bp}{{\bm{p}}}
+
 \newcommand{\bx}{{\bm{x}}}
 \newcommand{\by}{{\bm{y}}}
 \newcommand{\bz}{{\bm{z}}}
 
 \newcommand{\bu}{{\bm{u}}}
 \newcommand{\bv}{{\bm{v}}}
+\newcommand{\bw}{{\bm{w}}}
 
 % bold zero vector
 \newcommand{\bzv}{\bm{0}}
@@ -129,6 +133,7 @@
 
 
 \newcommand{\grG}{{\Gamma}}
+\newcommand{\grL}{{\Lambda}}
 
 % =================================
 % 略記号
@@ -144,7 +149,7 @@
 % 数式番号にセクション番号を併記する
 \renewcommand{\theequation}{\thesection.\arabic{equation}}
 \makeatletter
-\@addtoreset{equation}{section} 
+\@addtoreset{equation}{section}
 \makeatother
 
 % -------------------------------------------------------%
@@ -185,6 +190,7 @@
 % \DeclareMathOperator{\Im}{Im}
 % 虚部の「ℑ」を更新（像として使いたい）
 \renewcommand{\Im}{\operatorname{Im}}
+\DeclareMathOperator{\proj}{proj}
 
 % -------------------------------------------------------%
 
@@ -204,7 +210,12 @@
 
 % -------------------------------------------------------%
 % 問題(problem)
-\newcommand{\prob}[1]{\subsubsection{}\begin{leftbar}#1\end{leftbar}}
+% セクションやサブセクションのあと以外は改ページする
+\newcommand{\prob}[1]{%
+  \clearpageornot
+  \subsubsection{}\begin{leftbar}#1\end{leftbar}%
+  \setcounter{cpornot}{0}
+}
 
 % -------------------------------------------------------%
 % 小論文
@@ -219,9 +230,10 @@
 % ベクトル
 \renewcommand{\vec}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
 % 行列
-\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}}
-\newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}}
-\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}}
+\newcommand{\bmat}[1]{\begin{bmatrix}#1\end{bmatrix}} % [A]
+\newcommand{\Bmat}[1]{\begin{Bmatrix}#1\end{Bmatrix}} % {A}
+\newcommand{\pmat}[1]{\begin{pmatrix}#1\end{pmatrix}} % (A)
+\newcommand{\vmat}[1]{\begin{vmatrix}#1\end{vmatrix}} % |A|
 
 % ロピタル
 \newcommand{\lhopital}{L'H\^{o}pital}
