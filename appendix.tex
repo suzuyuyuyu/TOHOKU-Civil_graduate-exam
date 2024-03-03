@@ -1,17 +1,65 @@
 \documentclass[10pt, a4paper]{ltjsarticle}
 \input{./src/Preamble.tex}
 
+\title{東北大学 土木系 院試 基礎科目}
+\author{鈴木\thanks{https://github.com/suzuyuyuyu}}
+\date{}
+
 \begin{document}
 
+\pagestyle{empty}
+% タイトル
+\maketitle
+% 目次
+\tableofcontents
+
+
 \pagestyle{appendixPS}
+
+% =============================================================
+% 微分積分
+% - - - - - - - - - - - - -
+
+% ロピタルの定理
+\input{./src/appendix_lhopital.tex}
+
+% 微分方程式の解法
+\input{./src/appendix_ODE.tex}
+
+% 完全微分方程式と積分因子法
+\input{./src/appendix_integrating-factor-method.tex}
+
+% 未定係数法
+\input{./src/appendix_undetermined-coefficients.tex}
 
 % 定数変化法
 \input{./src/appendix_variation-of-constants.tex}
 
+% 収束半径
+\input{./src/appendix_convergence-radius.tex}
 
+% 極値
+\input{./src/appendix_extremum.tex}
+
+% ワイエルシュトラス変換
+\input{./src/appendix_Weierstrass.tex}
+
+% =============================================================
+% 線形代数
+% - - - - - - - - - - - - -
+\newpage
+% 対角化
+\input{./src/appendix_diagonalization.tex}
+
+% 2次形式と標準形
+\input{./src/appendix_quadratic-general-form.tex}
+
+
+\newpage
 % 参考文献
 \begin{thebibliography}{99}
   \bibitem{ref:teisuhenkaho}『二階非斉次常微分方程式の解法』\url{https://www2.yukawa.kyoto-u.ac.jp/~norihiro.tanahashi/pdf/ODE/note_7.pdf}
+  % \bibitem{ref:positive-definite}梅谷俊治『しっかり学ぶ数理最適化』
 \end{thebibliography}
 
 \end{document}
