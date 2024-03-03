@@ -103,7 +103,8 @@
 % \titleformat*{\section}{\Large\bfseries} % サイズ・太字
 % \titleformat*{\subsection}{\large\bfseries}
 \titleformat{\section}[block]
-{
+{%
+  % \clearpageornot
   % sectionとしたら絶対につく装飾
   % \noindent
   {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
@@ -120,6 +121,7 @@
 }{0pt}
 {
   \normalfont \Large\bfseries
+  % セクションの直後は改ページさせない
   \setcounter{cpornot}{1}
 }
 [
@@ -127,7 +129,7 @@
 
 \titleformat{\subsection}[block]
 {%
-  \clearpageornot
+  % \clearpageornot
   \raisebox{-5pt}%
   {\linethickness{1.5pt}%
   {\begin{picture}(5,20)%
@@ -142,6 +144,7 @@
 }{0pt}
 {
   \hspace*{0pt}\normalfont \large\bfseries
+  % サブセクションの直後は改ページさせない
   \setcounter{cpornot}{1}
 }
 [

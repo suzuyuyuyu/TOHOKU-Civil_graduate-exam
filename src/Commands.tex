@@ -13,6 +13,13 @@
 \let\originsi\si
 \renewcommand{\si}[1]{\hspace*{1pt}\originsi{#1}}
 
+% % 連分数が少し詰まるのを若干改善と思ったけどあんまりよくないのでやめました
+% \let\origincfrac\cfrac
+% \renewcommand{\cfrac}[2]{%
+%   \raisebox{1pt}{$\displaystyle\origincfrac{#1}{\raisebox{.5pt}{$#2$}}$}%
+% }
+
+
 % -------------------------------------------------------%
 
 \makeatletter
@@ -106,6 +113,8 @@
 
 \newcommand{\bp}{{\bm{p}}}
 
+\newcommand{\bt}{{\bm{t}}}
+
 \newcommand{\bx}{{\bm{x}}}
 \newcommand{\by}{{\bm{y}}}
 \newcommand{\bz}{{\bm{z}}}
@@ -130,6 +139,7 @@
 \newcommand{\grl}{{\lambda}}
 \newcommand{\grs}{{\sigma}}
 \newcommand{\gro}{{\omega}}
+\newcommand{\grp}{{\phi}}
 
 
 \newcommand{\grG}{{\Gamma}}
@@ -184,7 +194,7 @@
 
 % -------------------------------------------------------%
 
-% 数学文字表現
+% オペレーター
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\Ker}{Ker}
 % \DeclareMathOperator{\Im}{Im}
@@ -194,7 +204,7 @@
 
 % -------------------------------------------------------%
 
-% 数学記号
+% 二項演算子
 \renewcommand{\parallel}{/\!/}
 
 % 床関数（ガウス関数）
@@ -216,14 +226,20 @@
   \subsubsection{}\begin{leftbar}#1\end{leftbar}%
   \setcounter{cpornot}{0}
 }
-
-% -------------------------------------------------------%
 % 小論文
-\newcommand{\essayprob}[1]{\begin{leftbar}#1\end{leftbar}}
+\newcommand{\essayprob}[1]{%
+  % \clearpageornot
+  \begin{leftbar}#1\end{leftbar}
+  \setcounter{cpornot}{0}
+}
+% 専門科目問題(specialized problem)
+\newcommand{\spprob}[1]{%
+  \begin{leftbar}#1\end{leftbar}%
+}
 
 % -------------------------------------------------------%
-% 専門科目問題(specialized problem)
-\newcommand{\spprob}[1]{\begin{leftbar}#1\end{leftbar}}
+
+% -------------------------------------------------------%
 
 % alignを書くのが面倒なとき
 \newcommand{\al}[1]{\begin{align}#1\end{align}}
