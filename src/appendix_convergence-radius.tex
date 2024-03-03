@@ -1,0 +1,43 @@
+\newpage
+\section{収束半径}
+\begin{itembox}[l]{ダランベールの収束判定法}
+  数列 $\{a_{n}\}$に対し、
+  \begin{gather}
+    \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = r
+  \end{gather}
+  が存在するとする。このとき，\dm{\sum_{n=0}^{\infty}a_{n}}
+  の収束・発散について
+  \begin{enumerate}[label=\cdot]
+    \item $0\leq r<1$ ならば絶対収束
+    \item $1<r$ ならば発散
+  \end{enumerate}
+  となる。
+\end{itembox}
+
+\begin{itembox}[l]{コーシーアダマールの収束判定法}
+  数列 $\{a_{n}\}$に対し、
+  \begin{gather}
+    \lim_{n\to\infty}\sup \sqrt[n]{|a_{n}|} = r
+  \end{gather}
+  が存在するとする。このとき，\dm{\sum_{n=0}^{\infty}a_{n}}
+  の収束・発散について
+  \begin{enumerate}[label=\cdot]
+    \item $0\leq r<1$ ならば絶対収束
+    \item $1<r$ ならば発散
+  \end{enumerate}
+  となる。
+\end{itembox}
+
+
+
+この議論より一般のべき級数展開に対しても、
+$x$についての収束半径を得る。
+
+ある関数$f(x)$のべき級数展開を考える。
+\begin{gather}
+  f(x) = a_0 + a_1 x + a_2 x^2 + \cdots + a_n x^n + \cdots
+\end{gather}
+この関数が収束する条件を考える。
+
+マクローリン展開の剰余項が実際に無視できて項数が無限大の
+展開された関数が元の関数と一致することを示す。

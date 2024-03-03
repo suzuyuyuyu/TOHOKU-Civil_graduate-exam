@@ -1,0 +1,48 @@
+\newpage
+\section{極値とヘッセ行列とヘッシアン（Hessian）}
+ヘッセ行列$\bH$の行列式$\det\bH=H$の値から
+
+\begin{enumerate}[label=\arabic*.]
+  \item $\bH\succ 0$\:\eqa\: $H>0$ \land\, $f_{xx}>0$\Rightarrow 極小値
+  \item $\bH\prec 0$\:\eqa\: $H>0$ \land\, $f_{xx}<0$\Rightarrow 極大値
+  \item $H=0$ \Rightarrow 不明。個別に計算する % notice: https://detail.chiebukuro.yahoo.co.jp/qa/question_detail/q1092575770
+  \item $H<0$ \Rightarrow 極値ではない
+\end{enumerate}
+
+行列$\bH\succ 0$は正定値、$\bH\succeq 0$は半正定値、
+$\bH\prec 0$は負定値、$\bH\preceq 0$は半負定値といい、
+次\footnote{梅谷俊治『しっかり学ぶ数理最適化』pp.90-91 など}のように定義される。
+\begin{itembox}[l]{行列の符号}
+  $n$次正方行列$\bA\in\bbR^{n\tm n}$が任意の$\bx\in\bbR^{n}$に対して
+  \begin{gather}
+    \bx^{\top}\bA\bx = \sum_{i=1}^{n}a_{ii}x_{i}^2 + \sum_{i\neq j}^{}a_{ij}x_{i}x_{j}\geq 0
+  \end{gather}
+  を満たすとき、行列$\bA$は半正定値(positive semidefinite)であると呼ぶ。また、任意の$\bx\in\bbR^{n}$に対して
+  $\bx^{\top}\bA\bx>0$を満たすとき、行列$\bA$は正定値(positive definite)であると呼ぶ。
+
+  また、
+  \begin{align}
+    \text{行列$\bA$が（半）正定値}
+    &\eqa \bA\succ(\succeq) 0 \\
+    &\eqa {\forall \bx\in\bbR^{n},\,\bx^{\top}\bA\bx>(\geq) 0} \\
+    &\eqa \text{行列$\bA$の固有値が正（非負）} \\
+    &\eqa \text{すべての主小行列式が正（主小行列式が非負）} \\
+    &\eqa \text{すべての首座小行列式が正}
+  \end{align}
+  である。
+  ただし、行列$\bA = [a_{ij}]\in\bbR^{n\tm n}\:(i,j\in N,\,N=\{1,2,\cdots,N\})$
+  に対して（$k$次）首座小行列$\hat{\bA}$とは
+  $k(\in\bbZ,\,0\leq k\leq n)$とある集合$K=\{1,2,\cdots,k\}$に対して
+  \begin{gather}
+    \hat{\bA} = [a_{ij}] \quad(i,j\in K)
+  \end{gather}
+  を満たす行列である。
+  また、主小行列とは$M\subseteq N$に対して
+  \begin{gather}
+    \tilde{\bA} = [a_{ij}]\quad(i,j\in M)
+  \end{gather}
+  を満たす行列である。
+
+  $-\bA$が（半）正定値であるとき、$\bA$は（半）負定値であるという。
+  また、正定値、半正定値、負定値、半負定値のいずれでもないものを不定値行列という。
+\end{itembox}

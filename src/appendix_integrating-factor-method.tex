@@ -1,0 +1,122 @@
+\newpage
+\section{完全微分方程式と積分因子法}
+\begin{gather}
+  P(x,y)dx + Q(x,y)dy = 0 \\
+  \ppar{P}{y} = \ppar{Q}{x} \quad(\text{可積分条件})
+\end{gather}
+と与えられる微分方程式を完全微分方程式という。
+
+ある関数$U(=U(x,y))$に対する全微分は
+\begin{gather}
+  dU = \frac{\pd U}{\pd x}dx + \frac{\pd U}{\pd y}dy
+\end{gather}
+と与えられるので、微分方程式の$P,\,Q$について
+\begin{gather}
+  P(x,y) = \ppar{U}{x},\quad Q(x,y) = \ppar{U}{y}
+\end{gather}
+なる関数$U$が見つかれば、与えられた微分方程式は$dU = 0$すなわち
+\begin{gather}
+  U(x,y) = C \quad(C\text{は任意定数})
+\end{gather}
+と解を得る。
+
+さらに、
+\begin{gather}
+  \ppar{P}{y} \neq \ppar{Q}{x}
+\end{gather}
+であっても、ある適当な関数$\grl(x,y)$が存在して、
+\begin{gather}
+  \ppar{(\grl P)}{y} = \ppar{(\grl Q)}{x} \label{eq:appendix-IF-intcond}
+\end{gather}
+が成り立つとき、あらたに関数$\hat{P}=\grl P,\,\hat{Q}=\grl Q$を用いて
+\begin{gather}
+  \hat{P}(x,y) dx + \hat{Q}(x,y) dy = 0 \\
+  \ppar{\hat{P}}{y} = \ppar{\hat{Q}}{x}
+\end{gather}
+とできてこれは完全微分方程式である。
+このときの関数$\grl(x,y)$を積分因子(Integrating Factor)という。
+\refeq{eq:appendix-IF-intcond}について変形することで$\grl$の条件を考える。
+\begin{gather}
+  \ppar{\grl}{y}P + \ppar{P}{y}\grl = \ppar{\grl}{x}Q + \ppar{Q}{x}\grl
+\end{gather}
+ここで、$\grl=\grl(x)$であるような特殊な場合を仮定すれば
+この$\grl(x,y)$についての偏微分方程式は$\grl(x)$についての常微分方程式
+\begin{gather}
+  \grl\Bigl(\ppar{P}{y} - \ppar{Q}{x}\Bigr) = \frac{d\grl}{dx}Q \\
+  \Leftrightarrow
+  \frac{1}{\grl}\frac{d\grl}{dx} = \frac{1}{Q(x,y)}\Bigl(\ppar{P}{y} - \ppar{Q}{x}\Bigr)
+\end{gather}
+となる。
+左辺は$y$に依存しない（$x$のみの式である）ので右辺\dm{\frac{1}{Q}(P_{y} - Q_{x})}
+も$y$に依存しない式となれば積分因子$\grl$は$x$の関数$\grl(x)$としてよいということになる。
+
+あるいは微分方程式を次のような一階線形常微分方程式に変形することを考える。
+\begin{gather}
+  \frac{dy}{dx} + P(x)y = Q(x) \label{eq:appendix-IF-linearODE}
+\end{gather}
+斉次形（$Q(x) = 0$）のとき、これは変数分離形として解を得る。
+非斉次形でかつ$Q$が$x$の関数のときは積分因子は一変数関数
+$\grl(x)$として次のように求める。
+両辺に$\grl(x)$をかけて
+\begin{gather}
+  \grl(x)\left\{ \frac{dy}{dx} + P(x)y \right\} = \grl(x)Q(x) \label{eq:appendix-IF-LODEgrl}
+\end{gather}
+としてこれが完全微分方程式となるための可積分条件
+\begin{gather}
+  \frac{1}{\grl}\frac{d\grl}{dx} = P(x) \label{eq:appendix-IF-linearODE-intcond}
+\end{gather}
+を解けば積分因子を得る。
+また、\refeq{eq:appendix-IF-LODEgrl}について次式
+\begin{gather}
+  \grl(x)\left\{ \frac{dy}{dx} + P(x)y \right\} = \frac{d}{dx}(\grl(x)y) \label{eq:appendix-IF-LHScond}
+\end{gather}
+を満たすので、積分因子を\refeq{eq:appendix-IF-linearODE-intcond}によって計算して、
+\begin{gather}
+  \frac{d}{dx}(\grl(x)y) = \grl(x)Q(x)
+\end{gather}
+を解けば良い。一応簡単に証明しておく。
+
+% []: この辺微分とか条件とか怪しい
+\begin{proof}
+  \refeq{eq:appendix-IF-LODEgrl}から\refeq{eq:appendix-IF-LHScond}を得ることを示す。
+  \refeq{eq:appendix-IF-LODEgrl}は
+  \begin{gather}
+    \grl(x)\bigl(Q(x) - P(x)y\bigr)dx - \grl(x)dy = 0
+  \end{gather}
+  と変形できて、
+  これが完全微分形であるとき可積分条件は
+  \begin{gather}
+    \ppar{}{y} \Bigl(\grl(x)\bigl(Q(x) - P(x)y\bigr)\Bigr) = - \ppar{\grl(x)}{x}
+  \end{gather}
+  であって、左辺は$y$に依存しないのでたしかに積分因子$\grl(x)$が存在して
+  \begin{align}
+    \frac{d\grl}{dx}
+    &= \ppar{}{y}\bigl(\grl(x)P(x)y\bigr) - \ppar{(\grl Q)}{y} \\
+    &= \grl(x)P(x) \label{eq:appendix-IF-grlODE}
+  \end{align}
+  すなわち
+  \begin{gather}
+    \frac{1}{\grl}\frac{d\grl}{dx} = P(x) \label{eq:appendix-IF-howtogrl}
+  \end{gather}
+  を満たす。（この変数分離形の微分方程式を解くことによって積分因子を計算できる。）
+
+  \refeq{eq:appendix-IF-grlODE}の$\grl$に関する微分方程式の両辺を$y$倍して
+  \dm{\grl\frac{dy}{dx}}を加えることで
+  \begin{gather}
+    \grl(x)\frac{dy}{dx} + \grl(x)P(x)y = y\frac{d\grl}{dx} + \grl(x)\frac{dy}{dx}
+  \end{gather}
+  を得る。この式は左辺を$\grl(x)$でくくり右辺を積の導関数と見れば、
+  \refeq{eq:appendix-IF-LHScond}と同値である。
+\end{proof}
+
+\refeq{eq:appendix-IF-howtogrl}によって積分因子が得られれば、
+\eqref{eq:appendix-IF-LODEgrl},\,\refeq{eq:appendix-IF-LHScond}より
+\begin{gather}
+  \frac{d}{dx}(\grl(x)y) = \grl(x)Q(x)
+\end{gather}
+として、この微分方程式を解けば得られる。
+
+積分因子法は二階以上の線形微分方程式でも用いられる。
+
+以上の議論は$x$と$y$について対称性があるので、
+入れ替えた形で積分因子を$\grl(y)$のように仮定することもある。

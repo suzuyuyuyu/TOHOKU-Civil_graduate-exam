@@ -1,0 +1,31 @@
+\newpage
+\section{対角化}
+$n\times n$の行列$\bA$の対角化は 
+\begin{enumerate}[label=\arabic*.]
+  \item 固有値が$n$個
+  \begin{fleqn}[10pt]
+    \begin{align*}
+      \Rightarrow\text{可能}
+    \end{align*}
+  \end{fleqn}
+  \item 固有値1個($n$重解)
+  \begin{fleqn}[10pt]
+    \begin{align*}
+      \Rightarrow
+      \begin{dcases*}
+        \text{可能} & ($\lambda\bE-\bA = \bm{0}$)\\
+        \text{不可能} & (o/w)
+      \end{dcases*}
+    \end{align*}
+  \end{fleqn}
+  \item 固有値に$m$重解を含む
+  \begin{fleqn}[10pt]
+    \begin{align*}
+      \Rightarrow
+      \begin{dcases*}
+        \text{可能} & ($m$重解で固有ベクトルが$m$個対応する場合)\\
+        \text{不可能} & (o/w：この問題はこれに該当)
+      \end{dcases*}
+    \end{align*}
+  \end{fleqn}
+\end{enumerate}

@@ -1,0 +1,19 @@
+\section{ベルヌーイ(Bernoulli)型\cdot リッカチ(Riccati)型}
+一階線形非斉次常微分方程式において、
+右辺が$Q(x)y^n$になっているものをベルヌーイ型、
+$f(x)y^2 + g(x)y + h(x)$になっているものをリッカチ型という。
+\begin{gather}
+  \frac{dy}{dx} + P(x)y = Q(x)y^n \label{eq:appendix-ODE-Bernoulli} \\
+  \frac{dy}{dx} + P(x)y = f(x)y^2 + g(x)y + h(x) \label{eq:appendix-ODE-Riccati}\\
+  \frac{dy}{dx} + P(x)y = Q(x) (\text{積分因子法によって解く形})\\
+\end{gather}
+
+ベルヌーイ型は$u=y^{1-n}$とおくことで$u'=(1-n)y^{-n}y'$
+であり、\refeq{eq:appendix-ODE-Bernoulli}の両辺に$(1-n)y^{-n}$
+をかければ
+\begin{gather}
+  u' + (1-n)P(x)u = (1-n)Q(x)
+\end{gather}
+として一階線形微分方程式となる。
+
+
