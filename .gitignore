@@ -1,7 +1,13 @@
 *.gz
 *.fdb_latexmk
+*.aux
+*.log
+*.fls
+*.toc
 
 *.md
 !README.md
 
+
+out/
 hoge/
