@@ -1,0 +1,82 @@
+\newpage
+\section{2020秋}
+\setcounter{yearcounter}{2020}
+
+\subsection{弾性体と構造の力学(1)}
+
+Hooke則は以下のように与えられる。
+\begin{align*}%\label{eq:}
+  &\varepsilon_{xx} = \frac{1}{E}\{\sigma_{xx}-\nu(\sigma_{yy}+\sigma_{zz})\},
+  \varepsilon_{yy} = \frac{1}{E}\{\sigma_{yy}-\nu(\sigma_{zz}+\sigma_{xx})\},
+  \varepsilon_{zz} = \frac{1}{E}\{\sigma_{zz}-\nu(\sigma_{xx}+\sigma_{yy})\}\\
+  &\gamma_{xy} = 2\varepsilon_{xy} = \frac{1}{G}\sigma_{xy},
+  \gamma_{yz} = 2\varepsilon_{yz} = \frac{1}{G}\sigma_{yz},
+  \gamma_{zx} = 2\varepsilon_{zx} = \frac{1}{G}\sigma_{zx}
+\end{align*}
+
+ここに、$E$はヤング率、$\nu$はポアソン比である。$G$はせん断弾性係であり、$E$と$\nu$を使って以下のように表される。
+
+\begin{align*}%\label{eq:}
+  G = \frac{E}{2(1+\nu)}
+\end{align*}
+
+線形弾性体に関する以下の問いに答えよ。
+
+平面応力状態と平面応力ひずみ状態におけるひずみ成分$\varepsilon_{xx}$、$\varepsilon_{yy}$、$\gamma_{xy}$と
+応力成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$の関係式を導出し、行列形式で表せ。
+
+平面応力状態にある弾性版をx軸方向に一様な力で引っ張ったところ、以下に示す応力$\sigma$とひずみ$\varepsilon$
+が発生した。板は初期に無応力状態にあり、均質一様に変形したものとする。この板のヤング率$E$とポアソン比$\nu$を求めよ。
+
+\begin{align*}%\label{eq:}
+  \begin{bmatrix}
+    \sigma
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \sigma_{xx}&\sigma_{xy}\\
+    \sigma_{xy}&\sigma_{yy}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    2.8&0\\
+    0&0\\
+  \end{bmatrix}
+  (MPa),\:
+  \begin{bmatrix}
+    \varepsilon
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \varepsilon_{xx}&\varepsilon_{xy}\\
+    \varepsilon_{xy}&\varepsilon_{yy}\\
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0.02&0\\
+    0&-0.008
+  \end{bmatrix}
+\end{align*}
+
+平面ひずみ状態にある弾性版に以下のひずみ$\varepsilon$を生じさせた。
+弾性体の材質は設問2における板のと同じである。弾性体は初期に無応力状態にあり、
+均質一様に変形したものとする。発生する応力の成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$を求めよ。
+
+\begin{align*}%\label{eq:}
+  \begin{bmatrix}
+    \varepsilon
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    \varepsilon_{xx}&\varepsilon_{xy}\\
+    \varepsilon_{xy}&\varepsilon_{yy}
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    0.01&0.02\\
+    0.02&0.01
+  \end{bmatrix}
+\end{align*}
+
+% [ ] 設問3における主応力$\sigma_1$、$\sigma_2$とそれらの主方向ベクトル$\{n_1\}=$
+

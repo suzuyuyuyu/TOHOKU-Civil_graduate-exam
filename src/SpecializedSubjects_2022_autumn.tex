@@ -3,5 +3,102 @@
 \setcounter{yearcounter}{2022}
 
 \subsection{構造工学}
+\spprob{
+  下に示すような、ヤング率$E=200[\si{GPa}]$、ポアソン比$\nu$=0.25の等方線形弾性材料からなる
+  $100[\si{mm}] \tm 100[\si{mm}$]の正方形平板が上下端をy方向に固定されている(高さh一定)。
+  平面応力状態を仮定して、以下の問いに答えなさい。
+  なお、応力とひずみの間には以下の関係式があるものとする。
+  \begin{align}
+    \varepsilon_x = \frac{\sigma_x}{E}-\nu\frac{\sigma_y}{E},\quad
+    \varepsilon_y = \frac{\sigma_y}{E}-\nu\frac{\sigma_x}{E},\quad
+    \gamma_{xy} = \frac{\tau_{xy}}{G}
+  \end{align}
+  ここで、$\varepsilon_x$,\,$\varepsilon_y$はそれぞれ$x$と$y$方向の垂直ひずみ、
+  および$\gamma_{xy}$はせん断ひずみである。
+  また、$\sigma_x$,\,$\sigma_y$は、それぞれ$x$と$y$方向の垂直応力、
+  および$\tau_{xy}$はせん断応力である。なお、Gはせん断弾性係数で
+  $G=E/\{2(1+\nu)\}$で与えられる。
+  % PIC
+
+  \begin{enumerate}[label=(\arabic*)]
+    \item 下図(a)に示すように、高さhを固定し、板の上下端と左右端を平行に保ったまま
+          $x$方向垂直応力が一様に$\sigma_x = \bar{\sigma} = 80$[\si{MPa}]になるように載荷した。
+          このときの$y$方向垂直応力$\sigma_y$と$x$方向垂直ひずみ$\varepsilon_x$を求めよ。
+    \item 下図(b)に示すように高さhを固定し、板の上下端を平行に保ったまま上端を$x$方向に
+          0.05[\si{mm}]だけ動かした。このときのせん断ひずみ$\gamma_{xy}$とせん断応力$\tau_{xy}$を求めよ。
+    \item 上記(1)の垂直応力成分と(2)のせん断応力成分が同時に生じるような載荷を行ったとき、
+          最大主応力を求め、$x$軸から反時計回りにとった最大主応力の方向角$\theta$を$\tan 2\theta$
+          で答えなさい。また、最大せん断応力を求めよ。
+    \item 上記(3)の応力状態のとき、最大および最小主ひずみを求めなさい。
+          % PIC
+  \end{enumerate}
+}
+
 \subsection{コンクリート工学}
+\spprob{
+  \begin{enumerate}[label=\arabic*.]
+    \item ポルトランドセメントの製造に用いられるクリンカーの主要な化合物を4種類挙げ、それぞれの特性を説明せよ。
+    \item 空気量5.0\%のコンクリートの単位粗骨材量を単位水量$W[\si{kg/m^3}]$、単位セメント量$C[\si{kg/m^3}]$、細骨材率$s/a$、
+          水の密度$\rho_w[\si{g/cm^3}]$、セメントの密度$\rho_c[\si{g/cm^3}]$、粗骨材の表乾密度$\rho_g[\si{g/cm^3}]$を用いて示せ。
+    \item 図-1(a)に示す鉄筋コンクリート製梁の断面に曲げモーメントが作用したときのひずみ分布および応力分布が
+          図-1(b)および図-1(c)であるとするとき、中立軸高さ$x$を$b$,\,$d$,\,$A_s$\,$n$を用いて表せ。ここで、
+          $b$$\colon$断面幅、
+          $d$$\colon$断面の有効高さ、
+          $A_s$$\colon$引張鉄筋の断面積、
+          $n$$\colon$ヤング係数比(=$E_s/E_c$)、
+          $E_s$$\colon$鋼材のヤング係数、
+          $E_c$$\colon$コンクリートのヤング係数、
+          $\varepsilon'_c$$\colon$断面上縁のコンクリートの圧縮ひずみ、
+          $\varepsilon_s$$\colon$鉄筋の引張ひずみ、
+          $\sigma'_c$$\colon$断面上縁のコンクリート圧縮応力、
+          $\sigma_s$$\colon$鉄筋の引張応力である。
+    \item 次のコンクリート工学に関する専門用語をそれぞれ100字程度で説明しなさい。
+          \begin{enumerate}[label=(\arabic*)]
+            \item クリープ
+            \item 釣り合い鉄筋比
+          \end{enumerate}
+  \end{enumerate}
+  % PIC   
+}
+
 \subsection{地盤工学}
+\spprob{
+  \begin{enumerate}[label=\arabic*.]
+    \item 土取場より土を採取し、最適含水比で締め固めて、乾燥密度$\rho_d$、体積$V$の盛土を構築する。
+          土粒子密度は$\rho_s$で、土取場における土の含水比は$w$($w<w_{opt}$)である。以下の問いに答えよ。
+          ただし、水の密度を$\rho_w$、重力加速度$g$とする。
+          \begin{enumerate}[label=(\arabic*)]
+            \item 土取場で採取すべき水の重量$W$を求めよ。
+            \item 締固め時に散水すべき水の重量$\Delta W_w$を求めよ。
+            \item 盛土の間隙比$e$を求めよ。
+            \item 盛土の飽和度$S_r$を求めよ。
+          \end{enumerate}
+    \item 図1に示す水平成層地盤が単一の層からなると見做したときの巨視的な透水係数に関する以下の問いに答えよ。
+          ただし、$d_1$と$d_2$は各層の層厚であり、$k_1$,\,$k_2$は各層の透水係数である。
+          \begin{enumerate}[label=(\arabic*)]
+            \item 水平方向の巨視的な透水係数$k_H$を導出せよ。
+            \item 鉛直方向の巨視的な透水係数$k_V$を導出せよ。
+            \item $k_H \geq k_V$が成り立つことを示せ。
+                  % PIC
+          \end{enumerate}
+    \item Terzaghiの圧密理論に基づいて水平成層地盤に一様な荷重を瞬間載荷した場合に生じる圧密沈下について考える。
+          現場Aでは最終沈下量が$\SI{4}{m}$、圧密度50\%に至るまでの時間が200日であった。現場B~Eでは、地盤条件や載荷条件が
+          現場Aとは以下の通り異なる。各現場の($\mathrm{i}$)最終沈下量と($\mathrm{ii}$)圧密度50\%に至るまでの時間を
+          求めよ。ただし、各現場において記載の条件以外はAと同じであるとする。
+          \begin{fleqn}[10pt]
+            \begin{align*}%\label{eq:}
+              \begin{array}{ccl}
+              \text{現場B}&\colon&\text{地盤の層厚が現場Aの2倍}\\
+              \text{現場C}&\colon&\text{地盤の透水係数が現場Aの2倍}\\
+              \text{現場D}&\colon&\text{地盤の体積圧縮係数が現場Aの2倍}\\
+              \text{現場E}&\colon&\text{鉛直荷重が現場Aの2倍}\\
+              \end{array}
+            \end{align*}
+          \end{fleqn}
+  \end{enumerate}
+}
+
+
+
+
+
