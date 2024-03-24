@@ -3,103 +3,107 @@
 \setcounter{yearcounter}{2020}
 
 \subsection{弾性体と構造の力学(1)}
-図-1に示すように等方均質な線形弾性体の試験片に3枚のひずみゲージa,b,cが貼られている。
-一様な平面応力状態と仮定できるものとし、図に示す座標系の下で応力-ひずみ関係が以下のように与えられるものとする。
+\spprob{
+  図-1に示すように等方均質な線形弾性体の試験片に3枚のひずみゲージa,b,cが貼られている。
+  一様な平面応力状態と仮定できるものとし、図に示す座標系の下で応力-ひずみ関係が以下のように与えられるものとする。
 
-%式
+  \begin{align}\label{eq:ouryokuhizumikannkei}
+    \varepsilon_{xx} = \frac{\sigma_{xx}}{E}-\nu \frac{\sigma_{yy}}{E},\quad
+    \varepsilon_{yy} = \frac{\sigma_{yy}}{E}-\nu \frac{\sigma_{xx}}{E},\quad
+    \varepsilon_{xy} = \frac{(1+\nu)\sigma_{xy}}{E} \tag{1}
+  \end{align}
 
-ここに、$\sigma_{xx}$,$\sigma_{yy}$,$\sigma_{xy}$は応力テンソルの成分、
-$\varepsilon_{xx}$,$\varepsilon_{yy}$,$\varepsilon_{xy}$はひずみテンソルの成分、
-$E$と$\nu$はそれぞれヤング率とポアソン比である。以下の問いに答えよ。
+  ここに、$\sigma_{xx}$,\,$\sigma_{yy}$,\,$\sigma_{xy}$は応力テンソルの成分、
+  $\varepsilon_{xx}$,\,$\varepsilon_{yy}$,\,$\varepsilon_{xy}$はひずみテンソルの成分、
+  $E$と$\nu$はそれぞれヤング率とポアソン比である。以下の問いに答えよ。
 
-%図
-1.
+  % PIC
 
-試験片をy方向に一様な力で引っ張った。試験片に作用する応力は以下のように表される。
-\begin{align*}%\label{eq:}
-  \begin{bmatrix}
-    \sigma 
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    \sigma_{xx}&\sigma_{xy}\\
-    \sigma_{xy}&\sigma_{yy}\\
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    0.0& 0.0\\
-    0.0& 2.4\\
-  \end{bmatrix}
-\end{align*}
-
-このとき、3枚のひずみゲージa,b,cはそれぞれ、$-1.0 \times 10^{-3}$, $0.0 \times 10^0$, $5.0 \times 10^{-3}$の値を示した。
-\begin{enumerate}[(1)]
-  \item ひずみテンソルの成分$\varepsilon_{xx}$,$\varepsilon_{yy}$,$\varepsilon_{xy}$を求めよ。
-  \item ヤング率$E$とポアソン比$\nu$を求めよ。
-\end{enumerate}
-
-2.
-1.とは異なる別の力を試験片に作用させたところ、3枚のひずみゲージはa,b,cはそれぞれ
-$5.0\times10^{-3}$,$4.0\times10^{-3}$,$1.0\times10^{-3}$の値を示した。
-\begin{enumerate}
-  \item ひずみテンソル$\varepsilon_{xx}$,$\varepsilon_{yy}$,$\varepsilon_{xy}$の成分を求めよ。
-  \item 応力テンソル$\sigma_{xx}$,$\sigma_{yy}$,$\sigma_{xy}$の成分を求めよ。
-\end{enumerate}
-
+  \begin{enumerate}[label=\arabic*.]
+    \item 試験片をy方向に一様な力で引っ張った。試験片に作用する応力は以下のように表される。
+          \begin{align}\label{eq:sayououryoku}
+            \begin{bmatrix}
+              \sigma 
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              \sigma_{xx}&\sigma_{xy}\\
+              \sigma_{xy}&\sigma_{yy}\\
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              0.0& 0.0\\
+              0.0& 2.4\\
+            \end{bmatrix}
+            \si{MPa}\tag{2}
+          \end{align}
+          
+          このとき、3枚のひずみゲージa,b,cはそれぞれ、$-1.0 \times 10^{-3}$, $0.0 \times 10^0$, $5.0 \times 10^{-3}$の値を示した。
+          \begin{enumerate}[label=(\arabic*)]
+            \item ひずみテンソルの成分$\varepsilon_{xx}$,$\varepsilon_{yy}$,$\varepsilon_{xy}$を求めよ。
+            \item ヤング率$E$とポアソン比$\nu$を求めよ。
+          \end{enumerate}
+    \item 1.とは異なる別の力を試験片に作用させたところ、3枚のひずみゲージは$a$,\,$b$,\,$c$はそれぞれ
+          $5.0\times10^{-3}$,\,$4.0\times10^{-3}$,\,$1.0\times10^{-3}$の値を示した。
+          \begin{enumerate}
+            \item ひずみテンソル$\varepsilon_{xx}$,$\varepsilon_{yy}$,$\varepsilon_{xy}$の成分を求めよ。
+            \item 応力テンソル$\sigma_{xx}$,$\sigma_{yy}$,$\sigma_{xy}$の成分を求めよ。
+          \end{enumerate}
+  \end{enumerate}
+}
 \subsection{弾性体と構造の力学(2)}
-図-1に示すように、一様な厚さを有する辺長a、重量Wの正三角形鋼板ABCを、摩擦のない鉛直壁面のD点から辺長と同じ長さ
-aの糸で吊るとき、以下の問いに答えよ。なお、糸の重量は0、伸縮しないものとする。
+\spprob{
+  \begin{enumerate}[label=\arabic*.]
+    \item 図-1に示すように、一様な厚さを有する辺長$a$、重量Wの正三角形鋼板ABCを、摩擦のない鉛直壁面の$D$点から辺長と同じ長さ
+          $a$の糸で吊るとき、以下の問いに答えよ。なお、糸の重量は0、伸縮しないものとする。
+          \begin{enumerate}[label=(\arabic*)]
+            \item 正三角形鋼板が静止した状態で、B点、D点における反力を、
+                  それぞれ、$R_B$,\,$R_D$とするとき、力のモーメントの釣合い式を
+                  $R_B$,\,$R_D$,\,$a$,\,$W$,\,$\theta$を用いて表せ。
+            \item (1)で求めた釣合い式を連立させて、正三角形鋼板が静止するときの角度$\theta$を$\tan\theta$
+                  の値として求めよ。
+          \end{enumerate}
+          % PIC
+    \item 図-2に示すように、下端で床に固定された長さ$l$、曲げ剛性$EI$の弾性片持ち梁の上端において、
+          距離$a$だけ偏心した位置に荷重$P$が載荷される場合の梁の座屈問題について、以下の問いに答えよ。
+          \begin{enumerate}[label=(\arabic*)]
+            \item 梁のA点に作用する曲げモーメント$Mx$を図-2中の記号を用いて表せ。
+            \item 梁に曲げモーメント$Mx$が作用するとき、梁の変位$y$と曲げモーメント$Mx$、曲げ剛性$EI$の関係式を微分方程式で表せ。
+            \item (2)で求めた微分方程式に(1)を代入し、これに境界条件を適用して求められる最も小さい座屈荷重$P_{cr}$を求めよ。
+          \end{enumerate}
+          % PIC
+  \end{enumerate}
+}
 
-\begin{enumerate}
-  \item 正三角形鋼板が静止した状態で、B点、D点における反力を、
-        それぞれ、$R_B$、$R_D$とするとき、力のモーメントの釣合い式を
-        $R_B$、$R_D$、$a$、$W$、$\theta$を用いて表せ。
-  \item (1)で求めた釣合い式を連立させて、正三角形鋼板が静止するときの角度$\theta$を$\tan\theta$
-        の値として求めよ。
-\end{enumerate}
-
-2.
-図-2に示すように、下端で床に固定された長さl、曲げ剛性$EI$の弾性片持ち梁の上端において、
-距離aだけ偏心した位置に荷重Pが載荷される場合の梁の座屈問題について、以下の問いに答えよ。
-
-\begin{enumerate}[(1)]
-  \item 梁のA点に作用する曲げモーメント$Mx$を図-2中の記号を用いて表せ。
-  \item 梁に曲げモーメント$Mx$が作用するとき、梁の変位$y$と曲げモーメント$Mx$、曲げ剛性$EI$の関係式を微分方程式で表せ。
-  \item (2)で求めた微分方程式に(1)を代入し、これに境界条件を適用して求められる最も小さい座屈荷重$P_{cr}$を求めよ。
-\end{enumerate}
 
 \subsection{地盤とコンクリート(1)}
-1.
-地盤工学に関する次の語句を説明せよ。
-\begin{enumerate}[(1)]
-  \item 飽和度
-  \item 土の工学的分類
-  \item 締固め
-  \item N値
-\end{enumerate}
-
-2.
-土のせん断強さは、圧密および排水条件に依存する。土のせん断強さの違いを下記の用語を用いて説明せよ。
-【圧密、地盤の透水性、施工過程、荷重増加、有効応力】
-
-3.
-擁壁に作用する土圧の算定法について下記の用語を用いて説明せよ。
-【静止土圧、主動土圧、受動土圧、壁体の変位、側方応力、鉛直応力、土圧係数】
-
+\spprob{
+  \begin{enumerate}
+    \item 地盤工学に関する次の語句を説明せよ。
+          \begin{enumerate}[label=(\arabic*)]
+            \item 飽和度
+            \item 土の工学的分類
+            \item 締固め
+            \item N値
+          \end{enumerate}
+    \item 土のせん断強さは、圧密および排水条件に依存する。土のせん断強さの違いを下記の用語を用いて説明せよ。\\
+          【圧密、地盤の透水性、施工過程、荷重増加、有効応力】
+    \item 擁壁に作用する土圧の算定法について下記の用語を用いて説明せよ。\\
+          【静止土圧、主動土圧、受動土圧、壁体の変位、側方応力、鉛直応力、土圧係数】
+  \end{enumerate}  
+}
 \subsection{地盤とコンクリート(2)}
-
-1.
-鉄筋およびコンクリートの一般的な力学的性質の違いを応力-ひずみ曲線を描いて説明せよ。
-
-2.
-フレッシュコンクリートのレオロジー的性質に着目して、
-高流動コンクリートとスランプ8cm程度の普通コンクリートの違いを説明せよ。
-
-3.
-次のコンクリート工学に関する専門用語を説明せよ。
-\begin{enumerate}
-  \item クリープ
-  \item 塩害
-  \item 釣り合い鉄筋比
-  \item スターラップ
-\end{enumerate}
+\spprob{
+  \begin{enumerate}
+    \item 鉄筋およびコンクリートの一般的な力学的性質の違いを応力-ひずみ曲線を描いて説明せよ。
+    \item フレッシュコンクリートのレオロジー的性質に着目して、
+          高流動コンクリートとスランプ$\SI{8}{cm}$程度の普通コンクリートの違いを説明せよ。
+    \item 次のコンクリート工学に関する専門用語を説明せよ。
+          \begin{enumerate}[label=(\arabic*)]
+            \item クリープ
+            \item 塩害
+            \item 釣り合い鉄筋比
+            \item スターラップ
+          \end{enumerate}
+  \end{enumerate}
+}

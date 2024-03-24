@@ -3,80 +3,144 @@
 \setcounter{yearcounter}{2020}
 
 \subsection{弾性体と構造の力学(1)}
+\spprob{
+  Hooke則は以下のように与えられる。
+  \begin{align}\label{eq:Hooke}
+    &\varepsilon_{xx} = \frac{1}{E}\{\sigma_{xx}-\nu(\sigma_{yy}+\sigma_{zz})\},\,
+    \varepsilon_{yy} = \frac{1}{E}\{\sigma_{yy}-\nu(\sigma_{zz}+\sigma_{xx})\},\,
+    \varepsilon_{zz} = \frac{1}{E}\{\sigma_{zz}-\nu(\sigma_{xx}+\sigma_{yy})\}\\
+    &\gamma_{xy} = 2\varepsilon_{xy} = \frac{1}{G}\sigma_{xy},\,
+    \gamma_{yz} = 2\varepsilon_{yz} = \frac{1}{G}\sigma_{yz},\,
+    \gamma_{zx} = 2\varepsilon_{zx} = \frac{1}{G}\sigma_{zx}
+  \end{align}
 
-Hooke則は以下のように与えられる。
-\begin{align*}%\label{eq:}
-  &\varepsilon_{xx} = \frac{1}{E}\{\sigma_{xx}-\nu(\sigma_{yy}+\sigma_{zz})\},
-  \varepsilon_{yy} = \frac{1}{E}\{\sigma_{yy}-\nu(\sigma_{zz}+\sigma_{xx})\},
-  \varepsilon_{zz} = \frac{1}{E}\{\sigma_{zz}-\nu(\sigma_{xx}+\sigma_{yy})\}\\
-  &\gamma_{xy} = 2\varepsilon_{xy} = \frac{1}{G}\sigma_{xy},
-  \gamma_{yz} = 2\varepsilon_{yz} = \frac{1}{G}\sigma_{yz},
-  \gamma_{zx} = 2\varepsilon_{zx} = \frac{1}{G}\sigma_{zx}
-\end{align*}
+  ここに、$E$はヤング率、$\nu$はポアソン比である。$G$はせん断弾性係であり、$E$と$\nu$を使って以下のように表される。
 
-ここに、$E$はヤング率、$\nu$はポアソン比である。$G$はせん断弾性係であり、$E$と$\nu$を使って以下のように表される。
+  \begin{align}\label{eq:senndannkeisuu}
+    G = \frac{E}{2(1+\nu)}
+  \end{align}
 
-\begin{align*}%\label{eq:}
-  G = \frac{E}{2(1+\nu)}
-\end{align*}
+  線形弾性体に関する以下の問いに答えよ。
 
-線形弾性体に関する以下の問いに答えよ。
+  \begin{enumerate}[label = \arabic*.]
+    \item 平面応力状態と平面応力ひずみ状態におけるひずみ成分$\varepsilon_{xx}$、$\varepsilon_{yy}$、$\gamma_{xy}$と
+          応力成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$の関係式を導出し、行列形式で表せ。
+    \item 平面応力状態にある弾性版を$x$軸方向に一様な力で引っ張ったところ、以下に示す応力$\sigma$とひずみ$\varepsilon$
+          が発生した。板は初期に無応力状態にあり、均質一様に変形したものとする。この板のヤング率$E$とポアソン比$\nu$を求めよ。
+          \begin{align*}%\label{eq:}
+            \begin{bmatrix}
+              \bm \sigma
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              \sigma_{xx}&\sigma_{xy}\\
+              \sigma_{xy}&\sigma_{yy}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              2.8&0\\
+              0&0\\
+            \end{bmatrix}
+            (\si{MPa}),\:
+            \begin{bmatrix}
+              \bm \varepsilon
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              \varepsilon_{xx}&\varepsilon_{xy}\\
+              \varepsilon_{xy}&\varepsilon_{yy}\\
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              0.02&0\\
+              0&-0.008
+            \end{bmatrix}
+          \end{align*}
+    \item 平面ひずみ状態にある弾性版に以下のひずみ$\varepsilon$を生じさせた。
+          弾性体の材質は設問2における板のと同じである。弾性体は初期に無応力状態にあり、
+          均質一様に変形したものとする。発生する応力の成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$を求めよ。
+          \begin{align*}%\label{eq:}
+            \begin{bmatrix}
+              \bm \varepsilon
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              \varepsilon_{xx}&\varepsilon_{xy}\\
+              \varepsilon_{xy}&\varepsilon_{yy}
+            \end{bmatrix}
+            =
+            \begin{bmatrix}
+              0.01&0.02\\
+              0.02&0.01
+            \end{bmatrix}
+          \end{align*}
+    \item 設問3における主応力$\sigma_1$、$\sigma_2$とそれらの主方向ベクトル
+          $\disp{\{\bn_1\}= \left\{\begin{matrix} n_{1x}\\n_{1y}\end{matrix} \right\}}$
+          $\disp{\{\bn_2\}= \left\{\begin{matrix} n_{1x}\\n_{1y}\end{matrix} \right\}}$を求めよ。
+  \end{enumerate}
+}
+ 
+\subsection{弾性体と構造の力学(2)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item 図-1に示すように、C点に集中荷重Pが作用する単純支持梁について、以下の問いに答えよ。
+          ただし、梁の曲げ剛性を$EI(=const)$とする。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 支点A,\,Bの反力$R_A$,\,$R_B$を求めよ。
+            \item AC区間、BC区間の任意の点の鉛直変位$y_1$,\,$y_2$を求める式を誘導するとともに、C店の鉛直変位を求めよ。
+            \item $a>b$の場合、梁全体AB区間の中で最大鉛直変位が生じる位置を求めよ。
+          \end{enumerate}
+          % PIC
+    \item 図-2に示すようにその頂部で剛版を介して荷重Pを受ける塔構造において、高さによらず水平断面の圧縮応力$\sigma$が一定となるとき、
+          以下の問いに答えよ。なお、塔の単位体積重量を$\gamma$とする。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 断面$x$における微小要素に対する力のつり合い式を誘導せよ。
+            \item (1)で求めた微分方程式を解き、塔の任意の高さ$x$の水平断面積$A_x$を$P$,\,$\gamma$,\,$A_0$,\,$x$を用いた式として表せ。
+          \end{enumerate}
+          % PIC 
+  \end{enumerate}
+}
 
-平面応力状態と平面応力ひずみ状態におけるひずみ成分$\varepsilon_{xx}$、$\varepsilon_{yy}$、$\gamma_{xy}$と
-応力成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$の関係式を導出し、行列形式で表せ。
+\subsection{地盤とコンクリート(1)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item 地盤工学に関する次の語句を各200字程度で説明せよ。式や図を用いてもよい。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 間隙比
+            \item 有効応力原理
+            \item 圧密
+            \item 液状化現象
+          \end{enumerate}
+    \item 図は浸透カラム試験の状態を表している。以下の問いに答えよ。
+          なお、砂と容器側面の摩擦は無視でき、定常状態と考えてよい。また、
+          水の単位体積重量は$\gamma_w = \SI{9.8}{kN/m^3}$,\,
+          砂の飽和単位体積重量は$\gamma_{sat} = \SI{19.8}{kN/M^3}$,\,
+          砂柱の断面積は$A = \SI{100}{cm^3}$とする。
+          \begin{enumerate}[label = (\arabic*)]
+            \item の場合、$XX'$面の全鉛直応力と有効鉛直応力を計算せよ。
+            \item の場合、流量$Q$が$\SI{0.4}{cm^3/s}$のとき、砂の透水係数を求めよ。
+            \item \:(2)の状態\:(t=0)から1秒間に$\SI{1}{cm}$の速さで左側の水面を上昇させた。
+                  流量$Q(t)$と$XX'$面の有効鉛直応力$\sigma_v'(t)$の時間変化を0~300秒まで描け。
+                  % PIC
+          \end{enumerate}
+    \item 下図のような重力式係船岸の破壊モードを列挙し、それぞれの破壊モードに対する安全性の照査方法を説明せよ。
+          図を用いて説明してもよい。
+          % PIC
+  \end{enumerate}
+}
 
-平面応力状態にある弾性版をx軸方向に一様な力で引っ張ったところ、以下に示す応力$\sigma$とひずみ$\varepsilon$
-が発生した。板は初期に無応力状態にあり、均質一様に変形したものとする。この板のヤング率$E$とポアソン比$\nu$を求めよ。
 
-\begin{align*}%\label{eq:}
-  \begin{bmatrix}
-    \sigma
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    \sigma_{xx}&\sigma_{xy}\\
-    \sigma_{xy}&\sigma_{yy}
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    2.8&0\\
-    0&0\\
-  \end{bmatrix}
-  (MPa),\:
-  \begin{bmatrix}
-    \varepsilon
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    \varepsilon_{xx}&\varepsilon_{xy}\\
-    \varepsilon_{xy}&\varepsilon_{yy}\\
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    0.02&0\\
-    0&-0.008
-  \end{bmatrix}
-\end{align*}
-
-平面ひずみ状態にある弾性版に以下のひずみ$\varepsilon$を生じさせた。
-弾性体の材質は設問2における板のと同じである。弾性体は初期に無応力状態にあり、
-均質一様に変形したものとする。発生する応力の成分$\sigma_{xx}$、$\sigma_{yy}$、$\sigma_{xy}$を求めよ。
-
-\begin{align*}%\label{eq:}
-  \begin{bmatrix}
-    \varepsilon
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    \varepsilon_{xx}&\varepsilon_{xy}\\
-    \varepsilon_{xy}&\varepsilon_{yy}
-  \end{bmatrix}
-  =
-  \begin{bmatrix}
-    0.01&0.02\\
-    0.02&0.01
-  \end{bmatrix}
-\end{align*}
-
-% [ ] 設問3における主応力$\sigma_1$、$\sigma_2$とそれらの主方向ベクトル$\{n_1\}=$
-
+\subsection{地盤とコンクリート(2)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item 鉄筋コンクリート部材の終局曲げ耐力を計算する際に、一般に適用されている仮定を3つ以上上げて説明せよ。
+    \item AE剤の主要な効能を2つ挙げ、そのメカニズムについて説明せよ。
+    \item 次のコンクリート工学に関する専門用語を説明せよ。
+          \begin{enumerate}[label = (\arabic*.)]
+            \item エーライト
+            \item エフロレッセンス
+            \item 中立軸
+            \item 鉄筋の付着破壊
+          \end{enumerate}
+  \end{enumerate}
+}

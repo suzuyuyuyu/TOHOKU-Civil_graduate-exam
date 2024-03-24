@@ -1,0 +1,135 @@
+\newpage
+\section{2019秋}
+\setcounter{yearcounter}{2019}
+
+\subsection{弾性体と構造の力学(1)}
+\spprob{
+  図-1のような等方均質な線形弾性体の円板が一様な平面応力状態にあり、応力テンソルが次のようであったとする。
+
+  \begin{align*}
+    \begin{bmatrix} 
+      \sigma
+    \end{bmatrix}
+    =
+    \begin{bmatrix} 
+      \sigma_{11} & \sigma_{12}\\
+      \sigma_{12} & \sigma_{22}
+    \end{bmatrix}
+    =
+    \begin{bmatrix} 
+      9 & -\sqrt{3}\\
+      -\sqrt{3} & 7
+    \end{bmatrix}
+  \end{align*}
+
+  ここに、平面応力状態における等方線形弾性体の構成式は次式のように与えられる。
+  $\gamma_{12}$は工学せん断ひずみであり、$G$はせん断弾性係数である。
+
+  \begin{align*}
+    \left\{
+    \begin{matrix} 
+      \ve_{11}\\
+      \ve_{22}\\
+      \gamma_{12}
+    \end{matrix}
+    \right\}
+    =
+    \begin{bmatrix} 
+      \frac{1}{E} & -\frac{\nu}{E} & 0\\
+      -\frac{\nu}{E} & \frac{1}{E} & 0\\
+      0 & 0 &\frac{1}{G}
+    \end{bmatrix}
+    \begin{Bmatrix} 
+      \sigma_{11}\\
+      \sigma_{22}\\
+      \sigma_{12}
+    \end{Bmatrix}
+  \end{align*}
+
+  以下の問いに答えよ。
+  \begin{enumerate}[label=\arabic*.]
+    \item 主応力$\sigma_1$,\,$\sigma_2$とその主方向の単位ベクトル
+          $\disp \bn^{(1)} = \left\{ \begin{matrix} n_1^{(1)}\\ n_2^{(1)}\end{matrix}\right\}$,\,
+          $\disp \bn^{(2)} = \left\{ \begin{matrix} n_1^{(2)}\\ n_2^{(2)}\end{matrix}\right\}$
+          を求めよ。
+    \item ヤング率を$E = \SI{1000}{GPa}$,\,ポアソン比を$\nu = 0.2$とするとき、主ひずみ$\varepsilon_1$,\,$\varepsilon_2$を求めよ。
+    \item ひずみテンソルに対応する\,Mohr\,円を描き、それを用いて$x_1$方向のひずみゲージGが感知する軸ひずみ$\varepsilon_G$を求めよ。
+    \item ひずみテンソル
+          $\disp \begin{bmatrix} \bm{\ve} \end{bmatrix} = \begin{bmatrix} \varepsilon_{11} & \varepsilon_{12}\\ \varepsilon_{12} & \varepsilon_{22} \end{bmatrix}$
+          を求めよ。ただし、$\sqrt{3} \simeq 1.7$ を用いよ。
+          %　PIC
+  \end{enumerate}
+}
+
+\subsection{弾性体と構造の力学(2)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item C点に集中荷重$P$が作用する図-1の構造物について、以下の問いに答えよ。ただし、全ての部材の曲げ剛性を$EI (=\text{const})$とする。
+      \begin{enumerate}[label = (\arabic*)]
+        \item C点の鉛直変位を求めよ。
+        \item B点の鉛直変位を求めよ。
+      \end{enumerate}
+    % PIC
+    \item C点に集中荷重$P$が作用する図-2のはりについて以下の問いに答えよ。ただしはりの曲げ剛性を$EI(=\text{const})$とする。
+      \begin{enumerate}[label = (\arabic*)]
+        \item A点の反力を求めよ。
+        \item C点の鉛直変位を求めよ。
+      \end{enumerate}
+    % PIC
+  \end{enumerate}
+}
+\subsection{地盤とコンクリート(1)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item 次の用語を説明せよ。説明の際は模式図を用いてもよい。
+      \begin{enumerate}[label = (\arabic*)]
+        \item 粒径加積曲線
+        \item 締固め曲線
+        \item ヒービング
+        \item 杭の不の摩擦力(ネガティブフリクション)
+      \end{enumerate}
+    \item 砂質土について異なる密度で排水三軸圧縮試験を行ったとき、
+          軸圧縮過程において密な砂と緩い砂のそれぞれに見られる典型的なせん断挙動を、
+          下の4つのグラフに示すパラメータ間の関係として描け。
+          ここで、軸方向応力を$\sigma_1$、側方向応力を$\sigma_3$、
+          間隙水圧を$u$とし、軸圧過程で$\sigma_3$と$u$は一定とする。
+          $\sigma_1$および$\sigma_3$のそれぞれの有効応力を$\sigma_1'$,\,$\sigma_3'$とする。
+          $\sigma_m' = (\sigma_1' +2\sigma_3')/3$は平均有効応力、
+          $\sigma_d = \sigma_1' -\sigma_3'$は主応力差(軸差応力)、$e$は間隙比、$\varepsilon_a$は軸ひずみである。
+    % PIC
+    \item 図に示すように、透水係数が異なる土Aと土Bで構成される二層構造を有する土の円柱供試体について定水位透水係数試験を行った。
+          円柱供試体の断面積は$S = \SI{100}{cm^2}$である。水位差は$h = \SI{10}{cm}$とした。土Aと土Bの透水係数$k_A$,\,$k_B$
+          および層厚$l_A$,\,$l_B$は以下の通りである。このとき、単位時間当たりの流量$Q(\si{cm^3/s})$を求めよ。
+    % PIC
+  \end{enumerate}
+}
+
+
+\subsection{地盤とコンクリート(2)}
+\spprob{
+  \begin{enumerate}[label = \arabic*.]
+    \item 図-1に示すように、床に固定された剛なフーチングを有する一様断面、一様配筋の鉄筋コンクリート橋脚に対し、
+          一定軸力を作用させながら橋脚に破壊が生じるまで水平変位を徐々に増加させる。このとき、以下の問いに答えよ。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 橋脚に生じ得る主に2つの破壊形態を対象に、それぞれの損傷進展特性について、模式図を示しながら説明せよ。
+            \item (1)に示した2つの破壊形態それぞれを対象に、橋脚に作用させる水平荷重を橋脚の水平変位の関係について、
+                  模式図を示しながら説明せよ。
+            \item 橋脚の水平荷重-水平変位の関係を表す代表的な数学モデルを1つとりあげ、模式図を示しながらモデルの特徴を説明せよ。
+             % PIC
+          \end{enumerate}
+    \item 鉄筋コンクリート部材の「凍害」について以下の問いに答えよ。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 凍害による劣化メカニズムを説明せよ。
+            \item 建設時に実施する凍害の影響を低減するための方法および凍害が発生した部材に対する劣化進展抑制のための方法の中から、
+                  それぞれ1つずつとりあげ、それらのメカニズムを説明せよ。
+          \end{enumerate}
+    \item 次のコンクリート工学に関する専門用語を説明せよ。
+          \begin{enumerate}[label = (\arabic*)]
+            \item 塑性率
+            \item 等価応力ブロックモデル
+            \item 自己充填コンクリート
+            \item ひびわれ誘発目地
+          \end{enumerate}
+  \end{enumerate}
+}
+
