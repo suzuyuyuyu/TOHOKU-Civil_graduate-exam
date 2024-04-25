@@ -26,7 +26,19 @@
 % 微分方程式の解法
 \input{./src/appendix_ODE.tex}
 
-% 完全微分方程式と積分因子法
+% 非線形常微分方程式（ベルヌーイ型）
+\input{./src/appendix_non-linear_Bernoulli.tex}
+
+% 非線形常微分方程式（ラグランジュ型）
+\input{./src/appendix_non-linear_Lagrange.tex}
+
+% 線形常微分方程式（オイラー型）
+\input{./src/appendix_linear_Euler.tex}
+
+% 完全微分方程式
+\input{./src/appendix_complete-differential-eq.tex}
+
+% 積分因子法
 \input{./src/appendix_integrating-factor-method.tex}
 
 % 未定係数法
@@ -34,6 +46,12 @@
 
 % 定数変化法
 \input{./src/appendix_variation-of-constants.tex}
+
+% 変数分離法と同次形
+\input{./src/appendix_ODE_various.tex}
+
+% 微分方程式の例題
+\input{./src/appendix_ODE_practice.tex}
 
 % 収束半径
 \input{./src/appendix_convergence-radius.tex}
@@ -59,6 +77,7 @@
 % 参考文献
 \begin{thebibliography}{99}
   \bibitem{ref:teisuhenkaho}『二階非斉次常微分方程式の解法』\url{https://www2.yukawa.kyoto-u.ac.jp/~norihiro.tanahashi/pdf/ODE/note_7.pdf}
+  % \bibitem{ref:ensyu-DE}『』
   % \bibitem{ref:positive-definite}梅谷俊治『しっかり学ぶ数理最適化』
 \end{thebibliography}
 

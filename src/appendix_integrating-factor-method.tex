@@ -1,26 +1,10 @@
-\newpage
-\section{完全微分方程式と積分因子法}
+% \newpage
+\section{積分因子法}
+微分方程式
 \begin{gather}
-  P(x,y)dx + Q(x,y)dy = 0 \\
-  \ppar{P}{y} = \ppar{Q}{x} \quad(\text{可積分条件})
+  P(x,y)dx + Q(x,y)dy = 0
 \end{gather}
-と与えられる微分方程式を完全微分方程式という。
-
-ある関数$U(=U(x,y))$に対する全微分は
-\begin{gather}
-  dU = \frac{\pd U}{\pd x}dx + \frac{\pd U}{\pd y}dy
-\end{gather}
-と与えられるので、微分方程式の$P,\,Q$について
-\begin{gather}
-  P(x,y) = \ppar{U}{x},\quad Q(x,y) = \ppar{U}{y}
-\end{gather}
-なる関数$U$が見つかれば、与えられた微分方程式は$dU = 0$すなわち
-\begin{gather}
-  U(x,y) = C \quad(C\text{は任意定数})
-\end{gather}
-と解を得る。
-
-さらに、
+に対して
 \begin{gather}
   \ppar{P}{y} \neq \ppar{Q}{x}
 \end{gather}
@@ -28,29 +12,59 @@
 \begin{gather}
   \ppar{(\grl P)}{y} = \ppar{(\grl Q)}{x} \label{eq:appendix-IF-intcond}
 \end{gather}
-が成り立つとき、あらたに関数$\hat{P}=\grl P,\,\hat{Q}=\grl Q$を用いて
+が成り立つとき、あらたに関数$\hat{P}:=\grl P,\,\hat{Q}:=\grl Q$を用いて
 \begin{gather}
   \hat{P}(x,y) dx + \hat{Q}(x,y) dy = 0 \\
   \ppar{\hat{P}}{y} = \ppar{\hat{Q}}{x}
 \end{gather}
 とできてこれは完全微分方程式である。
-このときの関数$\grl(x,y)$を積分因子(Integrating Factor)という。
-\refeq{eq:appendix-IF-intcond}について変形することで$\grl$の条件を考える。
+このときの関数$\grl(x,y)$を積分因子(Integrating Factor)といい、
+積分因子を導入して解を得る方法を積分因子法という。
+積分因子法は\refeq{eq:appendix-IF-intcond}について変形した$\grl(x,y)$に関する次の条件を満たせば
+よいので、一階非線形常微分方程式においても用いられることがある。
 \begin{gather}
   \ppar{\grl}{y}P + \ppar{P}{y}\grl = \ppar{\grl}{x}Q + \ppar{Q}{x}\grl
 \end{gather}
-ここで、$\grl=\grl(x)$であるような特殊な場合を仮定すれば
+ここで、$\grl=\grl(x)$である、すなわち\dm{\ppar{\grl}{y}=0}
+であるような特殊な場合を仮定すれば
 この$\grl(x,y)$についての偏微分方程式は$\grl(x)$についての常微分方程式
 \begin{gather}
-  \grl\Bigl(\ppar{P}{y} - \ppar{Q}{x}\Bigr) = \frac{d\grl}{dx}Q \\
+  \grl\biggl(\ppar{P}{y} - \ppar{Q}{x}\biggr) = \frac{d\grl}{dx}Q \\
   \Leftrightarrow
-  \frac{1}{\grl}\frac{d\grl}{dx} = \frac{1}{Q(x,y)}\Bigl(\ppar{P}{y} - \ppar{Q}{x}\Bigr)
+  \frac{1}{\grl}\frac{d\grl}{dx} = \frac{1}{Q(x,y)}\biggl(\ppar{P}{y} - \ppar{Q}{x}\biggr)
 \end{gather}
-となる。
-左辺は$y$に依存しない（$x$のみの式である）ので右辺\dm{\frac{1}{Q}(P_{y} - Q_{x})}
-も$y$に依存しない式となれば積分因子$\grl$は$x$の関数$\grl(x)$としてよいということになる。
+となる（変数分離型）。
+左辺は$y$に依存しない（$x$のみの式である）ので
+右辺\dm{\frac{1}{Q}(P_{y} - Q_{x})}
+も$y$に依存しない式となれば積分因子$\grl(x,y)$は$x$の関数$\grl(x)$としてよいということになる。
 
-あるいは微分方程式を次のような一階線形常微分方程式に変形することを考える。
+同様にして
+\begin{gather*}
+  \grl\biggl(\ppar{P}{y}-\ppar{Q}{x}\biggr)=-P\frac{d\grl}{dy} \\
+  \Leftrightarrow
+  \frac{1}{\grl}\frac{d\grl}{dy} = -\frac{1}{P(x,y)}\biggl(\ppar{P}{y}-\ppar{Q}{x}\biggr)
+\end{gather*}
+より、
+右辺\dm{-\frac{1}{P}(P_{y} - Q_{x})}
+が$x$に依存しない式となれば
+これも変数分離型の常微分方程式であって、
+積分因子$\grl(x,y)$は$y$の関数$\grl(y)$としてよいということになる。
+
+一般に次のような公式が知られている。
+\begin{spacing}{1.95}
+  \begin{enumerate}[label=\textbf{\arabic*.}\hspace*{3pt}]
+    \item \dm{ \frac{1}{Q(x,y)}\biggl(\ppar{P(x,y)}{y} - \ppar{Q(x,y)}{x}\biggr)}が$x$の関数 \\
+    $\qquad\disp\Longrightarrow \grl(x) := \exp \left[ \int\frac{1}{Q}\biggl(\ppar{P}{y} - \ppar{Q}{x}\biggr)dx\right]$
+    \item \dm{-\frac{1}{P(x,y)}\biggl(\ppar{P(x,y)}{y} - \ppar{Q(x,y)}{x}\biggr)}が$y$の関数 \\
+    $\qquad\disp\Longrightarrow \grl(y) := \exp \left[-\int\frac{1}{P}\biggl(\ppar{P}{y} - \ppar{Q}{x}\biggr)dy\right]$
+    \item \dm{\frac{P(x,y)}{y}}と\dm{\frac{Q(x,y)}{x}}が$xy$の関数 \\
+    $\qquad\disp\Longrightarrow \grl(x,y) := \frac{1}{xP(x,y) - yQ(x,y)}$
+  \end{enumerate}
+\end{spacing}
+
+% あるいは微分方程式を次のような一階線形常微分方程式に変形可能な場合を考える。
+一般に積分因子は$x,\,y$の関数で簡単には求められないが、一階線形常微分方程式では
+次のようにして積分因子を求められる。
 \begin{gather}
   \frac{dy}{dx} + P(x)y = Q(x) \label{eq:appendix-IF-linearODE}
 \end{gather}
@@ -70,9 +84,9 @@ $\grl(x)$として次のように求める。
 \begin{gather}
   \grl(x)\left\{ \frac{dy}{dx} + P(x)y \right\} = \frac{d}{dx}(\grl(x)y) \label{eq:appendix-IF-LHScond}
 \end{gather}
-を満たすので、積分因子を\refeq{eq:appendix-IF-linearODE-intcond}によって計算して、
+を満たすので、積分因子を\refeq{eq:appendix-IF-linearODE-intcond}によって計算した上で、
 \begin{gather}
-  \frac{d}{dx}(\grl(x)y) = \grl(x)Q(x)
+  \frac{d}{dx}\bigl(\grl(x)y\bigr) = \grl(x)Q(x)
 \end{gather}
 を解けば良い。一応簡単に証明しておく。
 
@@ -112,11 +126,9 @@ $\grl(x)$として次のように求める。
 \refeq{eq:appendix-IF-howtogrl}によって積分因子が得られれば、
 \eqref{eq:appendix-IF-LODEgrl},\,\refeq{eq:appendix-IF-LHScond}より
 \begin{gather}
-  \frac{d}{dx}(\grl(x)y) = \grl(x)Q(x)
+  \frac{d}{dx}\bigl(\grl(x)y\bigr) = \grl(x)Q(x)
 \end{gather}
 として、この微分方程式を解けば得られる。
-
-積分因子法は二階以上の線形微分方程式でも用いられる。
 
 以上の議論は$x$と$y$について対称性があるので、
 入れ替えた形で積分因子を$\grl(y)$のように仮定することもある。

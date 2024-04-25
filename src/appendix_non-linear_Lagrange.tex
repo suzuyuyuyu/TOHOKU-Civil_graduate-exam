@@ -1,0 +1,61 @@
+\section{ラグランジュ（Lagrange）の微分方程式}
+次の形
+\begin{gather}
+  y = x f\Bigl(\frac{dy}{dx}\Bigr) + g\Bigl(\frac{dy}{dx}\Bigr)
+\end{gather}
+で表される一階非線形常微分方程式をラグランジュの微分方程式、
+あるいはダランベールの微分方程式という。
+
+特に$f(x) = x$のとき、この微分方程式は
+\begin{gather}
+  y = x \frac{dy}{dx} + g\Bigl(\frac{dy}{dx}\Bigr)
+\end{gather}
+と表されて、この微分方程式を特にクレロー（Clairaut）の微分方程式という。
+
+クレローの微分方程式は両辺をさらに$x$で微分して
+\begin{gather}
+  \frac{dy}{dx} = \frac{dy}{dx} + x \frac{d^2y}{dx^2} + \frac{dg(y')}{dx} \\
+  0 = xy'' + \frac{dg(y')}{dy'} y'' \\
+  y''\left(x + \frac{dg(y')}{dy'}\right) = 0
+\end{gather}
+ゆえに、
+\begin{gather}
+  y'' = 0 \quad\text{または}\quad x + \frac{dg(y')}{dy'} = 0
+\end{gather}
+として解く。
+前者は単に任意定数$C$を用いて
+\begin{gather}
+  \frac{dy}{dx} = C
+\end{gather}
+とできるので与えられた微分方程式より、
+\begin{gather}
+  y = Cx + g(C)
+\end{gather}
+として解を得る。これは1つの任意定数を持つので一般解である。
+
+一方で後者は
+\begin{gather}
+  \begin{dcases*}
+    x + \frac{dg(y')}{dy'} = 0 \\
+    y = xy' + g(y')
+  \end{dcases*}
+\end{gather}
+から連立させて$y'$を消去すれば任意定数を含まない解$y$を得る。
+この解を特異解という。
+
+ラグランジュの微分方程式も同様にまず両辺を$x$で微分して
+\begin{gather}
+  y' = f(y') + xy''\frac{df(y')}{dy'} + \frac{dg(y')}{dy'}y''
+\end{gather}
+ここで、$y' = p$とおけばこの微分方程式は
+\begin{gather}
+  p = f(p) + xp' f'(p) + p'g'(p) \\
+  p = f(p) + \frac{dp}{dx} \bigl(xf'(p) + g'(p)\bigr) \\
+  p - f(p) = \frac{dp}{dx} \bigl(xf'(p) + g'(p)\bigr) \\
+  \frac{dx}{dp} = \frac{xf'(p)}{p - f(p)} + \frac{g'(p)}{p - f(p)} \\
+  \frac{dx}{dp} + \frac{f'(p)}{f(p) - p} x + \frac{g'(p)}{f(p) - p} = 0
+\end{gather}
+と変形できるので、これは一階線形微分方程式に帰着する。
+このとき、$f(p) - p \not\equiv 0$を使っているので、% [?] 一瞬でも0になる場合は？
+関数$f$が$f(x) = x$となるような条件では
+異なるもの（クレローの微分方程式）として異なる解法をとることも自然である。

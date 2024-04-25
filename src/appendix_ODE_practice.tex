@@ -1,0 +1,43 @@
+\section{常微分方程式 例題}
+\begin{practice*}
+  \dm{x^2y'' + xy' + y = \log x}
+\end{practice*}
+\begin{ans*}
+  \dm{x = e^t}とおくと
+  \begin{gather}
+    \frac{dy}{dx} = \frac{dy}{dt}\frac{dt}{dx} = \frac{1}{x}\frac{dy}{dt} \\
+    \frac{d^2y}{dx^2}
+    = -\frac{1}{x^2}\frac{dy}{dt} + \frac{1}{x}\frac{dt}{dx}\frac{d^2y}{dt^2}
+    = \frac{1}{x^2}\biggl(\frac{d^2y}{dt^2} - \frac{dy}{dt}\biggr)
+  \end{gather}
+  であるので、
+  \begin{gather}
+    x^2\frac{d^2y}{dx^2} = \frac{d^2y}{dt^2} - \frac{dy}{dt} \\
+    x\frac{dy}{dx} = \frac{dy}{dt}
+  \end{gather}
+  を代入して与式は
+  \begin{gather}
+    \frac{d^2y}{dt^2} - \frac{dy}{dt} + \frac{dy}{dt} + y = t \\
+    \frac{d^2y}{dt^2} + y = t
+  \end{gather}
+  この斉次形の解は$y = C_{1}e^{it} + C_{2}e^{-it} = A\cos t + B\sin t$である。
+  ここに、特解$y=at+b$を仮定すると$a=1,\,b=0$であるので求める解は
+  \begin{gather}
+    y = A\cos t + B\sin t + t
+  \end{gather}
+  変数変換$t = \log x$より$A,\,B$を任意定数として
+  \begin{gather}
+    y = A\cos(\log x) + B\sin(\log x) + \log x
+  \end{gather}
+\end{ans*}
+
+\begin{practice*}
+  \dm{x^2y'' - 3xy' + 4y = x^2\log x}
+  \begin{ans*}
+
+  \end{ans*}
+\end{practice*}
+
+\begin{practice*}
+  \dm{y'' + 2y' + y = e^{x}\log x}
+\end{practice*}

@@ -1,20 +1,58 @@
 \newpage
 \section{微分方程式の解法}
-常微分方程式の解法についていくつか紹介する。
-\begin{enumerate}[label=\arabic*.]
-  \item 一階の場合
-  \begin{enumerate}[label=\roman*.]
-    \item 変数分離
-    \item 同次形
-    \item ベルヌーイ形の微分方程式
-    \item 完全微分方程式と積分因子法
+常微分方程式は分類ができ、それぞれ次のような解法がとられる。
+\begin{enumerate}[label=\Alph*.]
+  \item 非線形
+  \begin{enumerate}[label=\arabic*.]
+    \item 一階
+    \begin{enumerate}[label=\bullet]
+      \item 変数分離法
+      \item 同次形 \dm{y' = f\Bigl(\frac{y}{x}\Bigr)}
+      \item \textbf{ベルヌーイ（Bernoulli）の微分方程式} \dm{p(x)y' + q(x)y = r(x)y^n}
+      \item \textbf{完全微分方程式} \dm{P(x,y)dx + Q(x,y)dy = 0}
+      \item \textbf{積分因子法} \dm{\grl(x,y)}
+      \item \textbf{ラグランジュ（Lagrange）・ダランベール（d'Alembert）の微分方程式} \dm{y = xf(y') + g(y')}
+    \end{enumerate}
+    \item 二階以上
+    \begin{enumerate}[label=\bullet]
+      \item 階数低下法（階数低減法）
+    \end{enumerate}
   \end{enumerate}
-  \item 二階の場合
-  \begin{enumerate}[label=\roman*.]
-    \item 斉次形にして階数低減法や特性方程式（補助方程式）を用いて一般解を求める。
-    \item 非斉次形の特解を未定係数法や定数変化法によって求めて
-    足し合わせる。
+  \vskip1\baselineskip
+
+  \item 線形 \dm{y^{(n)} + p_{n-1}(x)y^{(n-1)} + \cdots + p_{0}(x)y = q(x)}
+  \begin{enumerate}[label=\arabic*.]
+    \item 一階 \dm{y' + p(x)y = q(x)}
+    \begin{enumerate}[label=\roman*.]
+      \item 斉次 \dm{y' + p(x)y = 0}
+      \begin{enumerate}[label=\bullet]
+        \item 変数分離法
+      \end{enumerate}
+      \item 非斉次
+      \begin{enumerate}[label=\bullet]
+        \item \textbf{積分因子法} \dm{\grl(x),\,\grl(y)}
+        \item \textbf{定数変化法}
+      \end{enumerate}
+    \end{enumerate}
+    \item 二階以上（非定数係数）
+    \begin{enumerate}[label=\bullet]
+      \item \textbf{オイラー（Euler）の微分方程式} \dm{x^ny^{(n)} + a_{1}x^{n-1}y^{(n-1)} + \cdots + a_{n}y = f(x)}
+      % \item スツルム・リウヴィル（Sturm-Liouville）の微分方程式
+    \end{enumerate}
+    \item 二階以上（定数係数）
+    \begin{enumerate}[label=\roman*.]
+      \item 斉次
+      \begin{enumerate}[label=\bullet]
+        \item 特性方程式（補助方程式）
+        \item 微分演算子法
+      \end{enumerate}
+      \item 非斉次
+      \begin{enumerate}[label=\bullet]
+        \item 特性方程式、未定係数法
+        \item 特性方程式、定数変化法
+      \end{enumerate}
+    \end{enumerate}
   \end{enumerate}
 \end{enumerate}
 
-うち、完全微分方程式と積分因子法、未定係数法、定数変化法について述べる。
+太字部分について以下まとめる。
