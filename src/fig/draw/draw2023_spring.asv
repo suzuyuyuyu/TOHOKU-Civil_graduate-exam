@@ -1,7 +1,7 @@
 %%
 % 2023春
 clear; clc;
-n = 150;
+n = 70;
 
 colors = [
     "#0072BD";
@@ -24,59 +24,16 @@ k1 = 50; k2 = 50; k3 = 50;
 
 a = 0; b = 2;
 
-span = floor((n+1)/length(colors));
-disp(span);
-% 1だけ多い区間数
-surp_size = n+1 - span*length(colors);
-disp(surp_size);
+span = floor(n/length(colors));
+surp_size = n - span*length(colors);
 color_index = 1;
 
-% 一区間の長さ
-span = span + 1;
-% カウンター
-counter = 1;
-surplus_counter = 0;
-disp('start');
-
-hold on;
-xc = linspace(0, 1, 150);
-yc = sqrt(xc - xc.^2);
-% xl = linspace(1, 0, 100);
-% yl = 0 * ones(100);
-z = 0 * ones(100);
-% plot3(xc, yc, z, 'Color', '#0072DB', 'LineWidth', 0.05);
-% plot3(xl, yl, z, 'Color', '#0072DB', 'LineWidth', 0.05);
-
-f = fill([xc],[yc],[0.0 0.445 0.85]);
-alpha(f, 0.3)
-
-x = linspace(0, 1, 100);
-y = sqrt(x - x.^2);
-z = 2 * sqrt(x);
-plot3(x, y, z, 'Color', '#909090')
-
-hold off;
-
 for i = 1:(n+1)
-    % 一周期終わったらcounterをリセット・1だけ多い区間のカウントを増やす
-    if counter > span
-        counter = 1;
-        if surplus_counter ~= -1
-            surplus_counter = surplus_counter + 1;
-        end
-        color_index = color_index + 1;
-        % disp('chipi chapa');
-    end
-    % ちょっと多い区間を終える
-    if surplus_counter == surp_size
-        span = span - 1;
-        surplus_counter = -1;
-        % disp('-')
-    end
+    counter = 0;
+    surplus_counter = 0;
 
     scolor = colors(color_index);
-
-    z = (b-a) / (n) * (i-1) + a;
+    z = (b-a) / (n) * (i-1);
     hold on;
     x1 = z^2/4 * ones(k1);
     x2 = linspace(z^2/4, 1, k2);
@@ -87,13 +44,10 @@ for i = 1:(n+1)
     z1 = z * ones(k1);
     z2 = z * ones(k2);
     z3 = z * ones(k3);
-    plot3(x1, y1, z1, 'Color',scolor);
-    plot3(x2, y2, z2, 'Color',scolor);
-    plot3(x3, y3, z3, 'Color',scolor);
+    plot3(x1, y1, z1, scolor);
+    plot3(x2, y2, z2, scolor);
+    plot3(x3, y3, z3, scolor);
     hold off
-
-    % disp([color_index counter]);
-    counter = counter + 1;
 end
 hold on;
 plot3([-10, 10], [0,0], [0,0], 'k');

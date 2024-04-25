@@ -92,21 +92,6 @@ for i = 1:n+1
     % disp([color_index counter]);
     counter = counter + 1;
 end
-% 外側
-% for i = 0:floor(n/5)
-%     hold on;
-%     xout2 = 0 * ones(k2);
-%     yout2 = linspace(0, 1-z, k2);
-%     zout2 = z * ones(k2);
-%     plot3(xout2, yout2, zout2, 'Color',[0.5 0.5 0.5]);
-%     xout3 = linspace(0,1-z, k3);
-%     yout3 = 0 * ones(k3);
-%     zout3 = z * ones(k3);
-%     plot3(xout3,yout3,zout3, 'Color',[0.5 0.5 0.5])
-%     hold off;
-% end
-
-
 
 hold on;
 plot3([-10, 10], [0,0], [0,0], 'k');
@@ -124,4 +109,5 @@ zlabel('Z');
 xlim([-0.5, 1.5]);
 ylim([-0.5, 1.5]);
 zlim([-0.5, 1.5]);
+disp('draw');
 %%
