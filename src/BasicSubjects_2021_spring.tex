@@ -143,15 +143,23 @@
 \begin{ans*}
   ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item 略 % pic
-    \item 与えられた領域$D$は$xy$平面を底面として
-    球面までを高さとする立体であるので、\\
+    \item % pic ok
+    ${}$
+    \begin{figure}[H]\centering
+      \includegraphics[width=.6\linewidth]{./src/fig/Basic/B_2021_spring_D.png}
+    \end{figure}
+
+    \item
+    % % 別解です。
+    % 積分領域$D$の$z$軸に垂直な面での切断面は以下のようになる。
+    % \begin{figure}[H]\centering
+    %   \includegraphics[width=.5\linewidth]{./src/fig/Basic/B_2021_spring_Dprime.png}
+    % \end{figure}
+    % この面を$z\in[0,1]$で積分すれば良い。
+    与えられた領域$D$は$xy$平面を底面として
+    球面までを高さとする立体であるので、
     積分領域\dm{D'=\Dset{(x,y)\relmiddle \biggl(x-\frac{1}{2}\biggr)^2+y^2\leq \frac{1}{4}}}において
     \dm{z = \sqrt{1-x^2-y^2}}を積分すれば良い。
-    \begin{figure}[H]\centering
-      \includegraphics[width=.5\linewidth]{./src/fig/Basic/B_2021_spring_Dprime.png}
-    \end{figure}
-    % [] 積分領域 もう少し書く？
     求める体積$V$は
     \begin{align}
       V
@@ -254,7 +262,7 @@
       \end{gather}
       \item $\grl = \grl_2$のとき、
       \begin{gather}
-        \bA = \Bmat{
+        \bA = \bmat{
           \disp \frac{3}{2} & \disp\frac{\sqrt{3}}{2} \\
           & \\
           \disp \frac{\sqrt{3}}{2} & \disp \frac{1}{2}
@@ -307,10 +315,7 @@
   \end{enumerate}
 }
 
-必要条件ではなく（必要）十分条件を問われているものと解釈しました。
-必要条件なら適当に「$\ba\in\bbR^3$である」でもよい気がします。
-
-また、(3)は$\gra,\,\beta,\,\grg$ではなく$\xi,\,\eta,\,\grk$の
+(3)は$\gra,\,\beta,\,\grg$ではなく$\xi,\,\eta,\,\grk$の
 条件を問われているものと解釈しました。
 
 \begin{ans*}

@@ -1,0 +1,66 @@
+\section{2016秋}
+\subsection{微分積分}
+\prob{
+  以下の問いに答えなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item $g(x)=x\sin x$とする。このとき、$g(x)>0$を満たす$x$において$f(x)=\log_{e}g(x)$を微分しなさい。
+    \item $f(x,y) = \exp(x\cos y)$について、\dm{\ppar{f}{x},\,\ppar{f}{y},\,\ppar{^2f}{x\partial y}}を求めなさい。
+  \end{enumerate}
+}
+
+\prob{
+  以下の式を全て満足する2次関数$f(x)$を求めなさい。
+  \begin{gather}
+    \int_{-1}^{1}f(x)\,dx = 1,\quad
+    \int_{-1}^{1}xf(x)\,dx = 0,\quad
+    \int_{-1}^{1}x^2f(x)\,dx = 1.
+  \end{gather}
+}
+
+\prob{
+  以下の微分方程式の一般解を求めなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item \dm{\frac{dy}{dx} = (1-y^2)\tan x}
+    \item \dm{\frac{dy}{dx} + 2y\tan x = \sin x}
+  \end{enumerate}
+}
+
+\newpage
+\subsection{線形代数}
+\prob{
+  行列$\bC$とその逆$\bC^{-1}$について、次の関係を証明しなさい。
+  \begin{gather}
+    \det\bigl(\bC^{-1}\bigr) = \bigl(\det\bC\bigr)^{-1}
+  \end{gather}
+}
+
+\prob{
+  実数$\gra$に依存する次の行列の階数を求めなさい。
+  \begin{gather}
+    \bA = \bmat{
+      5-\gra & 4 & -2 \\
+      4 & 5-\gra & -2 \\
+      -2 & -2 & 3-2\gra
+    }
+  \end{gather}
+}
+
+\prob{
+  行列$\bA$の固有値と対応する固有ベクトルを、それぞれ$\grl$と$\bn$で表す。すなわち、
+  \begin{gather}
+    \bA\bn = \grl \bn
+  \end{gather}
+  のとき、以下の問いに答えなさい。
+  \begin{enumerate}[label=(\alph*), ref=(\alph*), itemsep=0pt]
+    \item 次の関係を証明しなさい。
+    \begin{gather}
+      \bA^2\bn = \grl^2\bn
+    \end{gather}
+    \item $N$個のスカラー値$C_1,\,C_2,\,\cdots ,\,C_{N}$を用いて、行列$\bP$が
+    \begin{gather}
+      \bP = C_{1}\bA + C_{2}\bA^2 + \cdots + C_{N}\bA^{N}
+    \end{gather}
+    のように与えられるとき、$\bP$の固有値と固有ベクトルを$\grl$と$\bn$を用いて表しなさい。
+  \end{enumerate}
+}
+

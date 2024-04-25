@@ -1,0 +1,320 @@
+\section{2018秋}
+
+\setcounter{yearcounter}{2018}
+
+\subsection{微分積分}
+以下の問いに答えなさい。
+\prob{
+  \vskip.5\baselineskip
+  点$(5,\,0)$から曲線$2y^2 = x^3$まで最短距離を求めよ。
+  \vskip.5\baselineskip
+}
+\begin{ans*}
+  ${}$
+  距離$L$は$2y^2 = x^3$上の点$(x,\,y)$に依存するので$L = L(x,y)$と表せる。
+  このとき
+  \begin{align}
+    L^2
+    &= (x - 5)^2 + y^2 \\
+    &= \frac{x^3}{2} + x^2 - 10x + 25
+  \end{align}
+  であって、定義域は$2y^2 = x^3$より$x\geq 0$である。
+  この最小値を求める。
+  \begin{align}
+    \frac{d}{dx}L^2
+    = \frac{1}{2}(3x^2 + 4x - 20)
+    = \frac{1}{2}(x - 2)(3x + 10)
+  \end{align}
+  より、\dm{\frac{d(L^2)}{dx} = 0\land x\geq 0\Rightarrow x = 2}で
+  $L^2$の増減は下図。
+  \begin{table}[H]
+  \centering
+  \begin{tabular}{c||cccc}
+  \toprule
+    $x$ & 0 & $\cdots$ & 2 & $\cdots$ \\
+  \midrule
+    \dm{\frac{d(L^2)}{dx}} & & $-$ & 0 & $+$ \\[.8em]
+    \dm{L^2} & 25 & \searrow & 13 & \nearrow \\[.3em]
+    \dm{L} &&& $\sqrt{13}$ & \\
+  \bottomrule
+  \end{tabular}\end{table}
+  ゆえに、求める最短距離は$\sqrt{13}$。
+\end{ans*}
+
+\prob{
+  次の積分の値を各領域$D$において求めなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item \dm{D = \Dset{(x,y)\relmiddle 1\leq y\leq 2,\,y\leq x\leq y^3}}
+    \begin{gather}
+      \iint_{D} e^{\frac{x}{y}}\,dxdy
+    \end{gather}
+    \item 領域\dm{D}は$y = \sqrt{x}$と$y = x^3$に囲まれた領域とせよ。
+    \begin{gather}
+      \iint_{D}(4xy - y^3)dxdy
+    \end{gather}
+  \end{enumerate}
+}
+\begin{ans*}
+  ${}$
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item ${}$
+    \begin{align}
+      \iint_D e^{\frac{x}{y}}\,dxdy
+      &= \int_{1}^{2}dy \biggl[ye^\frac{x}{y}\biggr]_{y}^{y^3} \\
+      &= \int_{1}^{2}dy \Bigl(ye^{y^2} - ey\Bigr) \\
+      &= \int_{1}^{2}ye^{y^2} \,dy - e\int_{1}^{2}y\,dy \\
+      &= \frac{1}{2}\biggl[e^{y^2}\biggr]_{1}^{2} - \frac{e}{2}\biggl[y^{2}\biggr]_{1}^{2} \\
+      &= \frac{1}{2}(e^{4} - e) - \frac{3}{2}e \\
+      &= \frac{1}{2}e^{4} - 2e
+    \end{align}
+    \item ${}$
+    \begin{align}
+      \iint_D (4xy - y^3)dxdy
+      &= \int_{0}^{1}\int_{x^3}^{\sqrt{x}}(4xy - y^3)dydx \\
+      &= \int_{0}^{1}dx \biggl[2xy^2 - \frac{1}{4}y^4\biggr]_{x^3}^{\sqrt{x}} \\
+      &= \int_{0}^{1}\Bigl(2x^2 - \frac{x^2}{4} - 2x^7 + \frac{x^{12}}{4}\Bigr) \\
+      &= \biggl[\frac{7}{12}x^3 - \frac{1}{4}x^8 + \frac{1}{56}x^{13}\biggr]_{0}^{1} \\
+      &= \frac{55}{156}
+    \end{align}
+  \end{enumerate}
+\end{ans*}
+
+\prob{
+  次の微分方程式を解きなさい。
+  ただし、$x(0) = x_{0}$および$\dot{x}(0) = u_{0}$とせよ。
+  \begin{gather}
+    \ddot{x} - x = 0
+  \end{gather}
+  ここで、\dm{\dot{x} = \frac{dx}{dt}}および
+  \dm{\ddot{x} = \frac{d^2 x}{dt^2}}である。
+}
+\begin{ans*}
+  補助方程式$\grl^2 - 1 = 0\Leftrightarrow \grl = \pm 1$より、
+  一般解は$A,\,B$を任意定数として\dm{y = Ae^{t} + Be^{-t}}と表せる。
+
+  ここに、初期条件
+  \begin{gather}
+    A + B = x_0,\qquad
+    A - B = u_0
+  \end{gather}
+  を考えれば、初期条件を考慮した一般解は
+  \begin{gather}
+    y = \frac{x_0 + u_0}{2}e^{t} + \frac{x_0 - u_0}{2}e^{-t}
+  \end{gather}
+\end{ans*}
+
+\newpage
+\subsection{線形代数}
+
+\prob{
+  次の行列$\bA$について、以下の問いに答えなさい。
+  \begin{gather}
+    \bA = \bmat{
+      10 & 4 & 0 \\
+      4 & -5 & 0 \\
+      0 & 0 & \beta
+    }
+  \end{gather}
+  ここで、$\beta$は実数である。
+  また、固有値の重複はないものとする。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item 固有値を求めなさい。
+    \item 正規化された固有ベクトルを求めなさい。
+    \item $\bA$が正則のときの条件を答え、逆行列を求めなさい。
+    \item $\bA$が正則でないとき、階数を求めなさい。
+    \item \label{item:2018a-l-1-5}$\bA$の部分行列
+    \begin{gather}
+      \bB = \bmat{
+        10 & 4 \\
+        4 & 5
+      }
+    \end{gather}
+    について、$\bB^2 + p\bB + q\bI = \bzv$が成り立つとき、
+    実数$p$と$q$を求めなさい。
+    ただし、$\bzv$は零行列、$\bI$は単位行列である。
+    \item \ref*{item:2018a-l-1-5}で与えた$\bA$の部分行列$\bB$について、
+    $\bB^n$の1行1列の成分を求めなさい。
+    ただし、$n$は自然数である。
+  \end{enumerate}
+}
+
+\begin{ans*}
+  ${}$ \\
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item 固有方程式\dm{(10-\grl)(-5-\grl)(\beta-\grl) - 16(\beta-\grl)=0}より、
+    固有値$\grl$は
+    \begin{gather}
+      (10-\grl)(-5-\grl)(\beta-\grl) - 16(\beta-\grl)
+      = -(\grl - \beta)(\grl - 11)(\grl + 6) = 0 \\
+      \therefore \grl = \beta,\,11,\,-6
+    \end{gather}
+    \item 固有ベクトルを$\bu$とする。
+    \begin{enumerate}[label=(\roman*), ref=(\roman*), itemsep=0pt]
+      \item $\grl=\beta$のとき、
+      \begin{gather}
+        (\bA - \grl\bE)\bu = \bmat{
+          10-\beta & 4 & 0 \\
+          4 & -5-\beta & 0 \\
+          0 & 0 & 0
+        }\bu = \bzv \\
+        \therefore\bu_1 = \Bmat{
+          0 \\ 0 \\ 1
+        }
+      \end{gather}
+      \item $\grl=11$のとき、
+      \begin{gather}
+        (\bA - \grl\bE)\bu = \bmat{
+          -1 & 4 & 0 \\
+          4 & -16 & 0 \\
+          0 & 0 & \beta-11
+        }\bu = \bzv \\
+        \therefore\bu_2 = \frac{1}{\sqrt{17}}\Bmat{
+          -1 \\ 4 \\ 0
+        }
+      \end{gather}
+      \item $\grl=-6$のとき、
+      \begin{gather}
+        (\bA - \grl\bE)\bu = \bmat{
+          16 & 4 & 0 \\
+          4 & 1 & 0 \\
+          0 & 0 & \beta+6
+        }\bu = \bzv \\
+        \therefore\bu_3 = \frac{1}{\sqrt{17}}\Bmat{
+          -1 \\ 4 \\ 0
+        }
+      \end{gather}
+    \end{enumerate}
+    \item ${}$
+    \begin{align}
+      \bA\text{が正則}
+      &\Leftrightarrow \det\bA \neq 0 \\
+      &\Leftrightarrow -50\beta-16\beta \neq 0 \\
+      &\Leftrightarrow \beta \neq 0
+    \end{align}
+
+    また、$\beta\neq 0$のとき、
+    \begin{align}
+      \left[\begin{array}[]{ccc|ccc}
+        10 & 4 & 0 & 1 & 0 & 0 \\
+        4 & -5 & 0 & 0 & 1 & 0 \\
+        0 & 0 & \beta & 0 & 0 & 1
+      \end{array}\right]
+      &\longrightarrow
+      \left[\begin{array}[]{ccc|ccc}
+        10 & 4 & 0 & 1 & 0 & 0 \\
+        0 & 1 & 0 & 4/66 & -10/66 & 0 \\
+        0 & 0 & 1 & 0 & 0 & 1/\beta
+      \end{array}\right]\\
+      &\longrightarrow
+      \left[\begin{array}[]{ccc|ccc}
+        &&& 5/66 & 4/66 &  0 \\
+        &\bE&& 4/66 & -10/66 & 0 \\
+        &&& 0 & 0 & 1/\beta
+      \end{array}\right]
+    \end{align}
+    ゆえに、$\bA$の逆行列は
+    \begin{gather}
+      \bA^{-1} = \bmat{
+        5/66 & 2/33 &  0 \\
+        2/33 & -5/33 & 0 \\
+        0 & 0 & 1/\beta
+      }
+    \end{gather}
+    \item $\beta = 0$のとき、
+    \begin{align}
+      \bA
+      \longrightarrow\bmat{
+        10 & 4 & 0 \\
+        0 & -33/5 & 0 \\
+        0 & 0 & 0
+      }
+    \end{align}
+    より、$\rank\bA = 2$
+    \item この部分行列$\bB$の固有方程式は\dm{(10-\grl)(-5-\grl) - 16 = \grl^{2} - 5\grl - 66 = 0}
+    であるので、ケーリーハミルトンの定理から % [?] これ以外にないことは言えてる？
+    \begin{gather}
+      \bB^{2} -5\bB - 66\bI = \bzv
+    \end{gather}
+    ゆえに、
+    \begin{gather}
+      p = -5 ,~ q = -66
+    \end{gather}
+    \item $\bB^{n}$は$\bB$についての多項式$Q(\bB)$を用いて、
+    \begin{gather}
+      \bB^{n} = Q(\bB)(\bB^2 - 5\bB - 66) a\bB + b\bI \label{eq:2018a_l_1}
+    \end{gather}
+    と表される。ここに、$x\in\bbR$を用いて
+    \begin{gather}
+      x^{n} = Q(x)(x^2 - 5x - 66) + ax + b
+    \end{gather}
+    と書けるが、$x = 11,\,-6$として
+    \begin{gather}
+      a = \frac{11^{n} - (-6)^{n}}{17} \\
+      b = \frac{6\cdot 11^{n} + 11\cdot(-6)}{17}
+    \end{gather}
+    ゆえに、\refeq{eq:2018autumn_l_1}の$a,\,b$はこのように与えられて、
+    $\bB^n$の1行1列の成分$B^{n}_{\:11}$は
+    \begin{align}
+      B^{n}_{\:11}
+      &= aB_{11} + b \\
+      &= \frac{1}{17} \bigl(16\cdot 11^{n} + (-6)^{n}\bigr)
+    \end{align}
+    \begin{other*}
+      $\bB$は$\grl = -6,\,11$の固有値をもつ。固有ベクトルを$\bp$で表すとき、
+      \begin{enumerate}[label=(\roman*), ref=(\roman*), itemsep=0pt]
+        \item $\grl = -6$のとき、
+        \begin{gather}
+          \bmat{
+            16 & 4 \\
+            4 & 1
+          }\bp = \bzv \\
+          \therefore \bp_1 = \Bmat{
+            1 \\ -4
+          }
+        \end{gather}
+        \item $\grl = 11$のとき、
+        \begin{gather}
+          \bmat{
+            -1 & 4 \\
+            4 & -16
+          }\bp = \bzv \\
+          \therefore \bp_2 = \Bmat{
+            4 \\ 1
+          }
+        \end{gather}
+      \end{enumerate}
+      これらの固有ベクトルを並べた新たな行列$\grL:=[\bp_1,\,\bp_2]$は$\bB$の対角化行列であって、
+      \begin{gather}
+        \grL^{-1}\bB\grL
+        = \bmat{
+          -6 & 0 \\ 0 & 11
+        }
+      \end{gather}
+      と対角化される。
+      これを用いて$\bB^{n}$は
+      \begin{align}
+        \bB^{n}
+        &= \grL \bmat{
+          (-6)^{n} & 0 \\ 0 & 11^{n}
+        }\grL^{-1} \\
+        &= \frac{1}{17}\bmat{
+          (-6)^{n} & 4\cdot 11^{n} \\
+          -4\cdot(-6)^{n} & 11^{n}
+        }\bmat{
+          1 & -4 \\ 4 & 1
+        } \\
+        &= \frac{1}{17} \bmat{
+          (-6)^{n} + 16\cdot 11^{n} &
+          -4\cdot(-6)^{n} + 4\cdot 11^{n} \\
+          -4\cdot(-6)^{n} + 4\cdot 11^{n} &
+          16\cdot(-6)^{n} + 11^{n}
+        }
+      \end{align}
+      よって、$\bB^{n}$の1行1列の成分$B^{n}_{\:11}$は
+      \begin{gather}
+        B^{n}_{\:11}
+        = \frac{1}{17}\bigl(16\cdot 11^{n} + (-6)^{n}\bigr)
+      \end{gather}
+    \end{other*}
+  \end{enumerate}
+\end{ans*}

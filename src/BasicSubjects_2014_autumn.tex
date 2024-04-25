@@ -1,0 +1,100 @@
+\section{2014秋}
+\subsection{微分積分}
+
+\prob{
+  次の極限を求めよ。
+  \begin{gather}
+    \lim_{x\to 0} \frac{\sqrt{4+x} - 2}{x}
+  \end{gather}
+}
+
+\prob{
+  $e^{xy}+y\ln x = \cos 2x$のとき、\dm{\frac{dy}{dx}}を求めよ。
+  ただし、$\ln$は自然対数を表し、$e$はその底である。
+}
+
+\prob{
+  次の不定積分と定積分を求めよ。
+  \begin{enumerate}[label=(\alph*), ref=(\alph*), itemsep=5pt]
+    \item $\disp \int (x+2)\sin(x^2+4x-6)\,dx$
+    \item $\disp \int_{e}^{e^2} \frac{1}{x(\ln x)^{3}}$（ただし、$\ln$は自然対数を表し、$e$はその底である。）
+  \end{enumerate}
+}
+
+\prob{
+  微分方程式
+  \begin{gather}
+    \frac{dy}{dx} = (y-1)y
+  \end{gather}
+  を初期条件
+  \begin{gather}
+    y(0) = \frac{1}{2}
+  \end{gather}
+  のもとで解き、$y(t)$の概形を描け。
+}
+
+\prob{
+  次の連立微分方程式を解け。
+  \begin{gather}
+    \begin{dcases*}
+      \frac{dx}{dt} - 3\frac{dy}{dt} + 2y = 0 \\
+      \frac{dx}{dt} + 4x - 5\frac{dy}{dt} = 0
+    \end{dcases*}
+  \end{gather}
+}
+
+
+\newpage
+\subsection{線形代数}
+正方行列$\bA = \bmat{\disp\frac{34}{25} & \disp-\frac{12}{25} \\[10pt]  \disp-\frac{12}{25} & \disp\frac{41}{25}}$
+について以下の問いに答えよ。
+
+\prob{
+  $\bA$の固有値$\grl_1,\,\grl_2~(\grl_1\geq\grl_2)$と、それらに対する単位長さの固有ベクトル\\
+  $\bn_1 = \Bmat{n_{1x} \\ n_{1y}},\,\bn_2 = \Bmat{n_{2x} \\ n_{2y}},$を求めよ。
+}
+
+\prob{
+  次の$\bA$の多項式を計算せよ。
+    \begin{gather}
+      f(\bA) = \bA^6 - 4\bA^5 + 5\bA^4 - 2\bA^3 + \bA^2 - 2\bA + 2\bI
+    \end{gather}
+  ただし、$\disp \bI = \bmat{1 & 0 \\ 0 & 1}$である。
+}
+
+\prob{
+  次式を満たす平面上の点$\bP = \Bmat{x \\ y}$の集合は楕円である。
+  $x$-軸を水平方向に、$y$-軸を鉛直方向に取った座標系を設定してその楕円を描け。
+  楕円の長軸および短軸の長さ、それらの水平方向からの角度あるいは傾きを図中に示すこと。
+  \begin{gather}
+    \Bmat{x&y}\bmat{
+      34 & -12 \\
+      -12 & 41
+    }\Bmat{x \\ y} = 25
+  \end{gather}
+}
+
+\prob{
+  互いに直交する単位長さの3次元ベクトル
+  \begin{gather}
+    \bbm = \Bmat{
+      \disp \frac{n_{1x}}{\sqrt{2}} \\[10pt]
+      \disp \frac{1}{\sqrt{2}} \\[10pt]
+      \disp \frac{n_{1y}}{\sqrt{2}}
+    }
+  \end{gather}
+  が張る平面を考える。
+  ここに、$\bn_{1x},\,\bn_{1y},\,\bn_{2x},\,\bn_{2y}$はそれぞれ$\bA$の固有ベクトル
+  $\disp \bn_{1} = \Bmat{\bn_{1x}\\\bn_{1y}}$と
+  $\disp \bn_{2} = \Bmat{\bn_{2x}\\\bn_{2y}}$の成分である。
+  いま、与えられた3次元ベクトル$\disp \bp = \Bmat{10 \\ 3 \\ -3}$を
+  この平面上のベクトル$\bp = \gra\bbm_{1} + \beta\bbm_{2}$で近似するとき、
+  内積で測った誤差ノルム
+  \begin{gather}
+    e^2 = \|\bp - \bar{\bp}\|^2 = (\bp - \bar{\bp})^{\top}(\bp - \bar{\bp})\label{aaaaaa}
+  \end{gather}
+  を最小にする係数$\gra$と$\beta$の値を求めよ。
+}
+
+
+

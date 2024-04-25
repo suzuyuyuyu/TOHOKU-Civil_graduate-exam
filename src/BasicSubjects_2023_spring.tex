@@ -72,7 +72,7 @@
         &= r\cos\theta(\sin\theta \,dr + r\cos\theta\,d\theta) \\
         &\hspace*{30pt} - r\sin\theta(\cos\theta\,dr - r\sin\theta\,d\theta)
       \end{split}\\
-      &= r^2\cos^2\theta\,d\theta + r^2\sin\theta\,d\theta = r^2\,d\theta
+      &= r^2\cos^2\theta\,d\theta + r^2\sin^2\theta\,d\theta = r^2\,d\theta
     \end{align}
   \end{enumerate}
 \end{ans*}
@@ -93,13 +93,18 @@
 \begin{ans*}
   ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item 略 % pic
+    \item % pic ok
+    ${}$
+    \begin{figure}[H]\centering
+      \includegraphics[width=.6\linewidth]{./src/fig/Basic/B_2023_spring_D_02.png}
+    \end{figure}
+
     \item \dm{
       C = \Dset{(x,y)\relmiddle \left(x-\frac{1}{2}\right)^2 + y^2 \leq \left(\frac{1}{2}\right)^2}
       }として、
-    求める体積$V_{\rm{D}}$は
+    求める体積$V_{D}$は
     \begin{align}
-      V_{\rm{D}}
+      V_{D}
       &= \iint_C z\,dxdy \\
       &= \iint_C 2\sqrt{x}\,dxdy \\
       &= \int_{0}^{1}\int_{0}^{\sqrt{x-x^2}} 2\sqrt{x}\,dydx \\
@@ -302,13 +307,14 @@
         }
         =\bm{0}
       \end{gather}
-      よって、固有ベクトルは
+      よって
       \begin{gather}
         \bu =
         \Bmat{
           1 \\ 0 \\ -1
         }
       \end{gather}
+      は固有ベクトルである。
       \item $\grl = 2$のとき
       \begin{gather}
         (\grl\bE - \bA)\bu = \bm{0} \\
@@ -322,13 +328,14 @@
         }
         =\bm{0}
       \end{gather}
-      よって、固有ベクトルは
+      よって
       \begin{gather}
         \bu =
         \Bmat{
           2 \\ 0 \\ 1
         }
       \end{gather}
+      は固有ベクトルである。
     \end{enumerate}
     \item 固有方程式の解のうち重解$\grl = 2$において固有ベクトルが1つなので対角化可能でない。
   \end{enumerate}

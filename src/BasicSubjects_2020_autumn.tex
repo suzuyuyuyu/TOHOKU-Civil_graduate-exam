@@ -42,7 +42,7 @@
     \item \dm{t = \tan \frac{x}{2}}とおくことで
     \begin{align}
       \int_{0}^{\pi/2} \frac{dx}{(1+\cos x)^2}
-      &= \int_{0}^{1}\frac{2}{\biggl\{ 1+\biggl(\cfrac{1-t^2}{1+t^2}\biggr) \biggr\}^2}(1+t^2)\,dt \\
+      &= \int_{0}^{1}\frac{1}{\biggl\{ 1+\biggl(\cfrac{1-t^2}{1+t^2}\biggr) \biggr\}^2}\frac{2}{(1+t^2)}\,dt \\
       &= \int_{0}^{1}\frac{1}{2}(1+t^2)\,dt \\
       &= \frac{2}{3}
     \end{align}
@@ -81,31 +81,31 @@
     であるので、\refeq{eq:2020_autumn_diffintG}と\refeq{eq:2020_autumn_intG}の差をとって
     \begin{gather}
       G(t) - 2G'(t) - 2 = 0 \\
-      2G'(t) - G(t) = -2 \label{eq:2020_autumn_GODE}
+      2G'(t) - G(t) = 2 \\
+      2G'(t) = G(t) + 2 \label{eq:2020_autumn_GODE}
     \end{gather}
     となり、この微分方程式を\dm{G(0)=1,\,G'(0)=\frac{1}{2}}を
     初期条件として解けば良い。
 
-    斉次形\dm{2G'(t)-G(t) = 0}は\dm{G(t)\neq 0}のとき
+    \dm{G(t)-2\neq 0}のとき、
     \begin{gather}
-      \frac{G'(t)}{G(t)} = \frac{1}{2} \\
-      \log |G(t)| = \frac{1}{2}t + C
+      \frac{G'(t)}{G(t)+2} = \frac{1}{2} \\
+      \log |G(t)+2| = \frac{1}{2}t + C
     \end{gather}
     であるので、任意定数$A$を用いて一般解が
     \begin{gather}
-      G(t) = Ae^\frac{t}{2}
+      G(t) + 2 = Ae^\frac{t}{2}
     \end{gather}
-    と得られる。\dm{G(t)=0}は\dm{A=0}のときである。
-    よって、非斉次形の一般解は特解$G_{\rm{p}}=k$を仮定すれば
-    \refeq{eq:2020_autumn_GODE}より$k=2$であるので一般解は
+    と得られる。\dm{G(t)+2=0}は\dm{A=0}のときである。
+    よって一般解は
     \begin{gather}
-      G(t) = Ae^\frac{t}{2} + 2
+      G(t) = Ae^\frac{t}{2} - 2
     \end{gather}
     である。
     ここに、初期条件\dm{G(0)=1}より任意定数は$A=-1$と決まり
     求める関数\dm{G(t)}は
     \begin{gather}
-      G(t) = -e^{\frac{t}{2}} + 2
+      G(t) = -e^{\frac{t}{2}} - 2
     \end{gather}
     である。（これは\dm{G'(0)=-\frac{1}{2}}を満たす。）
   \end{enumerate}
@@ -270,7 +270,7 @@
       \therefore \grl = 4,\, 1\:(=:\grl_1,\,\grl_2)
     \end{gather}
     \begin{enumerate}[label=(\roman*)]
-      \item $\grl=\grl_1$のとき固有ベクトル$\bu_1(=\{u,\:v\}^\top)$は
+      \item $\grl=\grl_1$のとき固有ベクトル$\bu_1$は
       \begin{gather}
         \bmat{
           \disp -\frac{3}{2} & \disp -\frac{3}{2} \\

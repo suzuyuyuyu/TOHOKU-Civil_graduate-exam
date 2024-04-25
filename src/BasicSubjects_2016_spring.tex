@@ -1,0 +1,63 @@
+\section{2016春}
+
+\subsection{微分積分}
+\prob{
+  以下の微分に関する問いに答えなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item $f(x) = \sin(x\cos x)$を微分しなさい。
+    \item $f(x,y) = \sin(x\cos y)$について、\dm{\ppar{f}{x}}および\dm{\ppar{f}{y}}を求めなさい。
+  \end{enumerate}
+}
+
+\prob{
+  以下の方程式で与えられる楕円体について、次の問いに答えなさい。
+  \begin{gather}
+    \frac{x^2}{a^2} + \frac{y^2}{b^2} + \frac{z^2}{c^2} \leq 1,\quad a>0,\,b>0,\,c>0,\,
+  \end{gather}
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=0pt]
+    \item $x=\gra$のときの断面積が\dm{\pi bc \Bigl(1-\frac{\gra^2}{a^2}\Bigr)}であることを示しなさい。
+    \item 楕円体の体積を求めなさい。
+  \end{enumerate}
+}
+
+\prob{
+  下記の微分方程式の一般解を求めなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item \dm{x\frac{dy}{dx}=y+\sqrt{x^2+y^2}}
+    \item \dm{\frac{dy}{dx}=\frac{2x-3y+4}{3x-2y+1}}
+  \end{enumerate}
+}
+
+\newpage
+\subsection{線形代数}
+\prob{
+  正方行列$\disp \bA=\bmat{\disp \frac{17}{4} & \disp-\frac{3\sqrt{3}}{4} \\ \\ \disp-\frac{3\sqrt{3}}{4} & \disp\frac{11}{4}}$
+  について以下の問いに答えよ。
+  \begin{enumerate}[label=\alph*), ref=\alph*), itemsep=5pt]
+    \item $\bA$の固有値$\grl_{1},\,\grl_{2}~(\grl_{1}\geq \grl_{2})$と、
+    それら固有値に対する単位長さの固有ベクトル\\[3pt]
+    \dm{\bn_{1}=\Bmat{n_{1x}\\ n_{1y}},\,\bn_{2}=\Bmat{n_{2x}\\n_{2y}}}を求めよ。
+    \item 次の多項式を計算せよ。
+    \begin{gather}
+      f(\bA) = \bA^7 - 5\bA^6 + 3\bA^5 - 24\bA^4 + 47\bA^3 - 29\bA^2 + 89\bA + 40\bI
+    \end{gather}
+    ただし、\dm{\bI = \bmat{1 & 0 \\ 0 & 1}}である。
+  \end{enumerate}
+}
+
+\prob{
+  \dm{
+    \bB = \bmat{
+      1 & 2 & 3 & -4 \\
+      -2 & 1 & 1 & -2 \\
+      2 & 1 & 1 & -2 \\
+      s & 4s & 3s & -8s
+    },\,\by = \Bmat{
+      p \\ q \\ r \\ 1
+    },\,\bc = \Bmat{
+      \gra \\ \beta \\ 1 \\ \frac{1}{s}
+    }
+  }とする。 \\
+  \dm{\bB^{\top}\by = \bzv}であるとき、$\bB\bx = \bc$の解$\disp \bx = \Bmat{x_{1} \\ x_{2} \\ x_{3} \\ x_{4}}$が存在するための
+  必要条件を$\gra,\,\beta,\,s$を用いて示せ。
+}

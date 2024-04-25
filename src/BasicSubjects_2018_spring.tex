@@ -1,0 +1,87 @@
+\section{2018春}
+
+\subsection{微分積分}
+以下の問いに答えなさい。
+\vspace{-.5\baselineskip}
+\prob{
+  次の関数の一階微分$dy/dx$を求めよ。
+  ただし、$a$は定数である。\\
+  また、$\sinh^{-1}$は$\sinh$の逆関数である。
+  さらに$\cosh^2\grt - \sinh^2\grt = 1$とせよ。
+  \begin{gather}
+    y = \sinh^{-1}\Bigl(\frac{x}{a}\Bigr)
+  \end{gather}
+}
+\begin{ans*}
+  ${}$
+  \begin{gather}
+    \sinh x = \frac{e^x - e^{-x}}{2}
+  \end{gather}
+  より
+  \begin{gather}
+    y = \sinh^{-1} \Bigl(\frac{x}{a}\Bigr) = \log\biggl(\frac{x}{a} + \sqrt{\frac{x^2+a^2}{a^2}}\biggr)
+  \end{gather}
+  であるので
+  \begin{align}
+    \frac{dy}{dx}
+    &=
+    \frac{
+      \cfrac{1}{a} + \cfrac{\cfrac{2x}{a^2}}{2\sqrt{\cfrac{x^2+a^2}{a^2}}}
+    }{
+      \cfrac{x}{a} + \sqrt{\cfrac{x^2+a^2}{a^2}}
+    } \\[3pt]
+    &=
+    \frac{
+      1+\cfrac{x}{\pm \sqrt{x^2+a^2}}
+    }{
+      x\pm \sqrt{x^2+a^2}
+    } \\[5pt]
+    &=
+    \frac{\pm x + \sqrt{x^2+a^2}}{(x\pm\sqrt{x^2+a^2})\sqrt{x^2+a^2}} = \pm\frac{1}{\sqrt{x^2+a^2}} \\[7pt]
+    &= \begin{dcases*}
+      \frac{1}{\sqrt{x^2+a^2}} & (if~ $a>0$) \\
+      -\frac{1}{\sqrt{x^2+a^2}} & (if~ $a<0$)
+    \end{dcases*}
+  \end{align}
+\end{ans*}
+\prob{
+  次の関数の積分を極座標系で求めなさい。
+  \begin{gather}
+    f(x,y) = \frac{x}{\sqrt{x^2+y^2}}e^{\sqrt{x^2+y^2}}
+  \end{gather}
+  \begin{enumerate}[label=(\alph*), ref=(\alph*), itemsep=5pt]
+    \item \label{item:2018s-cal-2-a}
+    \dm{\iint_E f(x,y)\,dxdy,\quad E = \Dset{(x,y)\in\bbR^2\colon x^2+(y-1)^2\leq 1}}
+    \item \label{item:2018s-cal-2-b}
+    \dm{\iint_H f(x,y)\,dxdy,\quad H = \Dset{(x,y)\in\bbR^2\colon x^2+(y-1)^2\leq 1,\,0\leq x}}
+  \end{enumerate}
+}
+
+\prob{
+  次の微分方程式の一般解を求めよ。
+  \begin{gather}
+    (2e^{2x}y - 4x)dx + e^{2x}dy = 0
+  \end{gather}
+}
+
+\subsection{線形代数}
+
+\prob{
+  次の行列$\bA$について、以下の問題に答えなさい。
+  ただし、$\gra$はある実数である。
+  \begin{gather}
+    \bA = \frac{1}{5}\bmat{
+      36 & -12 & 0 \\
+      -12 & 29 & 0 \\
+      0 & 0 & 5\gra
+    }
+  \end{gather}
+  \begin{enumerate}[label=(\alph*), ref=(\alph*), itemsep=0pt]
+    \item 行列$\bA$の対角化行列$\bP$と対角化後の行列$\bB$を求めなさい。
+    \item $\bA^n$と$\bB^n$の関係を示しなさい。
+    \item \label{item:2018s-l-1-c}行列$\bB$が逆行列を持つ条件を答え、逆行列$\bB^{-1}$を求めなさい。
+    \item \ref*{item:2018s-l-1-c}の条件のとき、行列$\bA$の逆行列$\bA^{-1}$と$\bB^{-1}$との関係を示しなさい。
+    \item \ref*{item:2018s-l-1-c}の条件が満たされないとき、行列$\bA$の零空間（核）の次元を答えなさい。
+    \item \ref*{item:2018s-l-1-c}の条件が満たされないとき、行列$\bA$の階数（ランク）を答えなさい。
+  \end{enumerate}
+}

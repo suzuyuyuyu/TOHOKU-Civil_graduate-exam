@@ -92,12 +92,17 @@
 \begin{ans*}
   ${}$
   \begin{enumerate}[label=(\arabic*)]
-    \item 略 % pic 図示
+    \item % pic ok
+    ${}$
+    \begin{figure}[H]\centering
+      \includegraphics[width=.6\linewidth]{./src/fig/Basic/B_2022_autumn_D.png}
+    \end{figure}
+
     \item ある座標$(x,y)$における領域の上限は$x^2+y^2=z$上の点であるので、
     高さを$z=x^2 + y^2$、積分領域を\dm{C = \Dset{(x,y)\relmiddle (x-1)^2+y^2 \leq 1}}として
-    求める体積$V_{\rm{D}}$は
+    求める体積$V_{D}$は
     \begin{gather}
-      V_{\rm{D}} = \iint_C z \,dxdy
+      V_{D} = \iint_C z \,dxdy
     \end{gather}
     と求められる。
     まず、この積分領域は極座標系$(r,\theta)$に変換すれば
@@ -109,7 +114,7 @@
     \end{align}
     であるので、
     \begin{align}
-      V_{\rm{D}}
+      V_{D}
       &= \int_{0}^{2\pi}\int_{0}^{2\cos\theta}r^3\,drd\theta \\
       &= \int_{0}^{2\pi} 4\cos^4\theta\,d\theta \\
       &= \int_{0}^{2\pi} \left(1 + 2\cos\theta + \frac{1 + \cos4\theta}{2}\right)\,d\theta \\
@@ -406,7 +411,7 @@
   $\bb_3$は法線ベクトルと等しい方向で、
   \begin{align}
     \bb_3
-    &= \frac{\bn}{|\bn|} \\
+    &= \frac{\bn}{\|\bn\|} \\
     &= \frac{1}{\sqrt{3}}
     \Bmat{
       1 \\ -1 \\ 1

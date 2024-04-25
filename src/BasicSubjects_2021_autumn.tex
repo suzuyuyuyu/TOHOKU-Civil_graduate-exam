@@ -186,7 +186,12 @@
   \end{enumerate}
 }
 \begin{enumerate}[label=(\arabic*)]
-  \item 略% pic
+  \item % pic ok
+  ${}$
+  \begin{figure}[H]\centering
+    \includegraphics[width=.6\linewidth]{./src/fig/Basic/B_2021_autumn_D.png}
+  \end{figure}
+
   \item 円錐を$z=x$で切断したうち、上側の体積である。
   \dm{0\leq z < 1/2,\, 1/2 \leq z \leq 1}に分割して考える。
 
@@ -218,7 +223,7 @@
   を用いて
   \begin{align}
     I
-    &= \frac{1}{2}\left[x\sqrt{(1-z)^2 - x^2} + (1-z)^2\arcsin \frac{x}{1-x}\right]_{0}^{z} \\
+    &= \frac{1}{2}\left[x\sqrt{(1-z)^2 - x^2} + (1-z)^2\arcsin \frac{x}{1-z}\right]_{0}^{z} \\
     &= \frac{1}{2} z\sqrt{1-2z} + \frac{1}{2}(1-z)^2 \arcsin \frac{z}{1-z}
   \end{align}
   と計算できるので$V_1$の積分は

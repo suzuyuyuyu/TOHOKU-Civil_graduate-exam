@@ -18,7 +18,7 @@
     \end{gather}
   \end{enumerate}
 }
-% [?] (b)について、ライプニッツの定理を使っての解法があるかもしれません。
+% [?] (b)について、ライプニッツの定理を使っての解法があるかも。
 
 \begin{ans*}
   ${}$
@@ -30,7 +30,7 @@
     \item
     $f(x)$の$n$次導関数が
     \begin{gather}
-      f^{(n)}(x) = (\sqrt{2})^n e^x\sin\biggl(x + \frac{n\pi}{4}\biggr) \label{eq:2020_spring_goalfnx}
+      f^{(n)}(x) = \bigl(\sqrt{2}\bigr)^n e^x\sin\biggl(x + \frac{n\pi}{4}\biggr) \label{eq:2020_spring_goalfnx}
     \end{gather}
     となることを数学的帰納法を用いて示す。
     \begin{enumerate}[label=(\roman*)]
@@ -39,25 +39,25 @@
         f'(x)
         &= e^x(\sin x + \cos x) \\
         &= \sqrt{2}e^x \sin\biggl(x + \frac{\pi}{4}\biggr) \\
-        &= (\sqrt{2})^{1}e^x \sin\biggl(x + \frac{1\cdot\pi}{4}\biggr)
+        &= \bigl(\sqrt{2}\bigr)^{1}e^x \sin\biggl(x + \frac{1\cdot\pi}{4}\biggr)
       \end{align}
       より$n=1$で\refeq{eq:2020_spring_goalfnx}は成り立つ。
       \item $n=k \,(\in \bbN)$で\refeq{eq:2020_spring_goalfnx}が成立すると仮定すると
       \begin{align}
-        f^{(k)}(x) = (\sqrt{2})^k e^x\sin\biggl(x + \frac{k\pi}{4}\biggr)
+        f^{(k)}(x) = \bigl(\sqrt{2}\bigr)^k e^x\sin\biggl(x + \frac{k\pi}{4}\biggr)
       \end{align}
       であり、これを微分した$k+1$階の導関数は
       \begin{align}
         f^{(k+1)}(x)
-        &= (\sqrt{2})^k e^x\biggl(\sin\biggl(x + \frac{k\pi}{4}\biggr) + \cos\biggl(x + \frac{k\pi}{4}\biggr)\biggr) \\
-        &= (\sqrt{2})^{k+1} e^x\sin\biggl(x + \frac{k\pi}{4}+\frac{\pi}{4}\biggr) \\
-        &= (\sqrt{2})^{k+1} e^x\sin\biggl(x + \frac{(k+1)\pi}{4}\biggr)
+        &= \bigl(\sqrt{2}\bigr)^k e^x\biggl(\sin\biggl(x + \frac{k\pi}{4}\biggr) + \cos\biggl(x + \frac{k\pi}{4}\biggr)\biggr) \\
+        &= \bigl(\sqrt{2}\bigr)^{k+1} e^x\sin\biggl(x + \frac{k\pi}{4}+\frac{\pi}{4}\biggr) \\
+        &= \bigl(\sqrt{2}\bigr)^{k+1} e^x\sin\biggl(x + \frac{(k+1)\pi}{4}\biggr)
       \end{align}
       より$n=k+1$でも成り立つ。
     \end{enumerate}
     (i),(ii)と数学的帰納法より任意の自然数$n$に対して$n$次導関数が得られて、
     \begin{gather}
-      f^{(n)}(x) = (\sqrt{2})^n e^x\sin\biggl(x + \frac{n\pi}{4}\biggr)
+      f^{(n)}(x) = \bigl(\sqrt{2}\bigr)^n e^x\sin\biggl(x + \frac{n\pi}{4}\biggr)
     \end{gather}
     である。
   \end{enumerate}
@@ -90,7 +90,10 @@
       y = \pm\frac{b}{a} \sqrt{a^2 - x^2}
     \end{gather}
     概形は下図。
-    % pic 楕円
+    \begin{figure}[H]\centering
+      \includegraphics[width=.6\linewidth]{./src/fig/Basic/B_2020_spring_ellipse.png}
+    \end{figure}
+
     \item
     面積$S$は$x,y\geq 0$の領域$D$の面積の4倍として、
     この領域の境界は\dm{y = \frac{b}{a}\sqrt{a^2 - x^2}}だから
@@ -237,7 +240,7 @@
     \end{gather}
     ここで、行列\dm{\bB := \bmat{
       \disp \frac{5}{8} & \disp -\frac{3}{8} \\
-      % & \\
+      & \\
       \disp -\frac{3}{8} & \disp \frac{5}{8}
     }}
     は次のように対角化される。
