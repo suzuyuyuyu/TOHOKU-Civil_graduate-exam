@@ -77,16 +77,21 @@
 \prob{
   互いに直交する単位長さの3次元ベクトル
   \begin{gather}
-    \bbm = \Bmat{
+    \bbm_1 = \Bmat{
       \disp \frac{n_{1x}}{\sqrt{2}} \\[10pt]
       \disp \frac{1}{\sqrt{2}} \\[10pt]
       \disp \frac{n_{1y}}{\sqrt{2}}
+    },\quad
+    \bbm_2 = \Bmat{
+      n_{2x} \\
+      0 \\
+      n_{2y}
     }
   \end{gather}
   が張る平面を考える。
-  ここに、$\bn_{1x},\,\bn_{1y},\,\bn_{2x},\,\bn_{2y}$はそれぞれ$\bA$の固有ベクトル
-  $\disp \bn_{1} = \Bmat{\bn_{1x}\\\bn_{1y}}$と
-  $\disp \bn_{2} = \Bmat{\bn_{2x}\\\bn_{2y}}$の成分である。
+  ここに、$n_{1x},\,n_{1y},\,n_{2x},\,n_{2y}$はそれぞれ$\bA$の固有ベクトル
+  $\disp \bn_{1} = \Bmat{n_{1x}\\n_{1y}}$と
+  $\disp \bn_{2} = \Bmat{n_{2x}\\n_{2y}}$の成分である。
   いま、与えられた3次元ベクトル$\disp \bp = \Bmat{10 \\ 3 \\ -3}$を
   この平面上のベクトル$\bp = \gra\bbm_{1} + \beta\bbm_{2}$で近似するとき、
   内積で測った誤差ノルム

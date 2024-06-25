@@ -1,0 +1,72 @@
+\section{2003秋}
+\subsection{微分積分}
+\prob{
+  次の偏導関数を求めなさい。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item $\log\sqrt{(x - a)^2 + (y - b)^2}$
+    \item $\disp y^2 \tan^{-1}\biggl(\frac{x}{y}\biggr)$
+  \end{enumerate}
+}
+
+\prob{
+  次の積分を求めなさい。
+  \begin{gather}
+    \iint_{D} \bigl(x^2 + y^2\bigr)^{-n} \,dxdy \quad D = \Dset{(x, y) \relmiddle b^2 \leq x^2 + y^2 \leq a^2}
+  \end{gather}
+}
+
+\prob{
+  次の微分方程式を解きなさい。
+  \begin{gather}
+    y'' - 3y' + 2y = e^x + \sin x
+  \end{gather}
+}
+
+\newpage
+\subsection{線形代数}
+\prob{
+  以下の\ref{2003autumn_l_c1}、\ref{2003autumn_l_c2}は$(m\tm n)$行列$\bA$に関する事実である。
+  \begin{enumerate}[label={[c\arabic*]}, ref={[c\arabic*]}, itemsep=1pt]
+    \item \label{2003autumn_l_c1}
+    $\bA$による像ベクトル$\bA\bx \in R^{m}$（$\bx \in R^{m}$）全体の集合を$\bA$の像といい、
+    $\im \bA$と表す。$\im \bA$は$R^{m}$の部分空間になる。
+    $\bA$の$n$個の列ベクトルを$\ba_{1},\, \ba_{2}, \cdots,\, \ba_{n}$と表すならば、
+    任意のベクトル$\by\in\im\bA$はその一次結合$\by = \beta_{1}\ba_{1} + \beta_{2}\ba_{2} + \cdots + \beta_{n}\ba_{n}$によって表される。
+    \item \label{2003autumn_l_c2}
+    $\bA\bx = \bzv$となるようなベクトル$\bx\in R^{n}$の集合を$\bA$の核といい、$\ker \bA$と表す。
+    $\ker \bA$は$R^{n}$の部分空間になる。
+  \end{enumerate}
+
+  \ref{2003autumn_l_c1}、\ref{2003autumn_l_c2}を参考にして以下の設問に答えよ。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item 方程式$\bA\bx = \bb$の解$\bx$が存在するならば$\bb$はどの空間に属しているか？
+    \item $\im \bA$に含まれる任意のベクトル$\by$と、
+    $\bA$の転置行列の核$\ker \bA^{T}$に含まれる任意ベクトル$\bz$の内積について
+    $\by^{T}\bz = 0$が成立することを証明せよ。
+    \item
+    $\disp \bA = \begin{bmatrix} 1 & -1 \\ 1 & 2 \\ 2 & 1 \end{bmatrix}$、
+    $\disp \bb = \begin{Bmatrix} p \\ q \\ r \end{Bmatrix}$のとき、解$\bx$が存在するために$\bb$の成分
+    $p,\, q,\, r$が満たすべき関係式を求めよ。
+  \end{enumerate}
+}
+
+\prob{
+  正方行列$\disp \bB = \begin{bmatrix}
+    \disp \frac{34}{25} & -\disp \frac{12}{25} \\[10pt]
+    -\disp \frac{12}{25} & \disp \frac{41}{25}
+  \end{bmatrix}$について、以下の設問に答えよ。
+  \begin{enumerate}[label=(\arabic*), ref=(\arabic*), itemsep=5pt]
+    \item $\bB$の固有値$\grl_{1},\,\grl_{2}\,(\grl_{1}\geq \grl_{2})$と、
+    これらに対応する単位長さの固有ベクトル$\bn_{1},\,\bn_{2}$を求めよ。
+    \item 上の$\bB$は
+    $(\be_{1}=\{ 1 ~ 0 \}^{T},\, \be_{2}=\{ 0 ~ 1 \}^{T})$
+    を基底としたときの表現行列である。$\bB$の固有ベクトルの組$(\bn_{1},\,\bn_{2})$を基底として選んだときの$\bB$の表現行列を示せ。
+    \item $\bB$の多項式
+    \begin{gather}
+      f(\bB) = \bB^{n+3} - 4\bB^{n+2} + 5\bB^{n+1} - 2\bB^{n} + \bB^{2} - 2\bB + 2\bI
+    \end{gather}
+    を計算せよ。なお、$\bI$は恒等行列$\disp \bI = \begin{bmatrix}
+      1 & 0 \\ 0 & 1
+    \end{bmatrix}$を表す。
+  \end{enumerate}
+}

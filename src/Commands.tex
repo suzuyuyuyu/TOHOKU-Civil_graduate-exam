@@ -93,9 +93,11 @@
 \newcommand{\bH}{\bm{H}}
 \newcommand{\bI}{\bm{I}}
 \newcommand{\bL}{\bm{L}}
+\newcommand{\bM}{\bm{M}}
 \newcommand{\bU}{\bm{U}}
 \newcommand{\bP}{\bm{P}}
 \newcommand{\bQ}{\bm{Q}}
+\newcommand{\bX}{\bm{X}}
 
 \newcommand{\bbR}{\mathbb{R}}
 \newcommand{\bbC}{\mathbb{C}}
@@ -107,6 +109,7 @@
 \newcommand{\bc}{{\bm{c}}}
 \newcommand{\bd}{{\bm{d}}}
 \newcommand{\be}{{\bm{e}}}
+\renewcommand{\bf}{{\bm{f}}}
 \newcommand{\bg}{{\bm{g}}}
 
 \newcommand{\bbm}{{\bm{m}}}
@@ -199,9 +202,13 @@
 % オペレーター
 \DeclareMathOperator{\rank}{rank}
 \DeclareMathOperator{\Ker}{Ker}
+% 虚部の「ℑ」を更新（像として使いたいがすでに定義されているのでDeclareMathOperatorは使えない）
 % \DeclareMathOperator{\Im}{Im}
-% 虚部の「ℑ」を更新（像として使いたい）
 \renewcommand{\Im}{\operatorname{Im}}
+% 2003秋の問題では小文字で書かれている
+% \DeclareMathOperator{\ker}{ker}
+\renewcommand{\ker}{\operatorname{ker}}
+\DeclareMathOperator{\im}{im}
 \DeclareMathOperator{\proj}{proj}
 
 % -------------------------------------------------------%
