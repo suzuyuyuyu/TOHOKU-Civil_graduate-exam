@@ -276,10 +276,10 @@
 \subsection{線形代数}
 
 \prob{
-  正方行列\dm{\bA = \Bmat{
-    \disp\frac{21}{4} & \disp\frac{5\sqrt{3}}{4} \\ & \\
+  正方行列\dm{\bA = \bmat{
+    \disp\frac{21}{4} & \disp\frac{5\sqrt{3}}{4} \\[10pt]
     \disp\frac{5\sqrt{3}}{4} & \disp\frac{31}{4}
-  }}
+  }}について以下の問いに答えよ。
   \begin{enumerate}[label=(\arabic*)]
     \item $\bA$の固有値$\grl_1,\,\grl_2$\:($\grl_1\geq \grl_2$)と、
     それら固有値に対する単位長さの固有ベクトル
@@ -304,8 +304,7 @@
       \item $\grl=\grl_1$のとき固有ベクトル$\bn_1$は
       \begin{gather}
         \bmat{
-          \disp -\frac{15}{4} & \disp \frac{5\sqrt{3}}{4} \\
-          & \\
+          \disp -\frac{15}{4} & \disp \frac{5\sqrt{3}}{4} \\[10pt]
           \disp \frac{5\sqrt{3}}{4} & \disp -\frac{5}{4}
         }\bn = \bzv
       \end{gather}
@@ -327,10 +326,10 @@
     また、行列$\bP_1:=[\bn_1,\bn_2],\,\bP_2:=[\bn_2,\bn_1]$と
     固有ベクトルを横に並べた行列を用いて、$\bA$は
     \begin{gather}
-      \bP_1^{-1}\bA\bP_1 = \bmat{9 & 0 \\ 0 & 4} = \bmat{3 & 0 \\ 0 & 2}^2  \\
-      \bP_2^{-1}\bA\bP_2 = \bmat{4 & 0 \\ 0 & 9} = \bmat{2 & 0 \\ 0 & 3}^2
+      \bP_1^{-1}\bA\bP_1 = \bmat{9 & 0 \\ 0 & 4} = \bmat{\pm 3 & 0 \\ 0 & \pm 2}^2  \\
+      \bP_2^{-1}\bA\bP_2 = \bmat{4 & 0 \\ 0 & 9} = \bmat{\pm 2 & 0 \\ 0 & \pm 3}^2
     \end{gather}
-    と対角化できる。
+    と対角化できる。ただし、いずれも複号任意である。
     また、
     \begin{gather}
       \bP_1^{-1}\bA\bP_1 = \bP_1^{-1}\bA^{\frac{1}{2}}\bP_1\bP_1^{-1}\bA^{\frac{1}{2}}\bP_1 = (\bP_1^{-1}\bA^{\frac{1}{2}}\bP_1)^2 \\
@@ -338,25 +337,23 @@
     \end{gather}
     であるので、
     \begin{gather}
-      \bP_1^{-1}\bA^{\frac{1}{2}}\bP_1 = \pm\bmat{3 & 0 \\ 0 & 2} \\
-      \bP_2^{-1}\bA^{\frac{1}{2}}\bP_2 = \pm\bmat{2 & 0 \\ 0 & 3}
+      \bP_1^{-1}\bA^{\frac{1}{2}}\bP_1 = \bmat{\pm 3 & 0 \\ 0 & \pm 2} \\
+      \bP_2^{-1}\bA^{\frac{1}{2}}\bP_2 = \bmat{\pm 2 & 0 \\ 0 & \pm 3}
     \end{gather}
-    が成り立つ。
+    が成り立つ。ただし、いずれも複号任意である。
     よって、$\bA^{\frac{1}{2}}$は4つ得られて
     \begin{align}
       \bA^{\frac{1}{2}}
       &=
-      \pm \bP_1\bmat{3 & 0 \\ 0 & 2}\bP_1^{-1},\,
-      \pm \bP_2\bmat{2 & 0 \\ 0 & 3}\bP_2^{-1} \\
+      \bP_1\bmat{\pm 3 & 0 \\ 0 & \pm 2}\bP_1^{-1},\,
+      \bP_2\bmat{\pm 2 & 0 \\ 0 & \pm 3}\bP_2^{-1} \\
       &=\bmat{
-        \disp\pm\frac{9}{4} & \disp\pm\frac{\sqrt{3}}{4} \\
-        & \\
+        \disp\pm\frac{9}{4} & \disp\pm\frac{\sqrt{3}}{4} \\[10pt]
         \disp\pm\frac{\sqrt{3}}{4} & \disp\pm\frac{11}{4}
       },\,\bmat{
-        \disp\pm\frac{\sqrt{3}}{4} & \disp\pm\frac{9}{4} \\
-        & \\
-        \disp\pm\frac{11}{4} & \disp\pm\frac{\sqrt{3}}{4}
-      }\quad(\text{行列内は複号同順})
+        \disp\mp\frac{3}{4} & \disp\pm\frac{5\sqrt{3}}{4} \\[10pt]
+        \disp\pm\frac{5\sqrt{3}}{4} & \disp\pm\frac{7}{4}
+      }\quad\text{（行列内は複号同順）}
     \end{align}
 
   \end{enumerate}
