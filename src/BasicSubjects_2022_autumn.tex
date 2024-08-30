@@ -40,7 +40,7 @@
 \prob{%
   次の関数$f(x,y)$の極値を求めよ。
   \begin{gather}
-    f(x,y) = xy + \frac{8}{x} + \frac{1}{y} \quad(x\neq 0,\, y\neq 0)
+    f(x,y) = xy + \frac{8}{x} + \frac{8}{y} \quad(x\neq 0,\, y\neq 0)
   \end{gather}
 }
 \begin{ans*}
@@ -48,12 +48,12 @@
   \begin{align}
     &\begin{dcases*}
       \ppar{f}{x} = y - \frac{8}{x^2} = 0 \\
-      \ppar{f}{y} = x - \frac{1}{y^2} = 0
+      \ppar{f}{y} = x - \frac{8}{y^2} = 0
     \end{dcases*}\\
     &\Rightarrow
     \begin{dcases*}
-      x = 4 \\
-      y = \frac{1}{2}
+      x = 2 \\
+      y = 2
     \end{dcases*}
   \end{align}
   かつ、この点でヘッシアン\footnote{appendix}$\det\bH$は
@@ -63,18 +63,22 @@
     \left.
     \det
     \bmat{
-    \disp\frac{\d^2f}{\d x^2} & \disp\frac{\d^2f}{\d x\d y} \\
-    \\
+    \disp\frac{\d^2f}{\d x^2} & \disp\frac{\d^2f}{\d x\d y} \\[10pt]
     \disp\frac{\d^2f}{\d x\d y} & \disp\frac{\d^2f}{\d y^2}
-    }\right|_{(x,y) = (4,1/2)} \\
+    }\right|_{(x,y) = (2,2)} \\
     &=
     \begin{vmatrix}
-      1/4 & 1 \\
-      1 & 16
-    \end{vmatrix}
+      \disp\frac{16}{x^3} & \disp 1 \\[10pt]
+      \disp 1 & \disp\frac{16}{y^3}
+    \end{vmatrix} \\
+    &=
+    \begin{vmatrix}
+      \disp 2 & \disp 1 \\[10pt]
+      \disp 1 & \disp 2
+    \end{vmatrix} \\
     = 3 > 0
   \end{align}
-  より\dm{\bH \succ 0}なので\dm{(x,y) = (4,1/2)}で極小値6をとる。
+  より\dm{\bH \succ 0}なので\dm{(x,y) = (2,2)}で極小値12をとる。
 \end{ans*}
 
 \prob{%
@@ -110,15 +114,15 @@
       C
       &= \Dset{(x,y)\relmiddle (x-1)^2 + y^2 \leq 1} \\
       &= \Dset{(r,\theta)\relmiddle r^2 - 2r\cos\theta\leq 1} \\
-      &= \Dset{(r,\theta)\relmiddle 0\leq r\leq 2\cos\theta, 0\leq \theta < 2\pi}
+      &= \Dset{(r,\theta)\relmiddle 0\leq r\leq 2\cos\theta, -\frac{\pi}{2}\leq \theta < \frac{\pi}{2}}
     \end{align}
     であるので、
     \begin{align}
       V_{D}
-      &= \int_{0}^{2\pi}\int_{0}^{2\cos\theta}r^3\,drd\theta \\
-      &= \int_{0}^{2\pi} 4\cos^4\theta\,d\theta \\
-      &= \int_{0}^{2\pi} \left(1 + 2\cos\theta + \frac{1 + \cos4\theta}{2}\right)\,d\theta \\
-      &= 3\pi
+      &= \int_{-\pi/2}^{\pi/2}\int_{0}^{2\cos\theta}r^3\,drd\theta \\
+      &= \int_{-\pi/2}^{\pi/2} 4\cos^4\theta\,d\theta \\
+      &= \int_{-\pi/2}^{\pi/2} \left(1 + 2\cos\theta + \frac{1 + \cos4\theta}{2}\right)\,d\theta \\
+      &= \frac{3\pi}{2}
     \end{align}
   \end{enumerate}
 
@@ -332,11 +336,11 @@
     \end{gather}
     $\ba_2$ の$\ba_1$への射影ベクトルは
     \begin{gather}
-      (\ba_2\cdot\ba_1)\ba_1
+      (\ba_2\cdot\bb_1)\bb_1
     \end{gather}
     であるので、$\ba_2$はこの射影ベクトルと$\ba_1$と直交するベクトル$\bb'_2$を用いて
     \begin{gather}
-      \ba_2 = (\ba_2\cdot\ba_1)\ba_1 + \bb'_2
+      \ba_2 = (\ba_2\cdot\bb_1)\bb_1 + \bb'_2
     \end{gather}
     よって、$\bb_2$は
     \begin{align}
