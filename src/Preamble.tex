@@ -112,53 +112,53 @@
 % セクション・サブセクションの見出しのサイズ
 % \titleformat*{\section}{\Large\bfseries} % サイズ・太字
 % \titleformat*{\subsection}{\large\bfseries}
-% \titleformat{\section}[block]
-% {%
-%   % \clearpageornot
-%   % sectionとしたら絶対につく装飾
-%   % \noindent
-%   {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
-%   \hspace*{-13pt}
-%   \raisebox{-4.5pt}{\begin{picture}(0,0)
-%     \put(0,0){\color{black}\line(1,0){300}}
-%   \end{picture}}
-%   \hspace*{4pt}
-% }
-% {
-%   % section*では消える場所
-%   % \hspace{0pt}
-%   % {\normalfont \Large\bfseries}
-% }{0pt}
-% {
-%   \normalfont \Large\bfseries
-%   % セクションの直後は改ページさせない
-%   \setcounter{cpornot}{1}
-% }
-% [
-% ]
+\titleformat{\section}[block]
+{%
+  % \clearpageornot
+  % sectionとしたら絶対につく装飾
+  % \noindent
+  {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
+  \hspace*{-13pt}
+  \raisebox{-4.5pt}{\begin{picture}(0,0)
+    \put(0,0){\color{black}\line(1,0){300}}
+  \end{picture}}
+  \hspace*{4pt}
+}
+{
+  % section*では消える場所
+  % \hspace{0pt}
+  % {\normalfont \Large\bfseries}
+}{0pt}
+{
+  \normalfont \Large\bfseries
+  % セクションの直後は改ページさせない
+  \setcounter{cpornot}{1}
+}
+[
+]
 
-% \titleformat{\subsection}[block]
-% {%
-%   % \clearpageornot
-%   \raisebox{-5pt}%
-%   {\linethickness{1.5pt}%
-%   {\begin{picture}(5,20)%
-%     \put(0,0){\line(0,1){20}}%
-%   \end{picture}}}%
-%   \raisebox{-4pt}
-%   {\linethickness{0.5pt}%
-%   {\begin{picture}(0,20)%
-%     \put(0,0){\line(0,1){18}}%
-%   \end{picture}}}
-% }{%
-% }{0pt}
-% {
-%   \hspace*{0pt}\normalfont \large\bfseries
-%   % サブセクションの直後は改ページさせない
-%   \setcounter{cpornot}{1}
-% }
-% [
-% ]
+\titleformat{\subsection}[block]
+{%
+  % \clearpageornot
+  \raisebox{-5pt}%
+  {\linethickness{1.5pt}%
+  {\begin{picture}(5,20)%
+    \put(0,0){\line(0,1){20}}%
+  \end{picture}}}%
+  \raisebox{-4pt}
+  {\linethickness{0.5pt}%
+  {\begin{picture}(0,20)%
+    \put(0,0){\line(0,1){18}}%
+  \end{picture}}}
+}{%
+}{0pt}
+{
+  \hspace*{0pt}\normalfont \large\bfseries
+  % サブセクションの直後は改ページさせない
+  \setcounter{cpornot}{1}
+}
+[
+]
 
 
 % その他コマンド
