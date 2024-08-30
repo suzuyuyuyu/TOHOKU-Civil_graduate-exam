@@ -75,12 +75,11 @@
       \iint_D \sqrt{x^2+y^2}\,dxdy
       &= \int_{0}^{\pi/2}\int_{\cos\grt}^{1}\, drd\grt [r^2] \\
       &= \int_{0}^{\pi/2}\,d\grt \left[ \frac{1}{3}r^3 \right]_{\cos\grt}^{1} \\
-      &= \int_{0}^{\pi/2} \Biggl( \frac{1}{3} - \cos^3\grt \Biggr)\, d\grt \\
-      &= \frac{\pi}{6} - \frac{2}{3}
+      &= \int_{0}^{\pi/2} \Biggl( \frac{1}{3} - \frac{1}{3}\cos^3\grt \Biggr)\, d\grt \\
+      &= \frac{\pi}{6} - \frac{2}{9}
     \end{align}
   \end{enumerate}
 \end{ans*}
-蠅
 
 \prob{%
   次の初期値問題を解け。
@@ -112,7 +111,7 @@
     \pmat{
       -1 & 2 & 1 & -2 \\
       5 & -4 & -1 & 3 \\
-      3 & 0 & 2 & 3 \\
+      3 & 0 & 1 & -1 \\
       2 & -4 & 2 & 3
     }
     ,\quad
@@ -292,24 +291,22 @@
       \bP
       =
       \bmat{
-          \disp \frac{\sqrt{3}}{2} & \disp -\frac{1}{2} \\
-          \\
+          \disp \frac{\sqrt{3}}{2} & \disp -\frac{1}{2} \\[10pt]
           \disp \frac{1}{2} & \disp \frac{\sqrt{3}}{2}
       } =
       \bmat{
-        \disp \cos\frac{\pi}{6} &\disp \sin\frac{\pi}{6} \\
-        & \\
+        \disp \cos\frac{\pi}{6} &\disp \sin\frac{\pi}{6} \\[10pt]
         \disp -\sin\frac{\pi}{6} &\disp \cos\frac{\pi}{6} \\
       }
     \end{gather}
     であるので、\dm{\frac{\pi}{6}}方向の回転行列である。
-    \dm{\Bmat{X \\ Y} = \bP\Bmat{x \\y}}の座標変換によって
+    \dm{\Bmat{x \\[5pt] y} = \bP\Bmat{X \\Y}}の座標変換によって
     \begin{align}
       &f(x, y, 0) = 1 \\
       &\quad\eqa
-      \Bmat{x & y}\bP^{-1}\bP\bA\bP^{-1}\bP\Bmat{x \\ y} \\
+      \Bmat{x & y}\bP\bP^{-1}\bA\bP\bP^{-1}\Bmat{x \\ y} \\
       &\quad\eqa
-      \Bmat{X & Y}\bP\bA\bP^{-1}\Bmat{X \\ Y} \\
+      \Bmat{X & Y}\bP^{-1}\bA\bP\Bmat{X \\ Y} \\
       &\quad\eqa
       \Bmat{X & Y}\bmat{1 & 0 \\ 0 & 1/4}\Bmat{X \\ Y} \\
       &\quad\eqa
