@@ -1,8 +1,8 @@
-\section{ベルヌーイ（Bernoulli）の微分方程式}
+\section{Bernoulli の微分方程式}
 特に非線形常微分方程式は多くの場合、解くことができない。
 
 一階線形常微分方程式の左辺に対して
-右辺が$Q(x)y^n\:(n\neq 0,1)$になっているものをベルヌーイの微分方程式
+右辺が$Q(x) y^n \: (n\neq 0,\,1)$になっているものを Bernoulli の微分方程式
 % 、$f(x)y^2 + g(x)y + h(x)$になっているものをリッカチの微分方程式
 という。
 \begin{gather}
@@ -10,14 +10,14 @@
   % \frac{dy}{dx} + P(x)y = f(x)y^2 + g(x)y + h(x) \label{eq:appendix-ODE-Riccati}\\
 \end{gather}
 
-ベルヌーイの微分方程式は両辺を$y^n$で割って、
+Bernoulli の微分方程式は両辺を$y^n$で割って、
 \begin{gather}
   \frac{1}{y^n} \frac{dy}{dx} + \frac{P(x)}{y^{n-1}} = Q(x) \label{eq:appendix-ODE-Bernoulli-trans}
 \end{gather}
 と変形できる。
 
 ここに\dm{u=\frac{1}{y^{n-1}} = y^{1-n}}とおくことで\dm{u'=(1-n)\frac{1}{y^n}\frac{dy}{dx}}
-であり、\refeq{eq:appendix-ODE-Bernoulli-trans}の両辺を$1-n$倍してから$u$についての微分方程式に書き換えて
+であり、Eq.~\eqref{eq:appendix-ODE-Bernoulli-trans}の両辺を$1-n$倍してから$u$についての微分方程式に書き換えて
 \begin{gather}
   u' + (1-n)P(x)u = (1-n)Q(x)
 \end{gather}

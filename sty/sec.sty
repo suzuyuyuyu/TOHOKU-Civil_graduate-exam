@@ -1,0 +1,53 @@
+% セクション・サブセクションの見出しのサイズ
+\usepackage{titlesec} % タイトルの書式を変える(titleformat)
+% \titleformat{\section}{\normalfont\Large\bfseries}{\thesection}{1em}{}
+% \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+\titleformat{\section}[block]
+{%
+  {\colorbox{black}{\begin{picture}(0,10)\end{picture}}}
+  \hspace*{-13pt}
+  \raisebox{-4.5pt}{\begin{picture}(0,0)
+    \put(0,0){\color{black}\line(1,0){300}}
+  \end{picture}}
+  \hspace*{4pt}
+}
+{
+  % section*では消える場所
+  % \hspace{0pt}
+  % {\normalfont \Large\bfseries}
+}{0pt}
+{
+  \normalfont \Large\bfseries
+  % セクションの直後は改ページさせない
+  \setcounter{cpornot}{1}
+}
+[
+]
+
+\titleformat{\subsection}[block]
+{%
+  \hspace*{3.5pt}%
+  \raisebox{0pt}%
+  {%
+    \linethickness{8pt}%
+    {%
+      \begin{picture}(5,8)%
+        \put(0,0){\line(0,1){8}}%
+      \end{picture}%
+    }%
+  }%
+}{%
+}{0pt}
+{
+  \hspace*{0pt}\normalfont \large\bfseries
+  % サブセクションの直後は改ページさせない
+  \setcounter{cpornot}{1}
+}
+[
+]
+
+\usepackage{tocloft}
+\renewcommand{\cftsecfont}{\normalfont\normalsize\bfseries}
+\renewcommand{\cftsubsecfont}{\normalfont\normalsize}
+\renewcommand{\cftsubsubsecfont}{\normalfont\normalsize}

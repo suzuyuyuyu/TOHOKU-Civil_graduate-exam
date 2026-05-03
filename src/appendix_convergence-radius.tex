@@ -1,9 +1,9 @@
 \newpage
 \section{収束半径}
-\begin{itembox}[l]{ダランベールの収束判定法}
+\begin{theorem}{d'Alembert の収束判定法}{dalembert}
   数列 $\{a_{n}\}$に対し、
   \begin{gather}
-    \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = r
+    \lim_{n\to\infty}\left|\frac{a_{n+1}}{a_n}\right| = r \label{eq:dalembert}
   \end{gather}
   が存在するとする。このとき，\dm{\sum_{n=0}^{\infty}a_{n}}
   の収束・発散について
@@ -12,12 +12,12 @@
     \item $1<r$ ならば発散
   \end{enumerate}
   となる。
-\end{itembox}
+\end{theorem}
 
-\begin{itembox}[l]{コーシーアダマールの収束判定法}
+\begin{theorem}{Cauchy--Hadamard の収束判定法}{cauchy-hadamard}
   数列 $\{a_{n}\}$に対し、
   \begin{gather}
-    \lim_{n\to\infty}\sup \sqrt[n]{|a_{n}|} = r
+    \lim_{n\to\infty}\sup \sqrt[n]{|a_{n}|} = r \label{eq:cauchy-hadamard}
   \end{gather}
   が存在するとする。このとき，\dm{\sum_{n=0}^{\infty}a_{n}}
   の収束・発散について
@@ -26,7 +26,7 @@
     \item $1<r$ ならば発散
   \end{enumerate}
   となる。
-\end{itembox}
+\end{theorem}
 
 
 

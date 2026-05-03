@@ -1,0 +1,95 @@
+% -------------------------------------------------------%
+% パッケージのインポート
+
+\usepackage{graphicx} % 図の挿入(includegraphics)
+\usepackage{wrapfig}
+\usepackage{booktabs,multirow,tabularx}
+\usepackage{float} % [H]で厳密に位置を固定
+
+\usepackage{bm}
+\usepackage{amsmath} % 数式用
+\usepackage{amssymb} % もっと数式記号(iintとか)
+\usepackage{mathtools} % もっと数式(アクセント)
+\usepackage{accents} % \undertildeで下付きチルダ
+\usepackage{nccmath} % 数式左寄せ環境fleqn
+\usepackage{empheq} % わからん
+
+\usepackage{amsthm} % 定理，証明など
+
+\usepackage{siunitx} % 単位書き方(si)
+\sisetup{
+  group-separator = {,},
+  group-digits = integer,
+  group-minimum-digits = 4,
+  per-mode=symbol
+}
+
+\DeclarePairedDelimiter{\rbra}{\lparen}{\rparen}
+\usepackage{physics2}
+\usephysicsmodule{ab}
+\usepackage[italic]{derivative}
+
+\usepackage{url}
+
+\usepackage{hyperref,theoremref,xcolor}
+\definecolor{clink}{RGB}{0,60,110}%
+\hypersetup{
+  pdftitle={tohoku-civil-graduate-exam-maths},
+  colorlinks=true, linkcolor=clink!90,
+  bookmarksnumbered=true,
+  bookmarksopen=true
+}
+
+\usepackage{enumitem} % enumerate
+\setlist[enumerate,itemize]{
+  itemsep=0pt,
+  itemindent=4em,
+  leftmargin=.5em,
+  listparindent=1em,
+  labelsep=.7em,
+  itemindent=1.2em
+}
+% \usepackage{comment} % コメントアウト(comment環境)
+
+\usepackage{framed}
+\usepackage{ascmac}
+\usepackage{fancybox}
+
+% ページスタイルのため
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{color}
+
+\usepackage{setspace}
+
+% -------------------------------------------------------%
+
+% ページ番号に西暦を入れる用のカウンター
+\newcounter{yearcounter}
+
+% yearcounterとpageを変更
+% セクション始まりにこの2つを書けばページ番号を振り直せる
+% \setcounter{yearcounter}{2020}
+% \setcounter{page}{1}
+
+% これは多分使わない
+% yearcounterを1増加させる
+\newcommand{\incyearcounter}{\stepcounter{yearcounter}}
+
+
+% 1ならなにもしない、それ以外なら改ページする変数とコマンド
+% cpornot
+\newcounter{cpornot}
+\setcounter{cpornot}{1}
+\newcommand{\clearpageornot}{%
+  \ifnum\value{cpornot}=1
+    % skip
+  \else
+    \newpage
+  \fi
+}
+
+% -------------------------------------------------------%
+% 2:問題番号を表示しない 3:する
+\setcounter{tocdepth}{2}
+% \setcounter{tocdepth}{3}

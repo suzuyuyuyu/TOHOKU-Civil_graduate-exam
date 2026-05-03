@@ -1,20 +1,20 @@
 \newpage
 \section{定数変化法}
 定数変化法は次の手順で行う。
-\begin{itembox}[l]{定数変化法による解法}
+\begin{remark}{定数変化法による解法}{variation-of-constants}
   \begin{enumerate}[label=\arabic*.\:]
     \item 右辺をゼロにして得られる斉次方程式の一般解を求める。
     \item 斉次方程式の一般解の積分定数 $C$ を $x$ の関数 $C(x)$ に書き換える。
     \item それをもとの微分方程式に代入 $\longrightarrow$ $C(x)$ の微分方程式として解いて一般解を求める。
     \item 得られた $C(x)$ を斉次方程式の解に代入すると、非斉次方程式の一般解が得られる。
   \end{enumerate}
-\end{itembox}
+\end{remark}
 
 
 
 二階以上の非斉次常微分方程式では2つの任意定数を含むので上のように解くと
 $C_{1},\,C_{2}$に関する条件が不足する。
-そのため\refeq{27}のように$C'_{1}y_{1}+C'_{2}y_{2}=0$というような条件を追加で仮定することで
+そのためEq.~\eqref{27}のように$C'_{1}y_{1}+C'_{2}y_{2}=0$というような条件を追加で仮定することで
 $C'_{1},\,C'_{2}$に関しての単純な微分方程式として計算できる。
 
 文献\cite{ref:teisuhenkaho}を参考にまとめる。
@@ -25,7 +25,7 @@ $C'_{1},\,C'_{2}$に関しての単純な微分方程式として計算できる
 $y'' + ay' + by = r(x)$ の特解を求めるための公式を作ることができる。
 ただし、できる限り未定係数法を使った方が簡単に特解を求められる。
 
-\begin{itembox}[l]{非斉次方程式の一般解の公式}
+\begin{remark}{非斉次方程式の一般解の公式}{general-solution-formula}
   \begin{gather}
   %   y(x)
   %   = -\left( \int_{x_1}^{x}\frac{y_2(\hat{x})r(\hat{x})}{W(\hat{x})}\:d\hat{x} \right) y_1(x)
@@ -39,13 +39,13 @@ $y'' + ay' + by = r(x)$ の特解を求めるための公式を作ることが�
   \begin{itemize}
     \item $y_1(x),y_2(x)\colon$非斉次方程式の互いに独立な基本解
     % \item $x_1,x_2\colon$任意の定数
-    \item $W(x)\colon$以下で定義される$x$の関数（ロンスキアン）
+    \item $W(x)\colon$以下で定義される$x$の関数（ Wronskian ）
     \begin{gather}
       W(x) := y_1(x)y'_2(x) - y'_1(x)y_2(x) \label{24}
     \end{gather}
   \end{itemize}
   である。
-\end{itembox}
+\end{remark}
 
 
 公式 \eqref{23} を得るためには、非斉次方程式 の特解
@@ -140,7 +140,7 @@ $C_1(x), C_2(x)$ を決めればよい。そのために、まず $y'(x)$ を計
   }
 \end{gather}
 として$C'_1$および、$C'_2$が得られる。
-ここで$W(x)$はロンスキアンであり、
+ここで$W(x)$は Wronskian であり、
 $W(x) := y_1y'_2 - y'_1y_2$である。
 
 単に次のように不定積分して非斉次方程式の一般解を得ることができる。
@@ -172,7 +172,7 @@ $W(x) := y_1y'_2 - y'_1y_2$である。
 % \end{gather}
 
 % ただし、$x_1$ は任意の定数で、$C'_1(x)$ の式を積分する際に生じる積分定数に相当する。
-% また、式を単純化するために、式 \eqref{24} で定義されるロンスキアン $W(x)$ を用いた。
+% また、式を単純化するために、式 \eqref{24} で定義される Wronskian  $W(x)$ を用いた。
 % 同様に、$C_2(x)$ だけの式を作って積分すると
 
 % \begin{gather}
@@ -184,7 +184,7 @@ $W(x) := y_1y'_2 - y'_1y_2$である。
 % 先ほどと同様、$x_2$ は任意の定数である。
 % 式 \eqref{32}, \eqref{33} を最初に仮定した特解の表式 \eqref{25} に代入して、公式 \eqref{23} を得る。
 
-% % [?] ロンスキアン三階以上
+% % [?]  Wronskian 三階以上
 % \begin{gather*}
 %   W := \det\begin{vmatrix}
 %     y_1 & y_2 & \cdots & y_n \\
@@ -193,4 +193,3 @@ $W(x) := y_1y'_2 - y'_1y_2$である。
 %     y_1 & y_2 & \cdots & y_n
 %   \end{vmatrix}
 % \end{gather*}
-

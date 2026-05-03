@@ -1,0 +1,66 @@
+% 環境（tcolorbox）の定義
+% Remark
+\usepackage[most,many,breakable]{tcolorbox}
+\usepackage{xcolor}
+\definecolor{myremarkbg}{HTML}{fdf8f8}
+\definecolor{myremarkfr}{HTML}{EA2C16}
+\tcbuselibrary{theorems,skins,hooks}
+\newtcbtheorem[number within=section]{remark}{Remark}
+{%
+	enhanced,%
+	breakable,%
+	colback = myremarkbg,%
+	frame hidden,%
+	boxrule = 0sp,%
+	borderline west = {2pt}{0pt}{myremarkfr},%
+	sharp corners,%
+	detach title,%
+	before upper = \tcbtitle\par\smallskip,%
+	coltitle = myremarkfr,%
+	fonttitle = \bfseries\sffamily,%
+	description font = \mdseries,%
+	separator sign none,%
+	segmentation style={solid, myremarkfr},%
+}{rem}
+
+% Note
+\definecolor{mynotebg}{HTML}{f2fbfc}
+\definecolor{mynotefr}{HTML}{191971}
+\newtcbtheorem[number within=section]{note}{Note}
+{%
+	enhanced,%
+	breakable,%
+	colback = mynotebg,%
+	frame hidden,%
+	boxrule = 0sp,%
+	borderline west = {2pt}{0pt}{mynotefr},%
+	sharp corners,%
+	detach title,%
+	before upper = \tcbtitle\par\smallskip,%
+	coltitle = mynotefr,%
+	fonttitle = \bfseries\sffamily,%
+	description font = \mdseries,%
+	separator sign none,%
+	segmentation style={solid, mynotefr},%
+}{nt}
+
+% Theorem
+\definecolor{myproofbg}{HTML}{f2fbfc}
+\definecolor{myprooffr}{HTML}{191971}
+\newtcbtheorem[number within=section]{theorem}{Theorem}
+{%
+	enhanced,%
+	breakable,%
+	colback = myproofbg,%
+	frame hidden,%
+	boxrule = 0sp,%
+	borderline west = {2pt}{0pt}{myprooffr},%
+	sharp corners,%
+	detach title,%
+	before upper = \tcbtitle\par\smallskip,%
+	coltitle = myprooffr,%
+	fonttitle = \bfseries\sffamily,%
+	description font = \mdseries,%
+	separator sign none,%
+	segmentation style={solid, myprooffr},%
+}{thm}

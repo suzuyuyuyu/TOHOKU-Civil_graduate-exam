@@ -25,6 +25,7 @@ rubber.cache
 *.log
 *.fls
 *.toc
+*.out
 # empty filename
 .pdf
 

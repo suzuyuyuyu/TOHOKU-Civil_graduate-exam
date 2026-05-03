@@ -1,0 +1,41 @@
+{
+    "latex-workshop.latex.autoBuild.run": "never",
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "LaTeXmk",
+            "tools": [
+                "LaTeXmk"
+            ]
+        },
+        {
+            "name": "lualarex",
+            "tools": [
+                "lualarex"
+            ]
+        }
+    ],
+    "latex-workshop.latex.tools": [
+        {
+            "name": "lualarex",
+            "command": "lualatex",
+            "args": [
+                "-synctex=1",
+                "-halt-on-error",
+                "-file-line-error",
+                "%DOC%"
+            ]
+        },
+        {
+            "name": "LaTeXmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=batchmode",
+                "-file-line-error",
+                "-lualatex",
+                "-halt-on-error",
+                "%DOC%"
+            ]
+        }
+    ],
+}

@@ -1,9 +1,15 @@
 \documentclass[10pt, a4paper]{ltjsarticle}
-\input{./src/Preamble.tex}
+\usepackage{sec}
+\usepackage{tcbox}
+
+\input{preamble}
+\input{commands}
 
 \title{東北大学 土木系 院試 基礎科目}
 \author{鈴木\thanks{https://github.com/suzuyuyuyu}}
-\date{}
+\date{%
+  Last update: \today
+}
 
 \begin{document}
 
@@ -13,64 +19,61 @@
 % 目次
 \tableofcontents
 
-
-\pagestyle{appendixPS}
-
 % =============================================================
 % 微分積分
 % - - - - - - - - - - - - -
 
 % ロピタルの定理
-\input{./src/appendix_lhopital.tex}
+\input{appendix_lhopital.tex}
 
 % 微分方程式の解法
-\input{./src/appendix_ODE.tex}
+\input{appendix_ODE.tex}
 
 % 非線形常微分方程式（ベルヌーイ型）
-\input{./src/appendix_non-linear_Bernoulli.tex}
+\input{appendix_non-linear_Bernoulli.tex}
 
 % 非線形常微分方程式（ラグランジュ型）
-\input{./src/appendix_non-linear_Lagrange.tex}
+\input{appendix_non-linear_Lagrange.tex}
 
 % 線形常微分方程式（オイラー型）
-\input{./src/appendix_linear_Euler.tex}
+\input{appendix_linear_Euler.tex}
 
 % 完全微分方程式
-\input{./src/appendix_complete-differential-eq.tex}
+\input{appendix_complete-differential-eq.tex}
 
 % 積分因子法
-\input{./src/appendix_integrating-factor-method.tex}
+\input{appendix_integrating-factor-method.tex}
 
 % 未定係数法
-\input{./src/appendix_undetermined-coefficients.tex}
+\input{appendix_undetermined-coefficients.tex}
 
 % 定数変化法
-\input{./src/appendix_variation-of-constants.tex}
+\input{appendix_variation-of-constants.tex}
 
 % 変数分離法と同次形
-\input{./src/appendix_ODE_various.tex}
+\input{appendix_ODE_various.tex}
 
 % 微分方程式の例題
-\input{./src/appendix_ODE_practice.tex}
+\input{appendix_ODE_practice.tex}
 
 % 収束半径
-\input{./src/appendix_convergence-radius.tex}
+\input{appendix_convergence-radius.tex}
 
 % 極値
-\input{./src/appendix_extremum.tex}
+\input{appendix_extremum.tex}
 
-% ワイエルシュトラス変換
-\input{./src/appendix_Weierstrass.tex}
+% ワイエルシュトラス置換
+\input{appendix_Weierstrass.tex}
 
 % =============================================================
 % 線形代数
 % - - - - - - - - - - - - -
 \newpage
 % 対角化
-\input{./src/appendix_diagonalization.tex}
+\input{appendix_diagonalization.tex}
 
 % 2次形式と標準形
-\input{./src/appendix_quadratic-general-form.tex}
+\input{appendix_quadratic-general-form.tex}
 
 
 \newpage

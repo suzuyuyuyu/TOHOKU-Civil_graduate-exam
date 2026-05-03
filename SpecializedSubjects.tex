@@ -1,12 +1,15 @@
 \documentclass[10pt, a4paper, notitlepage]{ltjsarticle}
-%: プリアンブル
-\input{./src/Preamble.tex}
+\usepackage{sec}
+
+\input{preamble}
+\input{commands}
 
 \title{東北大学 土木系 院試 専門科目}
 \author{鈴木\thanks{https://github.com/suzuyuyuyu}}
-\date{}
-
-
+\date{Last update: \today %
+% \\[.5em]%
+}
+\usepackage{mhchem}
 % **************************************************************
 \begin{document}
 
@@ -17,15 +20,14 @@
 \tableofcontents
 
 \newpage
-\pagestyle{mainPS}
 
 % 2023秋
-\input{./src/SpecializedSubjects_2023_autumn.tex}
+\input{SpecializedSubjects_2023_autumn.tex}
 
 % 2023春
-\input{./src/SpecializedSubjects_2023_spring.tex}
+\input{SpecializedSubjects_2023_spring.tex}
 
 % 2022秋
-\input{./src/SpecializedSubjects_2022_autumn.tex}
+\input{SpecializedSubjects_2022_autumn.tex}
 
 \end{document}
